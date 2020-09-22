@@ -1,4 +1,4 @@
-import glicko_utils
+import glicko2_utils
 
 DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -24,8 +24,9 @@ class TeamData:
         self.name: str = name
         self.last_game: int = convert_to_days(creation_date)
 
-        self.rating: float = glicko_utils.INITIAL_RATING
-        self.deviation: float = glicko_utils.INITIAL_DEVIATION
+        self.rating: float = glicko2_utils.INITIAL_RATING
+        self.deviation: float = glicko2_utils.INITIAL_DEVIATION
+        self.volatility: float = glicko2_utils.INITIAL_VOLATILITY
 
         # [(date, rating), (date, rating), ... ]
         self.rating_history: list = [(creation_date, self.rating)]
@@ -33,9 +34,10 @@ class TeamData:
     def update_rating(self, opponent: "TeamData", win_loss: float, date: str):
         self.update_deviation(date)
 
-        self.rating, self.deviation = glicko_utils.get_new_stats(
+        self.rating, self.deviation, self.volatility = glicko2_utils.get_new_stats(
             self.rating,
             self.deviation,
+            self.volatility,
             ((opponent.rating, opponent.deviation, win_loss),)
         )
 
@@ -43,5 +45,9 @@ class TeamData:
 
     def update_deviation(self, date: str):
         game_date = convert_to_days(date)
-        self.deviation = glicko_utils.update_deviation(self.deviation, game_date - self.last_game)
+        self.deviation = glicko2_utils.update_deviation(
+            self.deviation,
+            self.volatility,
+            (game_date - self.last_game) // 7
+        )
         self.last_game = game_date
