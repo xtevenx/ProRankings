@@ -7,7 +7,7 @@ plot_after = "2019-01-09 00:00:00"
 # only plot the latest values from the last `n` days.
 smooth_factor = 1
 
-output_file = "output3.png"
+output_file = "data/output.png"
 
 if __name__ == "__main__":
     from datetime import datetime

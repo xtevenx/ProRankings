@@ -1,4 +1,4 @@
 ProRankings
 -----------
 
-![image missing](https://github.com/xtevenx/ProRankings/output.png "Top Rating Progression")
+![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output.png "Top Rating Progression")
