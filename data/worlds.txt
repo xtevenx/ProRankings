@@ -1,0 +1,33 @@
+Group A (avg. 1907.300000):
+  -  (G2)   G2 Esports                   1951.7
+  -  (MCX)  Machi Esports                1903.8
+  -  (SN)   Suning                       1866.4
+
+Group B (avg. 1914.266667):
+  -  (DWG)  DAMWON Gaming                1961.5
+  -  (JDG)  JD Gaming                    1953.7
+  -  (RGE)  Rogue (European Team)        1827.6
+
+Group C (avg. 1886.700000):
+  - (GEN.G) Gen.G                        1924.6
+  -  (FNC)  Fnatic                       1889.0
+  -  (TSM)  Team SoloMid                 1846.5
+
+Group D (avg. 1900.866667):
+  -  (TES)  Top Esports                  1968.9
+  -  (DRX)  DRX                          1895.2
+  -  (FLY)  FlyQuest                     1838.5
+
+Play-in A (avg. 1816.0):
+  -  (TL)   Team Liquid                  1879.2
+  -  (MAD)  MAD Lions                    1825.9
+  -  (LGC)  Legacy Esports               1812.2
+  -  (ITZ)  INTZ                         1812.2
+  -  (SUP)  Papara SuperMassive          1750.3
+
+Play-in B (avg. 1830.3):
+  -  (UOL)  Unicorns Of Love.CIS         1971.7 (???)
+  -  (PSG)  PSG Talon                    1895.5
+  -  (LGD)  LGD Gaming                   1819.5
+  -  (R7)   Rainbow7                     1741.6
+  -  (V3)   V3 Esports                   1723.0

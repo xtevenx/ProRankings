@@ -1,0 +1,2 @@
+mwclient==0.10.1
+seaborn==0.10.1
