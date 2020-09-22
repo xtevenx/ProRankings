@@ -1,11 +1,7 @@
 from pro_rankings import *
-from models import convert_to_days
 
 # only plot values after start of season 9.
 plot_after = "2019-01-09 00:00:00"
-
-# only plot the latest values from the last `n` days.
-smooth_factor = 1
 
 output_file = "data/output.png"
 
@@ -32,22 +28,6 @@ if __name__ == "__main__":
 
     plot_data = {"Date": [], "Rating": [], "Team": []}
     for team_name in team_names:
-        # smooth the rating history data
-        new_history = []
-        interval_start, latest_rating = (None, None)
-        interval_end = None
-        for date, rating in teams_dictionary[team_name].rating_history:
-            if interval_start is None:
-                interval_start, latest_rating = (date, rating)
-            elif convert_to_days(date) < convert_to_days(interval_start) + smooth_factor:
-                latest_rating = rating
-            else:
-                new_history.append((interval_end, latest_rating))
-                interval_start, latest_rating = (date, rating)
-            interval_end = date
-        new_history.append((interval_end, latest_rating))
-        teams_dictionary[team_name].rating_history = new_history
-
         # add to plotting data dictionary
         timestamps, ratings = zip(*teams_dictionary[team_name].rating_history)
         plot_data["Rating"].extend(ratings)
