@@ -5,12 +5,16 @@ from models import convert_to_days
 plot_after = "2019-01-09 00:00:00"
 
 # only plot the latest values from the last `n` days.
-smooth_factor = 7
+smooth_factor = 1
 
-output_file = "output.png"
+output_file = "output3.png"
 
 if __name__ == "__main__":
+    from datetime import datetime
+
     teams_dictionary = get_teams_data()
+    current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    [t.finalize(current_date) for t in teams_dictionary.values()]
 
     # display the results
     print("Preparing data for plotting ... ")

@@ -1,7 +1,7 @@
 import mwclient
 from time import sleep
 
-from models import TeamData
+from models import TeamData, convert_to_days
 
 _MAJOR_LEAGUES = (
     "LCS 2020 Summer",
@@ -148,13 +148,14 @@ if __name__ == "__main__":
     teams_dictionary = get_teams_data()
 
     # display the results
-    teams_list = [t for t in teams_dictionary.values() if t.name in team_names_set]
+    # teams_list = [t for t in teams_dictionary.values() if t.name in team_names_set]
+    teams_list = [t for t in teams_dictionary.values()
+                  if convert_to_days(current_date) - t.last_game < 30]
+    [t.finalize(current_date) for t in teams_list]
     teams_list = sorted(teams_list, key=lambda t: -t.rating)
 
     longest_name = len(max(teams_list, key=lambda t: len(t.name)).name)
     for i, team in enumerate(teams_list):
-        team.update_deviation(current_date)
-
         beautified_rank = f"{i + 1}.".rjust(3)
         beautified_name = team.name.ljust(longest_name + 2)
         beautified_rating = f"{team.rating:.1f}".rjust(6)
