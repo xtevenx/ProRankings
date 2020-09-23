@@ -52,19 +52,12 @@ if __name__ == "__main__":
 
     print("Plotting values onto graph ... ")
 
-    g = sns.lineplot(
-        x="Date",
-        y="Rating",
-        hue="Team",
-        palette=team_colors,
-        hue_order=team_names,
-        data=df
-    )
+    g = sns.lineplot(x="Date", y="Rating", data=df,
+                     hue="Team", palette=team_colors, hue_order=team_names)
 
     print("Saving graph output ... ")
 
-    # g.fig.autofmt_xdate()
-    plt.title("Rating Progression of Teams at Worlds 2020")
+    plt.title("Rating Progression of Select Teams at Worlds 2020")
     plt.tight_layout()
 
     plt.savefig(output_file, dpi=141.21)

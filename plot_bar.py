@@ -30,7 +30,7 @@ if __name__ == "__main__":
     import seaborn as sns
 
     sns.set_style("darkgrid")
-    plt.figure(figsize=(18.3, 10.3))
+    plt.figure(figsize=(13.6, 7.65))
 
     print("Sorting data by rating ... ")
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     print("Saving graph output ... ")
 
-    plt.title("Rankings of Teams at Worlds 2020")
+    plt.title("Ratings of Teams at Worlds 2020")
     plt.xticks(rotation=90, fontstretch="condensed")
     plt.ylim(bottom=1500)
     plt.tight_layout()
