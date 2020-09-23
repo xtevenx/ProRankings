@@ -30,7 +30,7 @@ if __name__ == "__main__":
     import seaborn as sns
 
     sns.set_style("darkgrid")
-    plt.figure(figsize=(13.6, 7.65))
+    plt.figure(figsize=(10.11, 5.69))
 
     print("Sorting data by rating ... ")
 
@@ -48,6 +48,6 @@ if __name__ == "__main__":
     plt.ylim(bottom=1500)
     plt.tight_layout()
 
-    plt.savefig(output_file, dpi=141.21)
+    plt.savefig(output_file, dpi=189.91)
 
     print("Done.")
