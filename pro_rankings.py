@@ -119,14 +119,16 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
         response = site.api(
             "cargoquery",
             limit="max",
-            tables="TournamentResults=TR",
-            fields="TR.Team",
-            where=f"TR.Event='{league_name}'"
+            tables="TournamentGroups=TG",
+            fields="TG.Team",
+            where=f"TG.OverviewPage='{league_name}'"
         )
 
         # add data to the set of all teams.
         query_result = response.get("cargoquery")
         for team_data in query_result:
+            if team_data.get("title").get("Team").startswith("TBD "):
+                continue
             team_names.add(team_data.get("title").get("Team"))
 
         # display progress message.
@@ -144,11 +146,9 @@ if __name__ == "__main__":
 
     current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    team_names_set = get_team_names()
     teams_dictionary = get_teams_data()
 
     # display the results
-    # teams_list = [t for t in teams_dictionary.values() if t.name in team_names_set]
     teams_list = [t for t in teams_dictionary.values()
                   if convert_to_days(current_date) - t.last_game < 30]
     [t.finalize(current_date) for t in teams_list]
