@@ -9,7 +9,7 @@ Ratings of Teams
 
 This chart lists the calculated ratings for the teams attending Worlds 2020. 
 
-Note: the top teams from minor leagues may have their rating inflated if they 
+Note: the top teams from minor leagues may have their ratings inflated if they 
 dominated their league. This is because if there are no inter-region games, 
 one's rating is solely based on their dominance within their region.
 
