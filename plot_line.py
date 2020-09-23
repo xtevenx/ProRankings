@@ -3,7 +3,7 @@ from pro_rankings import *
 # only plot values after start of season 9.
 plot_after = "2019-01-09 00:00:00"
 
-output_file = "data/output.png"
+output_file = "data/output_line.png"
 
 if __name__ == "__main__":
     from datetime import datetime
@@ -18,10 +18,8 @@ if __name__ == "__main__":
     plot_teams = [
         ("Top Esports", "#ff3e24"),
         ("JD Gaming", "#d61318"),
-        ("G2 Esports", "#000000"),  # ED2025
-        # ("Fnatic", "#fe5900"),
+        ("G2 Esports", "#000000"),
         ("DAMWON Gaming", "#34ceb5"),
-        # ("Team Liquid", "#0c223f"),
     ]
 
     team_names, team_colors = zip(*plot_teams)
@@ -41,7 +39,7 @@ if __name__ == "__main__":
     import seaborn as sns
 
     sns.set_style("darkgrid")
-    # plt.figure(figsize=(11, 8.5))
+    plt.figure(figsize=(13.6, 7.65))
 
     print("Sorting data by date ... ")
 
@@ -54,20 +52,21 @@ if __name__ == "__main__":
 
     print("Plotting values onto graph ... ")
 
-    g = sns.relplot(
+    g = sns.lineplot(
         x="Date",
         y="Rating",
         hue="Team",
         palette=team_colors,
         hue_order=team_names,
-        kind="line",
-        aspect=16 / 9,
         data=df
     )
 
     print("Saving graph output ... ")
 
-    g.fig.autofmt_xdate()
-    plt.savefig(output_file, dpi=314)
+    # g.fig.autofmt_xdate()
+    plt.title("Rating Progression of Teams at Worlds 2020")
+    plt.tight_layout()
+
+    plt.savefig(output_file, dpi=141.21)
 
     print("Done.")
