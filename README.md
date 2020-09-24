@@ -1,6 +1,3 @@
-LoL Professional Teams Rankings
-===============================
-
 Displayed here is the calculated rating data of professional League of Legends 
 teams. The ratings are calculated using the [glicko-2][1] rating system.
 
