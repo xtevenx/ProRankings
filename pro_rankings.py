@@ -10,6 +10,8 @@ _MAJOR_LEAGUES = (
     "LPL 2020 Summer"
 )
 
+_WORLD_CHAMPIONSHIP_BONUS = 2
+
 
 def get_teams_data():
     # get all games after Oct 27, 2009 (release date of LoL)
@@ -50,7 +52,7 @@ def get_teams_data():
             "cargoquery",
             limit="max",
             tables="ScoreboardGames=SG",
-            fields="SG.DateTime_UTC, SG.Team1, SG.Team2, SG.WinTeam",
+            fields="SG.OverviewPage, SG.Team1, SG.Team2, SG.WinTeam, SG.DateTime_UTC",
             where=f"SG.DateTime_UTC >= '{interval_start}'",
             order_by="SG.DateTime_UTC"
         )
@@ -73,6 +75,11 @@ def get_teams_data():
             # add data only if
             if data_only.get("DateTime UTC") != interval_start or data_only not in all_data:
                 all_data.append(data_only)
+
+                page_name = data_only.get("OverviewPage").split("/")[0]
+                if page_name.find("World Championship") != -1:
+                    for _ in range(_WORLD_CHAMPIONSHIP_BONUS):
+                        all_data.append(data_only)
 
         interval_end = all_data[-1].get("DateTime UTC")
         print(f"Collected {len(all_data)} game results ending at {interval_end} ... ")
