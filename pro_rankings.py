@@ -156,8 +156,15 @@ if __name__ == "__main__":
     teams_dictionary = get_teams_data()
 
     # display the results
-    teams_list = [t for t in teams_dictionary.values()
-                  if convert_to_days(current_date) - t.last_game < 30]
+    team_names = get_team_names([
+        "2020 Season World Championship/Main Event",
+        "2020 Season World Championship/Play-in"
+    ])
+
+    # performance rating of minor regions in play-in is 1718.
+    teams_list = [t for t in teams_dictionary.values() if t.name in team_names]
+    # teams_list = [t for t in teams_dictionary.values()
+    #               if convert_to_days(current_date) - t.last_game < 30]
     [t.finalize(current_date) for t in teams_list]
     teams_list = sorted(teams_list, key=lambda t: -t.rating)
 
