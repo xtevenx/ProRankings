@@ -12,41 +12,66 @@ _MAJOR_LEAGUES = (
 
 _WORLD_CHAMPIONSHIP_BONUS = 2
 
+# delay to add between queries.
+_QUERY_DELAY: float = 2.0
+
 
 def get_teams_data():
     # get all games after Oct 27, 2009 (release date of LoL)
-    interval_start = "2009-10-27 00:00:00"
+    _interval_start: str = "2009-10-27 00:00:00"
 
     # create database access object
-    site = mwclient.Site("lol.gamepedia.com", path="/")
+    site: mwclient.Site = mwclient.Site("lol.gamepedia.com", path="/")
 
-    # collect the history of all team renames.
-    response = site.api(
-        "cargoquery",
-        limit="max",
-        tables="TeamRenames=TR",
-        fields="TR.OriginalName, TR.NewName",
-        order_by="TR.Date"
-    )
+    # collect the history of all team renames -------------------------
+    rename_history: list[dict] = []
+    interval_start: str = _interval_start
 
-    rename_history = [x.get("title") for x in response.get("cargoquery")]
+    while True:
+        response: dict = site.api(
+            "cargoquery",
+            limit="max",
+            tables="TeamRenames=TR",
+            fields="TR.OriginalName, TR.NewName, TR.Date",
+            where=f"TR.Date >= '{interval_start}'",
+            order_by="TR.Date"
+        )
 
-    team_renames = {}
-    for rename in rename_history:
-        old_name = rename.get("OriginalName")
-        new_name = rename.get("NewName")
+        limits: dict = response.get("limits")
+        query_response: dict = response.get("cargoquery")
+
+        interval_end: str = interval_start
+        for _t in query_response:
+            rename_data: dict = _t.get("title")
+            if rename_data not in rename_history:
+                rename_history.append(rename_data)
+            interval_end = rename_data.get("Date")
+
+        print(f"Collected {len(rename_history)} team renames ending at {interval_end} ... ")
+
+        if len(query_response) < limits.get("cargoquery") or interval_start == interval_end:
+            break
+        interval_start = interval_end
+        sleep(_QUERY_DELAY)
+
+    print("Processing the collected team renames ... ")
+
+    team_renames: dict = {}
+    for rename in reversed(rename_history):
+        old_name: str = rename.get("OriginalName")
+        new_name: str = rename.get("NewName")
 
         if new_name in team_renames:
             team_renames[old_name] = team_renames[new_name]
         else:
             team_renames[old_name] = new_name
 
-    print(f"Finished gathering {len(team_renames)} team renames ... ")
+    print(f"Finished collecting {len(team_renames)} team renames ... ")
 
-    sleep(2.0)
+    # collect the history of all game results -------------------------
+    games_data: list[dict] = []
+    interval_start: str = _interval_start
 
-    # collect the history of all game results.
-    all_data = []
     while True:
         response = site.api(
             "cargoquery",
@@ -57,45 +82,46 @@ def get_teams_data():
             order_by="SG.DateTime_UTC"
         )
 
-        limits = response.get("limits")
-        query_response = response.get("cargoquery")
+        limits: dict = response.get("limits")
+        query_response: dict = response.get("cargoquery")
 
-        for game_data in query_response:
-            data_only = game_data.get("title")
+        interval_end: str = interval_start
+        for _t in query_response:
+            game_data: dict = _t.get("title")
 
-            # correct all team names accordingly depending on whether
-            # they have been renamed.
-            if data_only.get("Team1") in team_renames:
-                data_only["Team1"] = team_renames[data_only.get("Team1")]
-            if data_only.get("Team2") in team_renames:
-                data_only["Team2"] = team_renames[data_only.get("Team2")]
-            if data_only.get("WinTeam") in team_renames:
-                data_only["WinTeam"] = team_renames[data_only.get("WinTeam")]
+            # correct all team names based on determined rename history
+            if game_data.get("Team1") in team_renames:
+                game_data["Team1"] = team_renames[game_data.get("Team1")]
+            if game_data.get("Team2") in team_renames:
+                game_data["Team2"] = team_renames[game_data.get("Team2")]
+            if game_data.get("WinTeam") in team_renames:
+                game_data["WinTeam"] = team_renames[game_data.get("WinTeam")]
 
-            # add data only if
-            if data_only.get("DateTime UTC") != interval_start or data_only not in all_data:
-                all_data.append(data_only)
+            # add data only if it has not already been added
+            if game_data not in games_data:
+                games_data.append(game_data)
 
-                page_name = data_only.get("OverviewPage").split("/")[0]
+                # add bonus games for World Championship results
+                page_name = game_data.get("OverviewPage").split("/")[0]
                 if page_name.find("World Championship") != -1:
                     for _ in range(_WORLD_CHAMPIONSHIP_BONUS):
-                        all_data.append(data_only)
+                        games_data.append(game_data)
 
-        interval_end = all_data[-1].get("DateTime UTC")
-        print(f"Collected {len(all_data)} game results ending at {interval_end} ... ")
+            interval_end = game_data.get("DateTime UTC")
 
-        # assuming less than "max" games played per time frame.
+        print(f"Collected {len(games_data)} game results ending at {interval_end} ... ")
+
         if len(query_response) < limits.get("cargoquery") or interval_start == interval_end:
             break
         interval_start = interval_end
+        sleep(_QUERY_DELAY)
 
-        # minimum 2 second delay between requests.
-        sleep(2.0)
+    # calculate the ratings of each team ------------------------------
+    print("Processing collected game data ... ")
 
-    # calculate the ratings of each team.
-    teams = {}
+    teams: dict = {}
 
-    for game_data in all_data:
+    for game_data in games_data:
         game_time = game_data.get("DateTime UTC")
 
         team1 = game_data.get("Team1")
@@ -112,7 +138,8 @@ def get_teams_data():
         team1.update_rating(team2, team1.name == game_data.get("WinTeam"), game_time)
         team2.update_rating(team1, team2.name == game_data.get("WinTeam"), game_time)
 
-    print("Finished gathering and calculating team data.")
+    print("Finished collecting and processing game data.")
+
     return teams
 
 
@@ -138,11 +165,9 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
                 continue
             team_names.add(team_data.get("title").get("Team"))
 
-        # display progress message.
+        # display progress for this iteration.
         print(f"Collected {len(query_result)} team names from `{league_name}` ... ")
-
-        # minimum 2 second delay between requests.
-        sleep(2.0)
+        sleep(_QUERY_DELAY)
 
     print(f"Finished gathering {len(team_names)} team names.")
     return team_names
