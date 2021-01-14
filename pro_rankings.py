@@ -3,14 +3,11 @@ from time import sleep
 
 from models import TeamData, convert_to_days
 
-_MAJOR_LEAGUES = (
-    "LCS 2020 Summer",
-    "LEC 2020 Summer",
-    "LCK 2020 Summer",
-    "LPL 2020 Summer"
-)
+# iterable of all the major leagues.
+_MAJOR_LEAGUES: tuple = tuple(f"{s} 2021 Spring" for s in ("LCS", "LEC", "LCK", "LPL"))
 
-_WORLD_CHAMPIONSHIP_BONUS = 2
+# how much extra do world championship games count towards one's rating.
+_WORLD_CHAMPIONSHIP_BONUS: int = 2
 
 # delay to add between queries.
 _QUERY_DELAY: float = 2.0
@@ -73,7 +70,7 @@ def get_teams_data():
     interval_start: str = _interval_start
 
     while True:
-        response = site.api(
+        response: dict = site.api(
             "cargoquery",
             limit="max",
             tables="ScoreboardGames=SG",
@@ -122,17 +119,17 @@ def get_teams_data():
     teams: dict = {}
 
     for game_data in games_data:
-        game_time = game_data.get("DateTime UTC")
+        game_time: str = game_data.get("DateTime UTC")
 
-        team1 = game_data.get("Team1")
+        team1: str = game_data.get("Team1")
         if team1 not in teams:  # initialize team1 if not seen before
             teams[team1] = TeamData(team1, game_time)
-        team1 = teams[team1]
+        team1: TeamData = teams[team1]
 
-        team2 = game_data.get("Team2")
+        team2: str = game_data.get("Team2")
         if team2 not in teams:  # initialize team2 if not seen before
             teams[team2] = TeamData(team2, game_time)
-        team2 = teams[team2]
+        team2: TeamData = teams[team2]
 
         # update the ratings of each time accordingly.
         team1.update_rating(team2, team1.name == game_data.get("WinTeam"), game_time)
@@ -145,12 +142,13 @@ def get_teams_data():
 
 def get_team_names(tournaments=_MAJOR_LEAGUES):
     # create database access object
-    site = mwclient.Site("lol.gamepedia.com", path="/")
+    site: mwclient.Site = mwclient.Site("lol.gamepedia.com", path="/")
 
     # iterate through tournaments and collect teams.
-    team_names = set()
+    team_names: set = set()
+
     for league_name in tournaments:
-        response = site.api(
+        response: dict = site.api(
             "cargoquery",
             limit="max",
             tables="TournamentGroups=TG",
@@ -159,11 +157,12 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
         )
 
         # add data to the set of all teams.
-        query_result = response.get("cargoquery")
-        for team_data in query_result:
-            if team_data.get("title").get("Team").startswith("TBD "):
+        query_result: dict = response.get("cargoquery")
+        for _t in query_result:
+            team_name = _t.get("title").get("Team")
+            if team_name.startswith("TBD "):
                 continue
-            team_names.add(team_data.get("title").get("Team"))
+            team_names.add(team_name)
 
         # display progress for this iteration.
         print(f"Collected {len(query_result)} team names from `{league_name}` ... ")
@@ -177,20 +176,16 @@ if __name__ == "__main__":
     from datetime import datetime
 
     current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
     teams_dictionary = get_teams_data()
 
-    # display the results
-    team_names = get_team_names([
-        "2020 Season World Championship/Main Event",
-        "2020 Season World Championship/Play-in"
-    ])
+    team_names = get_team_names(_MAJOR_LEAGUES)
+    # team_names = get_team_names([
+    #     "2020 Season World Championship/Main Event",
+    #     "2020 Season World Championship/Play-in"
+    # ])
 
-    # performance rating of minor regions in play-in is 1718.
     teams_list = [t for t in teams_dictionary.values() if t.name in team_names]
-    # teams_list = [t for t in teams_dictionary.values()
-    #               if convert_to_days(current_date) - t.last_game < 30]
-    [t.finalize(current_date) for t in teams_list]
+    tuple(t.finalize(current_date) for t in teams_list)
     teams_list = sorted(teams_list, key=lambda t: -t.rating)
 
     longest_name = len(max(teams_list, key=lambda t: len(t.name)).name)
