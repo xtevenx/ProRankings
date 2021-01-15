@@ -1,3 +1,4 @@
+import time
 import glicko2_utils
 
 _RATING_INTERVAL = 7
@@ -61,3 +62,14 @@ class TeamData:
             (new_bank_end - self.games_bank_end) // _RATING_INTERVAL - 1
         )
         self.games_bank_end = new_bank_end
+
+
+class QueryDelay:
+    def __init__(self, minimum_delay: float) -> None:
+        self._delay: float = minimum_delay
+        self.last_query: float = time.time() - self._delay
+
+    def ensure_delay(self) -> None:
+        while time.time() < self.last_query + self._delay:
+            ...
+        self.last_query = time.time()

@@ -1,16 +1,16 @@
 import mwclient
 from time import sleep
 
-from models import TeamData, convert_to_days
+from models import QueryDelay, TeamData, convert_to_days
 
 # iterable of all the major leagues.
-_MAJOR_LEAGUES: tuple = tuple(f"{s} 2021 Spring" for s in ("LCS", "LEC", "LCK", "LPL"))
+_MAJOR_LEAGUES: tuple = tuple(f"{s} 2020 Summer" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # how much extra do world championship games count towards one's rating.
 _WORLD_CHAMPIONSHIP_BONUS: int = 2
 
-# delay to add between queries.
-_QUERY_DELAY: float = 2.0
+# query delay object (ensures minimum delay between queries).
+_QUERY_DELAY: QueryDelay = QueryDelay(2.0)
 
 
 def get_teams_data():
@@ -70,6 +70,7 @@ def get_teams_data():
     interval_start: str = _interval_start
 
     while True:
+        _QUERY_DELAY.ensure_delay()
         response: dict = site.api(
             "cargoquery",
             limit="max",
@@ -111,7 +112,6 @@ def get_teams_data():
         if len(query_response) < limits.get("cargoquery") or interval_start == interval_end:
             break
         interval_start = interval_end
-        sleep(_QUERY_DELAY)
 
     # calculate the ratings of each team ------------------------------
     print("Processing collected game data ... ")
@@ -148,6 +148,7 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
     team_names: set = set()
 
     for league_name in tournaments:
+        _QUERY_DELAY.ensure_delay()
         response: dict = site.api(
             "cargoquery",
             limit="max",
@@ -166,7 +167,6 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
 
         # display progress for this iteration.
         print(f"Collected {len(query_result)} team names from `{league_name}` ... ")
-        sleep(_QUERY_DELAY)
 
     print(f"Finished gathering {len(team_names)} team names.")
     return team_names
