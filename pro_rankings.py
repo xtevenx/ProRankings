@@ -25,6 +25,7 @@ def get_teams_data():
     interval_start: str = _interval_start
 
     while True:
+        _QUERY_DELAY.ensure_delay()
         response: dict = site.api(
             "cargoquery",
             limit="max",
@@ -49,7 +50,6 @@ def get_teams_data():
         if len(query_response) < limits.get("cargoquery") or interval_start == interval_end:
             break
         interval_start = interval_end
-        sleep(_QUERY_DELAY)
 
     print("Processing the collected team renames ... ")
 
