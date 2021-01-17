@@ -4,7 +4,7 @@ from time import sleep
 from models import QueryDelay, TeamData, convert_to_days
 
 # iterable of all the major leagues.
-_MAJOR_LEAGUES: tuple = tuple(f"{s} 2020 Summer" for s in ("LCS", "LEC", "LCK", "LPL"))
+_MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # how much extra do world championship games count towards one's rating.
 _WORLD_CHAMPIONSHIP_BONUS: int = 2
@@ -152,9 +152,9 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
         response: dict = site.api(
             "cargoquery",
             limit="max",
-            tables="TournamentGroups=TG",
-            fields="TG.Team",
-            where=f"TG.OverviewPage='{league_name}'"
+            tables="Standings=S",
+            fields="S.Team",
+            where=f"S.OverviewPage='{league_name}'"
         )
 
         # add data to the set of all teams.
