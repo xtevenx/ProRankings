@@ -67,6 +67,7 @@ def get_teams_data():
 
     # collect the history of all game results -------------------------
     games_data: list[dict] = []
+    seen_games: set[str] = set()
     interval_start: str = _interval_start
 
     while True:
@@ -96,8 +97,9 @@ def get_teams_data():
                 game_data["WinTeam"] = team_renames[game_data.get("WinTeam")]
 
             # add data only if it has not already been added
-            if game_data not in games_data:
+            if (str_data := str(game_data)) not in seen_games:
                 games_data.append(game_data)
+                seen_games.add(str_data)
 
                 # add bonus games for World Championship results
                 page_name = game_data.get("OverviewPage").split("/")[0]
