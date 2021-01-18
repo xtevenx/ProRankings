@@ -24,10 +24,10 @@ if __name__ == "__main__":
         print("Preparing data for line graph ... ")
 
         plot_teams = [
-            ("Top Esports", "#ff3e24"),
-            ("JD Gaming", "#d61318"),
-            ("G2 Esports", "#000000"),
-            ("DAMWON Gaming", "#34ceb5"),
+            ("DWG KIA", "#34ceb5"),  # worlds 1st
+            ("Suning", "#ffbf00"),  # worlds 2nd
+            ("Top Esports", "#ff3e24"),  # lpl 1st
+            ("G2 Esports", "#000000"),  # lec 1st
         ]
 
         team_names, team_colors = zip(*plot_teams)
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         g = sns.lineplot(x="Date", y="Rating", data=df,
                          hue="Team", palette=team_colors, hue_order=team_names)
 
-        plt.title("Rating Progression of Select Teams at Worlds 2020")
+        plt.title("Rating Progression of Select Teams")
         plt.tight_layout()
 
         plt.savefig(_line_output, dpi=_plot_dpi)
@@ -65,16 +65,16 @@ if __name__ == "__main__":
     if "bar":
         print("Preparing data bar graph ... ")
 
-        team_names = get_team_names([
-            "2020 Season World Championship/Main Event",
-            # "2020 Season World Championship/Play-in"
-        ])
-
+        team_names = get_team_names()
         plot_data = {"Rating": [], "Team": []}
         for team_name in team_names:
-            # add to plotting data dictionary
-            plot_data["Rating"].append(teams_dictionary[team_name].rating)
-            plot_data["Team"].append(team_name)
+            try:
+                # add to plotting data dictionary
+                if teams_dictionary[team_name].rating > 2000:
+                    plot_data["Rating"].append(teams_dictionary[team_name].rating)
+                    plot_data["Team"].append(team_name)
+            except KeyError:
+                ...
 
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
@@ -87,7 +87,7 @@ if __name__ == "__main__":
 
         g = sns.barplot(x="Team", y="Rating", data=df)
 
-        plt.title("Ratings of Teams at Worlds 2020")
+        plt.title("Ratings of Top Teams in Major Leagues")
         plt.xticks(rotation=90, fontstretch="condensed")
 
         bottom, top = plt.ylim()
