@@ -186,6 +186,9 @@ if __name__ == "__main__":
     # ])
 
     teams_list = [t for t in teams_dictionary.values() if t.name in team_names]
+    # teams_list: list[TeamData] = [
+    #     t for t in teams_dictionary.values()
+    #     if convert_to_days(current_date) - t.last_game < 30 and t.deviation < 100]
     tuple(t.finalize(current_date) for t in teams_list)
     teams_list = sorted(teams_list, key=lambda t: -t.rating)
 
