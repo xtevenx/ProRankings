@@ -24,10 +24,12 @@ if __name__ == "__main__":
         print("Preparing data for line graph ... ")
 
         plot_teams = [
-            ("DWG KIA", "#34ceb5"),  # worlds 1st
-            ("Suning", "#ffbf00"),  # worlds 2nd
-            ("Top Esports", "#ff3e24"),  # lpl 1st
-            ("G2 Esports", "#000000"),  # lec 1st
+            ("DWG KIA", "#00b8d4"),  # this worlds 1st  (cyan)
+            ("Suning", "#ffab00"),  # this worlds 2nd  (amber)
+            ("FunPlus Phoenix", "#d50000"),  # last worlds 1st  (red)
+            ("G2 Esports", "#212121"),  # curr lec 1st  (gray)
+            ("Gen.G", "#ffd600"),  # curr lck 1st  (yellow)
+            ("Team WE", "#ff6d00"),  # curr lpl 1st  (orange)
         ]
 
         team_names, team_colors = zip(*plot_teams)
