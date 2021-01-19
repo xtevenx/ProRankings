@@ -1,5 +1,4 @@
 import mwclient
-from time import sleep
 
 from models import QueryDelay, TeamData, convert_to_days
 
