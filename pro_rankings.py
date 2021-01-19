@@ -9,7 +9,7 @@ _MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Spring Season" for s in ("LCS", 
 _WORLD_CHAMPIONSHIP_BONUS: int = 2
 
 # query delay object (ensures minimum delay between queries).
-_QUERY_DELAY: QueryDelay = QueryDelay(2.0)
+_QUERY_DELAY: QueryDelay = QueryDelay(1.0)
 
 
 def get_teams_data():
