@@ -194,4 +194,5 @@ if __name__ == "__main__":
         beautified_rank = f"{i + 1}.".rjust(3)
         beautified_name = team.name.ljust(longest_name + 2)
         beautified_rating = f"{team.rating:.1f}".rjust(6)
-        print(f"{beautified_rank} {beautified_name} {beautified_rating}")
+        beautified_deviation = f"{team.deviation:.1f}".rjust(4)
+        print(f"{beautified_rank} {beautified_name} {beautified_rating} ± {beautified_deviation}")
