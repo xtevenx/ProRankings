@@ -73,8 +73,8 @@ if __name__ == "__main__":
                 if teams_dictionary[team_name].rating > 2000:
                     plot_data["Rating"].append(teams_dictionary[team_name].rating)
                     plot_data["Team"].append(team_name)
-            except KeyError:
-                ...
+            except KeyError as err:
+                print(f"Error: team `{team_name}' not found.")
 
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
