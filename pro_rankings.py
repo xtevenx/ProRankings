@@ -11,6 +11,12 @@ _WORLD_CHAMPIONSHIP_BONUS: int = 2
 # query delay object (ensures minimum delay between queries).
 _QUERY_DELAY: QueryDelay = QueryDelay(1.0)
 
+# list of [faulty] renames to ignore.
+_IGNORE_RENAMES: list = [
+    ("Cloud9", "Quantic Gaming"),
+    ("Evil Geniuses.NA", "Winterfox"),
+]
+
 
 def get_teams_data():
     # get all games after Oct 27, 2009 (release date of LoL)
@@ -40,9 +46,15 @@ def get_teams_data():
         interval_end: str = interval_start
         for _t in query_response:
             rename_data: dict = _t.get("title")
-            if rename_data not in rename_history:
-                rename_history.append(rename_data)
-            interval_end = rename_data.get("Date")
+
+            for orig, new in _IGNORE_RENAMES:
+                if rename_data.get("OriginalName") == orig and \
+                        rename_data.get("NewName") == new:
+                    break
+            else:
+                if rename_data not in rename_history:
+                    rename_history.append(rename_data)
+                interval_end = rename_data.get("Date")
 
         print(f"Collected {len(rename_history)} team renames ending at {interval_end} ... ")
 
