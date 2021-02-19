@@ -28,8 +28,9 @@ if __name__ == "__main__":
             ("Suning", "#ffab00"),  # this worlds 2nd  (amber)
             ("FunPlus Phoenix", "#d50000"),  # last worlds 1st  (red)
             ("G2 Esports", "#212121"),  # curr lec 1st  (gray)
-            ("Gen.G", "#ffd600"),  # curr lck 1st  (yellow)
-            ("Team WE", "#ff6d00"),  # curr lpl 1st  (orange)
+            # ("DWG KIA", "#00b8d4"),  # curr lck 1st  (cyan)
+            ("EDward Gaming", "#3e2723"),  # curr lpl 1st  (brown)
+            # Note: no LCS teams because they haven't won worlds before.
         ]
 
         team_names, team_colors = zip(*plot_teams)
