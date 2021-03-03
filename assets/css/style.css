@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import "given-style.css";
 
 html, body {
-    color: #ffffff9f;
     background: black;
+    color: #ffffff9f;
+    font-family: 'Open Sans', sans-serif;
 }
