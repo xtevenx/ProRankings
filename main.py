@@ -21,7 +21,21 @@ if __name__ == "__main__":
     import seaborn as sns
 
     sns.set_style("darkgrid")
-    plt.figure(figsize=_plot_size)
+
+    sns.set(rc={
+        "axes.edgecolor": "#ffffff9f",
+        "axes.facecolor": "black",
+        "axes.labelcolor": "#ffffff9f",
+        "figure.facecolor": "black",
+        "grid.color": "#ffffff",
+        "grid.alpha": 0.382,
+        "patch.linewidth": 0,
+        "text.color": "#ffffff9f",
+        "xtick.color": "#ffffff9f",
+        "ytick.color": "#ffffff9f",
+    })
+
+    plt.grid(color="#ffffff9f")
 
     if "line":
         print("Preparing data for line graph ... ")
@@ -56,6 +70,9 @@ if __name__ == "__main__":
         # actually plot the data
         print("Generating line graph ... ")
 
+        _, _ = plt.subplots()
+        plt.figure(figsize=_plot_size)
+
         g = sns.lineplot(x="Date", y="Rating", data=df,
                          hue="Team", palette=team_colors, hue_order=team_names)
 
@@ -84,6 +101,9 @@ if __name__ == "__main__":
         df.sort_values(by="Rating", ascending=False, inplace=True)
 
         print("Generating bar graph ... ")
+
+        _, _ = plt.subplots()
+        plt.figure(figsize=_plot_size)
 
         g = sns.barplot(x="Team", y="Rating", data=df)
 
