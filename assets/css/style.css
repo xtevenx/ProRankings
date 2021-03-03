@@ -1,5 +1,6 @@
 @import "given-style.css";
 
-html {
-    background-color: black;
+html, body {
+    color: #ffffff9f;
+    background: black;
 }
