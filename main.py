@@ -41,12 +41,12 @@ if __name__ == "__main__":
         print("Preparing data for line graph ... ")
 
         plot_teams = [
-            ("DWG KIA", "#00b8d4"),  # this worlds 1st  (cyan)
-            ("Suning", "#ffab00"),  # this worlds 2nd  (amber)
-            ("FunPlus Phoenix", "#d50000"),  # last worlds 1st  (red)
-            ("G2 Esports", "#212121"),  # curr lec 1st  (gray)
-            # ("DWG KIA", "#00b8d4"),  # curr lck 1st  (cyan)
-            ("EDward Gaming", "#3e2723"),  # curr lpl 1st  (brown)
+            ("DWG KIA", "#00bcd4"),  # this worlds 1st  (cyan)
+            ("Suning", "#ffc107"),  # this worlds 2nd  (amber)
+            ("FunPlus Phoenix", "#f44336"),  # last worlds 1st  (red)
+            ("G2 Esports", "#9e9e9e"),  # curr lec 1st  (gray)
+            # ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
+            ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
             # Note: no LCS teams because they haven't won worlds before.
         ]
 
