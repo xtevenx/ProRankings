@@ -20,6 +20,9 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
 
+    sns.set_style("darkgrid")
+    plt.figure(figsize=_plot_size)
+
     if "line":
         print("Preparing data for line graph ... ")
 
@@ -51,9 +54,6 @@ if __name__ == "__main__":
         df = df[df.Date > pd.to_datetime(_line_plot_after)]
 
         # actually plot the data
-        sns.set_style("darkgrid")
-        plt.figure(figsize=_plot_size)
-
         print("Generating line graph ... ")
 
         g = sns.lineplot(x="Date", y="Rating", data=df,
@@ -82,9 +82,6 @@ if __name__ == "__main__":
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
         df.sort_values(by="Rating", ascending=False, inplace=True)
-
-        sns.set_style("darkgrid")
-        plt.figure(figsize=_plot_size)
 
         print("Generating bar graph ... ")
 
