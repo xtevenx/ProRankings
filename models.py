@@ -4,6 +4,8 @@ import glicko2_utils
 _RATING_INTERVAL = 7
 _DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
+_DEVIATION_RESET_FACTOR: float = 0.08
+
 
 def convert_to_days(utc_string: str) -> int:
     # remove the time of day from the date and time.
@@ -62,6 +64,10 @@ class TeamData:
             (new_bank_end - self.games_bank_end) // _RATING_INTERVAL - 1
         )
         self.games_bank_end = new_bank_end
+
+    def soft_reset_stats(self):
+        self.deviation = (_DEVIATION_RESET_FACTOR * glicko2_utils.INITIAL_DEVIATION
+                          + (1 - _DEVIATION_RESET_FACTOR) * self.deviation)
 
 
 class QueryDelay:

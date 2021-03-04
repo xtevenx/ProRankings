@@ -1,5 +1,7 @@
+import datetime
 import mwclient
 
+import glicko2_utils
 from models import QueryDelay, TeamData, convert_to_days
 
 # iterable of all the major leagues.
@@ -16,6 +18,35 @@ _IGNORE_RENAMES: list = [
     ("Cloud9", "Quantic Gaming"),
     ("Evil Geniuses.NA", "Winterfox"),
 ]
+
+# list of season end dates.
+_SEASON_END_DATES_READABLE: list = [
+    "Jul 13, 2010",  # season  1
+    "Nov 29, 2011",  # season  2
+    "Feb  1, 2013",  # season  3
+    "Jan 10, 2014",  # season  4
+    "Jan 21, 2015",  # season  5
+    "Jan 20, 2016",  # season  6
+    "Dec  8, 2016",  # season  7
+    "Jan 16, 2018",  # season  8
+    "Jan 23, 2019",  # season  9
+    "Jan 10, 2020",  # season 10
+    "Jan  8, 2021",  # season 11
+]
+
+_MONTHS_STR: dict = {
+    "Jan":  1, "Feb":  2, "Mar":  3,
+    "Apr":  4, "May":  5, "Jun":  6,
+    "Jul":  7, "Aug":  8, "Sep":  9,
+    "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+_SEASON_END_DATES: list = []
+for date in _SEASON_END_DATES_READABLE:
+    m, d, y = date.split()
+    m, d, y = _MONTHS_STR[m], int(d[:-1]), int(y)
+    _SEASON_END_DATES.append(datetime.datetime(y, m, d))
+_SEASON_END_DATES.append(datetime.datetime.today())
 
 
 def get_teams_data():
@@ -134,9 +165,20 @@ def get_teams_data():
 
     teams: dict = {}
 
+    season_index: int = 0
     for game_data in games_data:
         game_time: str = game_data.get("DateTime UTC")
 
+        # update all rating deviations if new season.
+        year, month, day = [int(n) for n in game_time.split()[0].split("-")]
+        game_datetime = datetime.datetime(year, month, day)
+
+        if game_datetime > _SEASON_END_DATES[season_index]:
+            for t in teams.values():
+                t.soft_reset_stats()
+            season_index += 1
+
+        # get teams from team names
         team1: str = game_data.get("Team1")
         if team1 not in teams:  # initialize team1 if not seen before
             teams[team1] = TeamData(team1, game_time)
