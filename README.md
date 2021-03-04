@@ -1,6 +1,8 @@
 This site displays calculated ratings for professional League of Legends teams.
 The ratings are calculated using the [Glicko-2][1] rating system.
 
+View the source on [GitHub][2].
+
 Ratings of Top Teams
 --------------------
 
@@ -22,9 +24,10 @@ This chart displays the calculated rating progression for select teams.
 Acknowledgements
 ----------------
 
-Thanks to [Leaguepedia][2] for maintaining and providing the data utilized in
+Thanks to [Leaguepedia][3] for maintaining and providing the data utilized in
 these calculations, and to Mark Glickman for devising the Glicko-2 rating
 system.
 
 [1]: http://www.glicko.net/glicko/glicko2.pdf
-[2]: https://lol.gamepedia.com/Help:API_Documentation
+[2]: https://github.com/xtevenx/ProRankings
+[3]: https://lol.gamepedia.com/Help:API_Documentation
