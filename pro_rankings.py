@@ -5,8 +5,8 @@ from models import QueryDelay, TeamData, convert_to_days
 # iterable of all the major leagues.
 _MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
-# how much extra do world championship games count towards one's rating.
-_WORLD_CHAMPIONSHIP_BONUS: int = 2
+# how much extra do interregional games count towards one's rating.
+_INTERREGIONAL_BONUS: int = 2
 
 # query delay object (ensures minimum delay between queries).
 _QUERY_DELAY: QueryDelay = QueryDelay(1.0)
@@ -115,7 +115,10 @@ def get_teams_data():
                 # add bonus games for World Championship results
                 page_name = game_data.get("OverviewPage").split("/")[0]
                 if page_name.find("World Championship") != -1:
-                    for _ in range(_WORLD_CHAMPIONSHIP_BONUS):
+                    for _ in range(_INTERREGIONAL_BONUS):
+                        games_data.append(game_data)
+                if page_name.find("Mid-Season Invitational") != -1:
+                    for _ in range(_INTERREGIONAL_BONUS):
                         games_data.append(game_data)
 
             interval_end = game_data.get("DateTime UTC")
