@@ -6,7 +6,7 @@ from models import QueryDelay, TeamData, convert_to_days
 _MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # how much extra do interregional games count towards one's rating.
-_INTERREGIONAL_BONUS: int = 2
+_INTERREGIONAL_BONUS: int = 1
 
 # query delay object (ensures minimum delay between queries).
 _QUERY_DELAY: QueryDelay = QueryDelay(1.0)
