@@ -231,9 +231,7 @@ def get_team_names(tournaments=_MAJOR_LEAGUES):
 
 
 if __name__ == "__main__":
-    from datetime import datetime
-
-    current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     teams_dictionary = get_teams_data()
 
     team_names = get_team_names(_MAJOR_LEAGUES)
