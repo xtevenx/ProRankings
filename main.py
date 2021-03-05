@@ -62,10 +62,10 @@ if __name__ == "__main__":
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
         df["Date"] = pd.to_datetime(df["Date"])
-        df.sort_values(by="Date", inplace=True)
+        df.set_index("Date", inplace=True)
 
         # filter data to only include the ones we want.
-        df = df[df.Date > pd.to_datetime(_line_plot_after)]
+        df = df[df.index > pd.to_datetime(_line_plot_after)]
 
         # actually plot the data
         print("Generating line graph ... ")
