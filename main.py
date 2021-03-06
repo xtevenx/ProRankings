@@ -62,7 +62,17 @@ if __name__ == "__main__":
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
         df["Date"] = pd.to_datetime(df["Date"])
-        df.set_index("Date", inplace=True)
+
+        new_df = pd.DataFrame()
+        for team_name in team_names:
+            temp_df = df[df["Team"] == team_name]
+            temp_df["Date"] = temp_df["Date"].apply(lambda dt: datetime(dt.year, dt.month, dt.day))
+            temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
+            temp_df.set_index("Date", inplace=True)
+            temp_df = temp_df.resample("D").interpolate(method="pchip")
+            temp_df["Team"] = team_name
+            new_df = new_df.append(temp_df)
+        df = new_df
 
         # filter data to only include the ones we want.
         df = df[df.index > pd.to_datetime(_line_plot_after)]
