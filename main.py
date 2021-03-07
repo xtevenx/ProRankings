@@ -46,7 +46,8 @@ if __name__ == "__main__":
             ("FunPlus Phoenix", "#f44336"),  # last worlds 1st  (red)
             ("G2 Esports", "#9e9e9e"),  # curr lec 1st  (gray)
             # ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
-            ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
+            ("Royal Never Give Up", "#795548"),  # curr lpl 1st  (brown)
+            # ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
             # Note: no LCS teams because they haven't won worlds before.
         ]
 
