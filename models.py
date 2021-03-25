@@ -4,7 +4,7 @@ import glicko2_utils
 _RATING_INTERVAL = 7
 _DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-_DEVIATION_RESET_FACTOR: float = 0.08
+_DEVIATION_RESET_FACTOR: float = 0.1
 
 
 def convert_to_days(utc_string: str) -> int:
