@@ -71,7 +71,8 @@ if __name__ == "__main__":
             temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
             temp_df.set_index("Date", inplace=True)
             temp_df = temp_df[temp_df.index > pd.to_datetime(_line_plot_after)]
-            temp_df = temp_df.resample("D").interpolate(method="pchip")
+            temp_df = temp_df.resample("D").interpolate(method="nearest")
+            # temp_df = temp_df.resample("D").interpolate(method="pchip")
             temp_df["Team"] = team_name
             new_df = new_df.append(temp_df)
         df = new_df
