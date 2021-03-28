@@ -102,7 +102,7 @@ if __name__ == "__main__":
         for team_name in team_names:
             try:
                 # add to plotting data dictionary
-                if teams_dictionary[team_name].rating > 2000:
+                if teams_dictionary[team_name].rating > 1800:
                     plot_data["Rating"].append(teams_dictionary[team_name].rating)
                     plot_data["Team"].append(team_name)
             except KeyError as err:

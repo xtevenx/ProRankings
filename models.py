@@ -4,6 +4,8 @@ import glicko2_utils
 _RATING_INTERVAL = 7
 _DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
+_RATING_RESET_FACTOR: int = 25
+
 # time in _RATING_INTERVAL units to artificially adjust the rating
 # deviation by, every new season.
 _DEVIATION_RESET_TIME: int = 52
@@ -68,8 +70,12 @@ class TeamData:
         self.games_bank_end = new_bank_end
 
     def soft_reset_stats(self):
+        self.rating, self.deviation, self.volatility = glicko2_utils.get_new_stats(
+            self.rating, self.deviation, self.volatility,
+            ((glicko2_utils.INITIAL_RATING, glicko2_utils.INITIAL_DEVIATION, 0.5),) * _RATING_RESET_FACTOR
+        )
         self.deviation = glicko2_utils.update_deviation(
-            self.deviation, self.volatility, _DEVIATION_RESET_TIME
+            self.deviation, self.volatility, _DEVIATION_RESET_TIME - 1
         )
 
 
