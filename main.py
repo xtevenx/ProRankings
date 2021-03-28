@@ -1,7 +1,8 @@
 from pro_rankings import *
 
 _line_output = "data/output_line.png"
-_line_plot_after = "2019-01-09 00:00:00"
+_line_plot_start = "2021-01-08 00:00:00"
+_line_plot_end = "2022-01-08 00:00:00"
 _bar_output = "data/output_bar.png"
 
 _plot_size = (10.11, 5.69)
@@ -70,9 +71,8 @@ if __name__ == "__main__":
             temp_df["Date"] = temp_df["Date"].apply(lambda dt: datetime(dt.year, dt.month, dt.day))
             temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
             temp_df.set_index("Date", inplace=True)
-            temp_df = temp_df[temp_df.index > pd.to_datetime(_line_plot_after)]
-            temp_df = temp_df.resample("D").interpolate(method="nearest")
-            # temp_df = temp_df.resample("D").interpolate(method="pchip")
+            temp_df = temp_df[temp_df.index > pd.to_datetime(_line_plot_start)]
+            temp_df = temp_df.resample("D").interpolate(method="linear")
             temp_df["Team"] = team_name
             new_df = new_df.append(temp_df)
         df = new_df
@@ -85,6 +85,8 @@ if __name__ == "__main__":
 
         g = sns.lineplot(x="Date", y="Rating", data=df,
                          hue="Team", palette=team_colors, hue_order=team_names)
+
+        plt.xlim(pd.to_datetime(_line_plot_start), pd.to_datetime(_line_plot_end))
 
         plt.title("Rating Progression of Select Teams")
         plt.tight_layout()
