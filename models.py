@@ -4,7 +4,7 @@ import glicko2_utils
 _RATING_INTERVAL = 7
 _DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-_RATING_RESET_FACTOR: int = 25
+_RATING_RESET_FACTOR: int = 32
 
 # time in _RATING_INTERVAL units to artificially adjust the rating
 # deviation by, every new season.
