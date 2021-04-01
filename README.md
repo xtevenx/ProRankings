@@ -30,4 +30,4 @@ system.
 
 [1]: http://www.glicko.net/glicko/glicko2.pdf
 [2]: https://github.com/xtevenx/ProRankings
-[3]: https://lol.gamepedia.com/Help:API_Documentation
+[3]: https://lol.fandom.com/Help:API_Documentation

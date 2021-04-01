@@ -54,7 +54,7 @@ def get_teams_data():
     _interval_start: str = "2009-10-27 00:00:00"
 
     # create database access object
-    site: mwclient.Site = mwclient.Site("lol.gamepedia.com", path="/")
+    site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # collect the history of all team renames -------------------------
     rename_history: list[dict] = []
@@ -200,7 +200,7 @@ def get_teams_data():
 
 def get_team_names(tournaments=_MAJOR_LEAGUES):
     # create database access object
-    site: mwclient.Site = mwclient.Site("lol.gamepedia.com", path="/")
+    site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # iterate through tournaments and collect teams.
     team_names: set = set()
