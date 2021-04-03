@@ -32,6 +32,7 @@ _SEASON_END_DATES_READABLE: list = [
     "Jan 23, 2019",  # season  9
     "Jan 10, 2020",  # season 10
     "Jan  8, 2021",  # season 11
+    "Jan  1, 9999",  # end of time
 ]
 
 _MONTHS_STR: dict = {
