@@ -17,6 +17,7 @@ _QUERY_DELAY: QueryDelay = QueryDelay(1.0)
 _IGNORE_RENAMES: list = [
     ("Cloud9", "Quantic Gaming"),
     ("Evil Geniuses.NA", "Winterfox"),
+    ("eStar (Chinese Team)", "Ultra Prime"),  # temporary until LPL Summer 2021
 ]
 
 # list of season end dates.
