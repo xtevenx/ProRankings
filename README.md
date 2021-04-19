@@ -7,6 +7,16 @@ played.
 
 View the source on [GitHub][2].
 
+Ratings of Teams at MSI 2021
+----------------------------
+
+This chart displays the ratings of teams at the Mid-Season Invitational of 2021.
+Since MSI is the first international competition of the season, ratings at the
+start of the tournament will be based heavily on a team's dominance within their
+region, so teams from minor regions may have their ratings inflated.
+
+![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_tourney.png "Ratings of Teams at MSI 2021")
+
 Ratings of Top Teams
 --------------------
 
