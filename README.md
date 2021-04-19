@@ -1,6 +1,8 @@
 This site displays calculated ratings for professional League of Legends teams.
 Only teams from the four major regions are included in the below charts, however
-all games are accounted for when calculating the ratings.
+all games are accounted for when calculating the ratings. Due to the nature of
+the rating system (see notes below), the ratings maybe be very inaccurate at the
+start of each season, and become more accurate as more games are played.
 
 View the source on [GitHub][2].
 
