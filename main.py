@@ -93,7 +93,7 @@ if __name__ == "__main__":
         plt.clf()
 
     if "bar":
-        print("Preparing data bar graph ... ")
+        print("Preparing data for bar graph ... ")
 
         team_names = get_team_names()
         plot_data = {"Rating": [], "Team": []}
