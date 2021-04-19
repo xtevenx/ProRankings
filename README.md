@@ -14,13 +14,13 @@ leagues ([LCS][3], [LEC][4], [LCK][5], [LPL][6]).
 [comment]: <> (dominated their league. This is because if there are no inter-region games, )
 [comment]: <> (one's rating is solely based on their performance within their region.)
 
-![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_bar.png "Ratings")
+![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_bar.png "Ratings of Top Teams")
 
 Rating Progression of Select Teams
 ----------------------------------
 
 This chart displays the calculated rating progression for select teams.
-![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png "Rating Progression")
+![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png "Rating Progression of Select Teams")
 
 About the Rating System
 -----------------------
