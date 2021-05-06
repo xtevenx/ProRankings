@@ -22,8 +22,10 @@ if __name__ == "__main__":
     import pandas as pd
     import seaborn as sns
 
-    sns.set_style("darkgrid")
+    # don't warn on chained assignment (hopefully the code is correct :)
+    pd.options.mode.chained_assignment = None
 
+    sns.set_style("darkgrid")
     sns.set(rc={
         "axes.edgecolor": "#ffffff9f",
         "axes.facecolor": "black",
