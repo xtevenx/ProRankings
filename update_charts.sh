@@ -1,3 +1,4 @@
+git fetch --all && git reset --hard origin/master
 python3.9 main.py
 git diff --exit-code --quiet data/output_tourney.png || git add output_tourney.png
 git diff --exit-code --quiet data/output_bar.png || git add output_bar.png output_line.png
