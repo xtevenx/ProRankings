@@ -59,8 +59,10 @@ def get_teams_data():
     site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # collect the history of all team renames -------------------------
-    rename_history: list[dict] = []
     interval_start: str = _interval_start
+
+    # rename_history: list[dict[OriginalName: str, NewName: str]]
+    rename_history: list[dict] = []
 
     while True:
         _QUERY_DELAY.ensure_delay()
@@ -110,9 +112,11 @@ def get_teams_data():
     print(f"Finished collecting {len(team_renames)} team renames ... ")
 
     # collect the history of all game results -------------------------
-    games_data: list[dict] = []
     seen_games: set[str] = set()
     interval_start: str = _interval_start
+
+    # games_data: list[dict[Team1: str, Team2: str, WinTeam: str]]
+    games_data: list[dict] = []
 
     while True:
         _QUERY_DELAY.ensure_delay()
@@ -165,7 +169,8 @@ def get_teams_data():
     # calculate the ratings of each team ------------------------------
     print("Processing collected game data ... ")
 
-    teams: dict = {}
+    # teams: dict[teamName: TeamData]
+    teams: dict[str, TeamData] = {}
 
     season_index: int = 0
     for game_data in games_data:
@@ -196,16 +201,15 @@ def get_teams_data():
         team2.update_rating(team1, team2.name == game_data.get("WinTeam"), game_time)
 
     print("Finished collecting and processing game data.")
-
     return teams
 
 
-def get_team_names(tournaments=_MAJOR_LEAGUES):
+def get_team_names(tournaments=_MAJOR_LEAGUES) -> set[str]:
     # create database access object
     site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # iterate through tournaments and collect teams.
-    team_names: set = set()
+    team_names: set[str] = set()
 
     for league_name in tournaments:
         _QUERY_DELAY.ensure_delay()
