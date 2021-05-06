@@ -141,3 +141,6 @@ cython_debug/
 
 # PyCharm IDE configurations
 .idea/
+
+# Generated script files
+data/past_data.json

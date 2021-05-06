@@ -1,4 +1,5 @@
 import datetime
+import json
 import mwclient
 
 import glicko2_utils
@@ -51,18 +52,65 @@ for date in _SEASON_END_DATES_READABLE:
 _SEASON_END_DATES.append(datetime.datetime.today())
 
 
+def _get_past_data(filename: str = "data/past_data.json") -> dict:
+    """Get previously retrieved data from file if exists.
+
+    Attempt to read `filename` to get an account of previously retrieved data.
+    If the file does not exist, return an empty dictionary.
+
+    :return: dict[
+        end_at: str = "YYYY-MM-DD HH:MM:SS",
+        rename_history: list[dict[OriginalName: str, NewName: str]],
+        games_data: list[dict[Team1: str, Team2: str, WinTeam: str]]
+        ]
+    """
+
+    try:
+        with open(filename, "r") as fp:
+            return json.load(fp)
+    except FileNotFoundError:
+        return dict()
+
+
+def _save_past_data(end_at, rename_history, games_data, filename: str = "data/past_data.json"):
+    """Save retrieved data to file."""
+
+    save_obj = {"end_at": end_at,
+                "rename_history": rename_history,
+                "games_data": games_data}
+
+    try:
+        with open(filename, "w") as fp:
+            json.dump(save_obj, fp, separators=(",", ":"))
+    except FileNotFoundError:
+        ...
+
+
 def get_teams_data():
-    # get all games after Oct 27, 2009 (release date of LoL)
-    _interval_start: str = "2009-10-27 00:00:00"
+    if past_data := _get_past_data():
+        _interval_start = past_data["end_at"]
+        rename_history = past_data["rename_history"]
+        games_data = past_data["games_data"]
+        seen_games = set(str(sorted(g.values())) for g in games_data)
+
+    else:
+        # get all games after Oct 27, 2009 (release date of LoL)
+        _interval_start: str = "2009-10-27 00:00:00"
+
+        # rename_history: list[dict[OriginalName: str, NewName: str]]
+        rename_history: list[dict[str, str]] = []
+
+        # games_data: list[dict[Team1: str, Team2: str, WinTeam: str]]
+        games_data: list[dict[str, str]] = []
+
+        # seen_games: set["{Team1: str, Team2: str, WinTeam: str}"]
+        seen_games: set[str] = set()
 
     # create database access object
     site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # collect the history of all team renames -------------------------
     interval_start: str = _interval_start
-
-    # rename_history: list[dict[OriginalName: str, NewName: str]]
-    rename_history: list[dict] = []
 
     while True:
         _QUERY_DELAY.ensure_delay()
@@ -112,11 +160,7 @@ def get_teams_data():
     print(f"Finished collecting {len(team_renames)} team renames ... ")
 
     # collect the history of all game results -------------------------
-    seen_games: set[str] = set()
     interval_start: str = _interval_start
-
-    # games_data: list[dict[Team1: str, Team2: str, WinTeam: str]]
-    games_data: list[dict] = []
 
     while True:
         _QUERY_DELAY.ensure_delay()
@@ -145,7 +189,7 @@ def get_teams_data():
                 game_data["WinTeam"] = team_renames[game_data.get("WinTeam")]
 
             # add data only if it has not already been added
-            if (str_data := str(game_data)) not in seen_games:
+            if (str_data := str(sorted(game_data.values()))) not in seen_games:
                 games_data.append(game_data)
                 seen_games.add(str_data)
 
@@ -165,6 +209,7 @@ def get_teams_data():
         if len(query_response) < limits.get("cargoquery") or interval_start == interval_end:
             break
         interval_start = interval_end
+    _interval_end: str = interval_end
 
     # calculate the ratings of each team ------------------------------
     print("Processing collected game data ... ")
@@ -201,6 +246,10 @@ def get_teams_data():
         team2.update_rating(team1, team2.name == game_data.get("WinTeam"), game_time)
 
     print("Finished collecting and processing game data.")
+
+    _save_past_data(_interval_end, rename_history, games_data)
+    print("Saved collected data for future use.")
+
     return teams
 
 
