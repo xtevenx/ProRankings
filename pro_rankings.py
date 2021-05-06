@@ -253,12 +253,12 @@ def get_teams_data():
     return teams
 
 
-def get_team_names(tournaments=_MAJOR_LEAGUES) -> set[str]:
+def get_team_names(tournaments=_MAJOR_LEAGUES) -> set:
     # create database access object
     site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
 
     # iterate through tournaments and collect teams.
-    team_names: set[str] = set()
+    team_names: set = set()
 
     for league_name in tournaments:
         _QUERY_DELAY.ensure_delay()
