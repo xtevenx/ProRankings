@@ -98,13 +98,13 @@ def get_teams_data():
         _interval_start: str = "2009-10-27 00:00:00"
 
         # rename_history: list[dict[OriginalName: str, NewName: str]]
-        rename_history: list[dict[str, str]] = []
+        rename_history: list = []
 
         # games_data: list[dict[Team1: str, Team2: str, WinTeam: str]]
-        games_data: list[dict[str, str]] = []
+        games_data: list = []
 
         # seen_games: set["{Team1: str, Team2: str, WinTeam: str}"]
-        seen_games: set[str] = set()
+        seen_games: set = set()
 
     # create database access object
     site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
@@ -215,7 +215,7 @@ def get_teams_data():
     print("Processing collected game data ... ")
 
     # teams: dict[teamName: TeamData]
-    teams: dict[str, TeamData] = {}
+    teams: dict = {}
 
     season_index: int = 0
     for game_data in games_data:
