@@ -50,8 +50,8 @@ However, there are some things of note:
     equivalent to if there was a year without play. This is done to try to
     account for the rapidly changing meta.
 *   The average rating is set to the average FIDE standard rating which is, as
-    of March 2021, 1649. There is no meaning behind this and is done purely for
-    entertainment purposes.
+    of April 2021, 1647. There is no meaning behind this and is done purely based
+    on personal preference.
 
 Acknowledgements
 ----------------
