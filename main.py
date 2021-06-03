@@ -131,41 +131,41 @@ if __name__ == "__main__":
         plt.savefig(_bar_output, dpi=_plot_dpi)
         plt.clf()
 
-    if "tournament":
-        print("Preparing data for tournament bar graph ... ")
-
-        team_names = get_team_names(["2021 Mid-Season Invitational"])
-        plot_data = {"Rating": [], "Team": []}
-        for team_name in team_names:
-            try:
-                plot_data["Rating"].append(teams_dictionary[team_name].rating)
-                while "(" in team_name:  # hopefully team names are reasonable.
-                    team_name = team_name[:team_name.find("(")] + team_name[team_name.find(")") + 1:]
-                plot_data["Team"].append(team_name)
-            except KeyError as err:
-                print(f"Error: team `{team_name}' not found.")
-
-        # input data into a DataFrame
-        df = pd.DataFrame(plot_data)
-        df.sort_values(by="Rating", ascending=False, inplace=True)
-
-        print("Generating tournament bar graph ... ")
-
-        _, _ = plt.subplots()
-        plt.figure(figsize=_plot_size)
-
-        g = sns.barplot(x="Team", y="Rating", data=df)
-
-        plt.title("Ratings of Teams at MSI 2021")
-        plt.xticks(rotation=90, fontstretch="condensed")
-
-        bottom, top = plt.ylim()
-        top_diff = 0.382 * (top - max(df["Rating"]))
-        plt.ylim(min(df["Rating"]) - top_diff, max(df["Rating"]) + top_diff)
-
-        plt.tight_layout()
-
-        plt.savefig(_tourney_output, dpi=_plot_dpi)
-        plt.clf()
+    # if "tournament":
+    #     print("Preparing data for tournament bar graph ... ")
+    #
+    #     team_names = get_team_names(["2021 Mid-Season Invitational"])
+    #     plot_data = {"Rating": [], "Team": []}
+    #     for team_name in team_names:
+    #         try:
+    #             plot_data["Rating"].append(teams_dictionary[team_name].rating)
+    #             while "(" in team_name:  # hopefully team names are reasonable.
+    #                 team_name = team_name[:team_name.find("(")] + team_name[team_name.find(")") + 1:]
+    #             plot_data["Team"].append(team_name)
+    #         except KeyError as err:
+    #             print(f"Error: team `{team_name}' not found.")
+    #
+    #     # input data into a DataFrame
+    #     df = pd.DataFrame(plot_data)
+    #     df.sort_values(by="Rating", ascending=False, inplace=True)
+    #
+    #     print("Generating tournament bar graph ... ")
+    #
+    #     _, _ = plt.subplots()
+    #     plt.figure(figsize=_plot_size)
+    #
+    #     g = sns.barplot(x="Team", y="Rating", data=df)
+    #
+    #     plt.title("Ratings of Teams at MSI 2021")
+    #     plt.xticks(rotation=90, fontstretch="condensed")
+    #
+    #     bottom, top = plt.ylim()
+    #     top_diff = 0.382 * (top - max(df["Rating"]))
+    #     plt.ylim(min(df["Rating"]) - top_diff, max(df["Rating"]) + top_diff)
+    #
+    #     plt.tight_layout()
+    #
+    #     plt.savefig(_tourney_output, dpi=_plot_dpi)
+    #     plt.clf()
 
     print("Done.")
