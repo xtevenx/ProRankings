@@ -15,7 +15,7 @@ MATCH_RESULT = Tuple[float, float, float]
 ALL_MATCH_RESULTS = Sequence[MATCH_RESULT]
 
 # glicko rating utility definitions
-INITIAL_RATING: float = 1646.92
+INITIAL_RATING: float = 1646.48
 INITIAL_DEVIATION: float = 350
 INITIAL_VOLATILITY: float = 0.06
 
