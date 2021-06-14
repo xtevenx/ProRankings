@@ -6,7 +6,7 @@ import glicko2_utils
 from models import QueryDelay, TeamData, convert_to_days
 
 # iterable of all the major leagues.
-_MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL"))
+_MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # how much extra do interregional games count towards one's rating.
 _INTERREGIONAL_BONUS: int = 1
@@ -18,7 +18,6 @@ _QUERY_DELAY: QueryDelay = QueryDelay(1.0)
 _IGNORE_RENAMES: list = [
     ("Cloud9", "Quantic Gaming"),
     ("Evil Geniuses.NA", "Winterfox"),
-    ("eStar (Chinese Team)", "Ultra Prime"),  # temporary until LPL Summer 2021
 ]
 
 # list of season end dates.
