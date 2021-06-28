@@ -49,6 +49,7 @@ if __name__ == "__main__":
             ("MAD Lions", "#795548"),  # curr lec 1st  (brown)
             ("Royal Never Give Up", "#ffb74d"),  # curr lpl 1st  (orange)
             # ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
+            ("FunPlus Phoenix", "#f44336"),  # curr favourite team (red)
             # Note: no LCS teams because they haven't won worlds before.
         ]
 
