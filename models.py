@@ -6,9 +6,9 @@ _DAYS_PER_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 _RATING_RESET_FACTOR: int = 32
 
-# time in _RATING_INTERVAL units to artificially adjust the rating
-# deviation by, every new season.
-_DEVIATION_RESET_TIME: int = 52
+# Time in _RATING_INTERVAL units to artificially adjust the rating
+# deviation by, every new season. Currently set to one year.
+_DEVIATION_RESET_TIME: int = 365 // _RATING_INTERVAL
 
 
 def convert_to_days(utc_string: str) -> int:
@@ -19,7 +19,7 @@ def convert_to_days(utc_string: str) -> int:
     year, month, day = [int(n) for n in utc_string.split("-")]
 
     days = 365 * year
-    days += (year // 4) - (year // 100) + (year // 400)
+    days += (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
     days += sum(_DAYS_PER_MONTH[:month - 1])
     days += (month > 2) and (year % 400 == 0 or (year % 4 == 0 and year % 100 != 0))
     days += day
