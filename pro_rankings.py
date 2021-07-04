@@ -84,11 +84,25 @@ def _save_past_data(end_at, rename_history, games_data, filename: str = "data/pa
         ...
 
 
+def parse_string_datetime(str_: str) -> datetime.datetime:
+    return datetime.datetime.strptime(str_, "%Y-%m-%d %H:%M:%S")
+
+
 def get_teams_data():
     if past_data := _get_past_data():
         _interval_start = past_data["end_at"]
         rename_history = past_data["rename_history"]
         games_data = past_data["games_data"]
+
+        # Refresh the most recent 14 days of data in case new things were added.
+        start_datetime = parse_string_datetime(_interval_start)
+        start_datetime -= datetime.timedelta(days=14)
+        while parse_string_datetime(rename_history[-1]["Date"]) >= start_datetime:
+            rename_history.pop()
+        while parse_string_datetime(games_data[-1]["DateTime UTC"]) >= start_datetime:
+            games_data.pop()
+
+        _interval_start = str(start_datetime)
         seen_games = set(str(sorted(g.values())) for g in games_data)
 
     else:
