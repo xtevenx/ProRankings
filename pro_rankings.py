@@ -2,8 +2,7 @@ import datetime
 import json
 import mwclient
 
-import glicko2_utils
-from models import QueryDelay, TeamData, convert_to_days
+from models import QueryDelay, TeamData
 
 # iterable of all the major leagues.
 _MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
