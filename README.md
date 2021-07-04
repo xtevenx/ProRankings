@@ -13,7 +13,6 @@ View the source on [GitHub][2].
 [comment]: <> (Since MSI is the first international competition of the season, ratings at the)
 [comment]: <> (start of the tournament will be based heavily on a team's dominance within their)
 [comment]: <> (region, so teams from minor regions may have their ratings inflated.)
-[comment]: <> (![image missing]&#40;https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_tourney.png "Ratings of Teams at MSI 2021"&#41;)
 
 Ratings of Top Teams
 --------------------
