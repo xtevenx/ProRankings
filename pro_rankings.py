@@ -141,6 +141,7 @@ def get_teams_data():
         interval_end: str = interval_start
         for _t in query_response:
             rename_data: dict = _t.get("title")
+            del rename_data["Date__precision"]
 
             for orig, new in _IGNORE_RENAMES:
                 if rename_data.get("OriginalName") == orig and \
@@ -191,6 +192,7 @@ def get_teams_data():
         interval_end: str = interval_start
         for _t in query_response:
             game_data: dict = _t.get("title")
+            del game_data["DateTime UTC__precision"]
 
             # correct all team names based on determined rename history
             if game_data.get("Team1") in team_renames:
