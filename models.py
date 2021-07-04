@@ -19,7 +19,7 @@ def convert_to_days(utc_string: str) -> int:
     year, month, day = [int(n) for n in utc_string.split("-")]
 
     days = 365 * year
-    days += (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+    days += (year // 4) - (year // 100) + (year // 400)
     days += sum(_DAYS_PER_MONTH[:month - 1])
     days += (month > 2) and (year % 400 == 0 or (year % 4 == 0 and year % 100 != 0))
     days += day
