@@ -207,15 +207,6 @@ def get_teams_data():
                 games_data.append(game_data)
                 seen_games.add(str_data)
 
-                # add bonus games for World Championship results
-                page_name = game_data.get("OverviewPage").split("/")[0]
-                if page_name.find("World Championship") != -1:
-                    for _ in range(_INTERREGIONAL_BONUS):
-                        games_data.append(game_data)
-                if page_name.find("Mid-Season Invitational") != -1:
-                    for _ in range(_INTERREGIONAL_BONUS):
-                        games_data.append(game_data)
-
             interval_end = game_data.get("DateTime UTC")
 
         print(f"Collected {len(games_data)} game results ending at {interval_end} ... ")
@@ -255,9 +246,15 @@ def get_teams_data():
             teams[team2] = TeamData(team2, game_time)
         team2: TeamData = teams[team2]
 
+        # add bonus games for international game results
+        page_name = game_data.get("OverviewPage")
+        is_international = page_name.find("World Championship") != -1
+        is_international |= page_name.find("Mid-Season Invitational") != -1
+
         # update the ratings of each time accordingly.
-        team1.update_rating(team2, team1.name == game_data.get("WinTeam"), game_time)
-        team2.update_rating(team1, team2.name == game_data.get("WinTeam"), game_time)
+        for _ in range(1 + is_international * _INTERREGIONAL_BONUS):
+            team1.update_rating(team2, team1.name == game_data.get("WinTeam"), game_time)
+            team2.update_rating(team1, team2.name == game_data.get("WinTeam"), game_time)
 
     print("Finished collecting and processing game data.")
 
