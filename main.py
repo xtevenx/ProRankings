@@ -69,6 +69,7 @@ if __name__ == "__main__":
 
         # input data into a DataFrame
         datetime_start = pd.to_datetime(_line_plot_start)
+        no_smooth_start = datetime_start - pd.to_timedelta(52, unit="W")
 
         df = pd.DataFrame(plot_data)
         df["Date"] = pd.to_datetime(df["Date"])
@@ -80,6 +81,7 @@ if __name__ == "__main__":
             temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
             temp_df.set_index("Date", inplace=True)
             temp_df = temp_df.resample("D").interpolate(method="linear")
+            temp_df = temp_df[temp_df.index >= no_smooth_start]
 
             # apply Gaussian kernel smoothing.
             smoothed_df = temp_df.copy()
