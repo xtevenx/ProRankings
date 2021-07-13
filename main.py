@@ -92,7 +92,6 @@ if __name__ == "__main__":
         plt.xlim(pd.to_datetime(_line_plot_start), pd.to_datetime(_line_plot_end))
 
         plt.title("Rating Progression of Select Teams")
-        plt.tight_layout()
 
         plt.savefig(_line_output, dpi=_plot_dpi)
         plt.clf()
