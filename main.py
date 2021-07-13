@@ -138,7 +138,7 @@ if __name__ == "__main__":
         for i, a in enumerate(bars):
             plt.gca().text(
                 x=a.get_x() + a.get_width() / 2,
-                y=y_min + 5,
+                y=plt.ylim()[0] + 0.19 * ylim_diff,
                 s=plot_data["Team"][i],
                 backgroundcolor="#0000009f",
                 color="#ffffff9f",
@@ -153,15 +153,19 @@ if __name__ == "__main__":
     #     print("Preparing data for tournament bar graph ... ")
     #
     #     team_names = get_team_names(["2021 Mid-Season Invitational"])
-    #     plot_data = {"Rating": [], "Team": []}
+    #     teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
+    #
+    #     all_names = {t[0] for t in teams_data}
     #     for team_name in team_names:
-    #         try:
-    #             plot_data["Rating"].append(teams_dictionary[team_name].rating)
-    #             while "(" in team_name:  # hopefully team names are reasonable.
-    #                 team_name = team_name[:team_name.find("(")] + team_name[team_name.find(")") + 1:]
-    #             plot_data["Team"].append(team_name)
-    #         except KeyError as err:
+    #         if team_name not in all_names:
     #             print(f"Error: team `{team_name}' not found.")
+    #
+    #     teams_data.sort(key=lambda t: t[1].rating, reverse=True)
+    #
+    #     plot_data = {
+    #         "Rating": [t[1].rating for t in teams_data],
+    #         "Team": [t[0] for t in teams_data]
+    #     }
     #
     #     # input data into a DataFrame
     #     df = pd.DataFrame(plot_data)
@@ -172,15 +176,27 @@ if __name__ == "__main__":
     #     _, _ = plt.subplots()
     #     plt.figure(figsize=_plot_size)
     #
-    #     g = sns.barplot(x="Team", y="Rating", data=df)
+    #     bar_colors = sns.color_palette(palette="hls", n_colors=len(teams_data))
+    #     bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
     #
     #     plt.title("Ratings of Teams at MSI 2021")
-    #     plt.xticks(rotation=90, fontstretch="condensed")
+    #     plt.xticks(ticks=[])
     #
     #     ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
     #     plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
+    #     plt.grid(False, axis="x")
     #
-    #     plt.tight_layout()
+    #     y_min = plt.ylim()[0]
+    #     for i, a in enumerate(bars):
+    #         plt.gca().text(
+    #             x=a.get_x() + a.get_width() / 2,
+    #             y=plt.ylim()[0] + 0.19 * ylim_diff,
+    #             s=plot_data["Team"][i],
+    #             backgroundcolor="#0000009f",
+    #             color="#ffffff9f",
+    #             horizontalalignment="center",
+    #             rotation="vertical"
+    #         )
     #
     #     plt.savefig(_tourney_output, dpi=_plot_dpi)
     #     plt.clf()
