@@ -47,12 +47,13 @@ if __name__ == "__main__":
         print("Preparing data for line graph ... ")
 
         plot_teams = [
-            ("DWG KIA", "#4dd0e1"),  # this worlds 1st  (cyan)
-            ("MAD Lions", "#795548"),  # curr lec 1st  (brown)
-            ("Royal Never Give Up", "#ffb74d"),  # curr lpl 1st  (orange)
-            # ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
+            ("DWG KIA", "#00bcd4"),  # this worlds 1st  (cyan)
+            ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
+            ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
+            ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
             ("FunPlus Phoenix", "#f44336"),  # personal favourite team (red)
-            # Note: no LCS teams because they haven't won worlds before.
+            # Note: no LCS teams because they haven't won worlds before. :)
+            # Note: colors are the 500 colors from the 2014 Material color palette.
         ]
 
         team_names, team_colors = zip(*plot_teams)
