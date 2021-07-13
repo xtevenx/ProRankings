@@ -1,5 +1,5 @@
 git fetch --all && git reset --hard origin/master
-python -m pip install -r requirements.txt --user || python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt --user || python3 -m pip install -r requirements.txt
 python3 main.py
 git diff --exit-code --quiet data/output_tourney.png || git add data/output_tourney.png
 git diff --exit-code --quiet data/output_bar.png || git add data/output_bar.png data/output_line.png
