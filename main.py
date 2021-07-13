@@ -10,7 +10,7 @@ _plot_size = (10.11, 5.69)
 _plot_dpi = 189.91
 
 _bar_number_teams = 12
-_line_smooth_factor = 1
+_line_smooth_factor = 1.5
 
 if __name__ == "__main__":
     from datetime import datetime
