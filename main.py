@@ -130,9 +130,8 @@ if __name__ == "__main__":
         plt.title("Ratings of Top Teams in Major Leagues")
         plt.xticks(rotation=90, fontstretch="condensed")
 
-        bottom, top = plt.ylim()
-        top_diff = 0.382 * (top - max(df["Rating"]))
-        plt.ylim(min(df["Rating"]) - top_diff, max(df["Rating"]) + top_diff)
+        ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
+        plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
 
         plt.tight_layout()
 
@@ -167,9 +166,8 @@ if __name__ == "__main__":
     #     plt.title("Ratings of Teams at MSI 2021")
     #     plt.xticks(rotation=90, fontstretch="condensed")
     #
-    #     bottom, top = plt.ylim()
-    #     top_diff = 0.382 * (top - max(df["Rating"]))
-    #     plt.ylim(min(df["Rating"]) - top_diff, max(df["Rating"]) + top_diff)
+    #     ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
+    #     plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
     #
     #     plt.tight_layout()
     #
