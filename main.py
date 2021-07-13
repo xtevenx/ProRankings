@@ -80,7 +80,7 @@ if __name__ == "__main__":
             temp_df["Date"] = temp_df["Date"].apply(lambda dt: datetime(dt.year, dt.month, dt.day))
             temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
             temp_df.set_index("Date", inplace=True)
-            temp_df = temp_df.resample("D").interpolate(method="linear")
+            temp_df = temp_df.resample("6H").interpolate(method="linear")
             temp_df = temp_df[temp_df.index >= no_smooth_start]
 
             # apply Gaussian kernel smoothing.
