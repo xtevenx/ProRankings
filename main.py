@@ -68,6 +68,8 @@ if __name__ == "__main__":
             plot_data["Team"].extend(len(timestamps) * (team_name,))
 
         # input data into a DataFrame
+        datetime_start = pd.to_datetime(_line_plot_start)
+
         df = pd.DataFrame(plot_data)
         df["Date"] = pd.to_datetime(df["Date"])
 
@@ -81,15 +83,17 @@ if __name__ == "__main__":
 
             # apply Gaussian kernel smoothing.
             smoothed_df = temp_df.copy()
-            for date in smoothed_df.index:
+            for date in smoothed_df.index[::-1]:
                 multipliers = np.exp(
                     -(temp_df.index - date).days ** 2 / (2 * (_line_smooth_factor ** 2))
                 )
                 multipliers /= np.sum(multipliers)
+                if date < datetime_start:
+                    break
                 smoothed_df.at[date, "Rating"] = np.sum(multipliers * temp_df["Rating"])
             temp_df = smoothed_df
 
-            temp_df = temp_df[temp_df.index >= pd.to_datetime(_line_plot_start)]
+            temp_df = temp_df[temp_df.index >= datetime_start]
             temp_df["Team"] = team_name
             new_df = new_df.append(temp_df)
         df = new_df
