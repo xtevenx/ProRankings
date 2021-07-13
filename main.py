@@ -125,15 +125,27 @@ if __name__ == "__main__":
         _, _ = plt.subplots()
         plt.figure(figsize=_plot_size)
 
-        g = sns.barplot(x="Team", y="Rating", data=df)
+        bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
+        bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
 
         plt.title("Ratings of Top Teams in Major Leagues")
-        plt.xticks(rotation=90, fontstretch="condensed")
+        plt.xticks(ticks=[])
 
         ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
         plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
+        plt.grid(False, axis="x")
 
-        plt.tight_layout()
+        y_min = plt.ylim()[0]
+        for i, a in enumerate(bars):
+            plt.gca().text(
+                x=a.get_x() + a.get_width() / 2,
+                y=y_min + 5,
+                s=plot_data["Team"][i],
+                backgroundcolor="#0000009f",
+                color="#ffffff9f",
+                horizontalalignment="center",
+                rotation="vertical"
+            )
 
         plt.savefig(_bar_output, dpi=_plot_dpi)
         plt.clf()
