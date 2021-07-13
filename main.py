@@ -9,6 +9,8 @@ _tourney_output = "data/output_tourney.png"
 _plot_size = (10.11, 5.69)
 _plot_dpi = 189.91
 
+_bar_number_teams = 12
+
 if __name__ == "__main__":
     from datetime import datetime
 
@@ -99,15 +101,20 @@ if __name__ == "__main__":
         print("Preparing data for bar graph ... ")
 
         team_names = get_team_names()
-        plot_data = {"Rating": [], "Team": []}
+        teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
+
+        all_names = {t[0] for t in teams_data}
         for team_name in team_names:
-            try:
-                # add to plotting data dictionary
-                if teams_dictionary[team_name].rating > 1800:
-                    plot_data["Rating"].append(teams_dictionary[team_name].rating)
-                    plot_data["Team"].append(team_name)
-            except KeyError as err:
+            if team_name not in all_names:
                 print(f"Error: team `{team_name}' not found.")
+
+        teams_data.sort(key=lambda t: t[1].rating, reverse=True)
+        teams_data = teams_data[:_bar_number_teams]
+
+        plot_data = {
+            "Rating": [t[1].rating for t in teams_data],
+            "Team": [t[0] for t in teams_data]
+        }
 
         # input data into a DataFrame
         df = pd.DataFrame(plot_data)
