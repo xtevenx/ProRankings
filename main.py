@@ -10,6 +10,7 @@ _plot_size = (10.11, 5.69)
 _plot_dpi = 189.91
 
 _bar_number_teams = 12
+_line_smooth_factor = 1
 
 if __name__ == "__main__":
     from datetime import datetime
@@ -21,6 +22,7 @@ if __name__ == "__main__":
     print("Loading plotting libraries ... ")
 
     import matplotlib.pyplot as plt
+    import numpy as np
     import pandas as pd
     import seaborn as sns
 
@@ -76,6 +78,17 @@ if __name__ == "__main__":
             temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
             temp_df.set_index("Date", inplace=True)
             temp_df = temp_df.resample("D").interpolate(method="linear")
+
+            # apply Gaussian kernel smoothing.
+            smoothed_df = temp_df.copy()
+            for date in smoothed_df.index:
+                multipliers = np.exp(
+                    -(temp_df.index - date).days ** 2 / (2 * (_line_smooth_factor ** 2))
+                )
+                multipliers /= np.sum(multipliers)
+                smoothed_df.at[date, "Rating"] = np.sum(multipliers * temp_df["Rating"])
+            temp_df = smoothed_df
+
             temp_df = temp_df[temp_df.index >= pd.to_datetime(_line_plot_start)]
             temp_df["Team"] = team_name
             new_df = new_df.append(temp_df)
