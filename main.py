@@ -161,7 +161,7 @@ if __name__ == "__main__":
         for i, a in enumerate(bars):
             plt.gca().text(
                 x=a.get_x() + a.get_width() / 2,
-                y=plt.ylim()[0] + 0.19 * ylim_diff,
+                y=plt.ylim()[0] + 0.2 * ylim_diff,
                 s=plot_data["Team"][i],
                 backgroundcolor="#0000009f",
                 color="#ffffff9f",
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     #     for i, a in enumerate(bars):
     #         plt.gca().text(
     #             x=a.get_x() + a.get_width() / 2,
-    #             y=plt.ylim()[0] + 0.19 * ylim_diff,
+    #             y=plt.ylim()[0] + 0.2 * ylim_diff,
     #             s=plot_data["Team"][i],
     #             backgroundcolor="#0000009f",
     #             color="#ffffff9f",
