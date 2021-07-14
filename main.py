@@ -21,6 +21,7 @@ if __name__ == "__main__":
 
     print("Loading plotting libraries ... ")
 
+    import matplotlib as mpl
     import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
@@ -29,8 +30,8 @@ if __name__ == "__main__":
     # don't warn on chained assignment (hopefully the code is correct :)
     pd.options.mode.chained_assignment = None
 
-    sns.set_style("darkgrid")
-    sns.set(rc={
+    mpl.rcParams.update({
+        "axes.axisbelow": True,
         "axes.edgecolor": "#ffffff9f",
         "axes.facecolor": "black",
         "axes.labelcolor": "#ffffff9f",
@@ -106,10 +107,12 @@ if __name__ == "__main__":
         _, _ = plt.subplots()
         plt.figure(figsize=_plot_size)
 
-        g = sns.lineplot(x="Date", y="Rating", data=df,
-                         hue="Team", palette=team_colors, hue_order=team_names)
+        for name, color in plot_teams:
+            plt.plot("Rating", data=df[df["Team"] == name], color=color, label=name)
+        plt.legend()
 
         plt.xlim(pd.to_datetime(_line_plot_start), pd.to_datetime(_line_plot_end))
+        plt.grid(True, axis="y")
 
         plt.title("Rating Progression of Select Teams")
 
@@ -152,7 +155,7 @@ if __name__ == "__main__":
 
         ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
         plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
-        plt.grid(False, axis="x")
+        plt.grid(True, axis="y")
 
         y_min = plt.ylim()[0]
         for i, a in enumerate(bars):
@@ -204,7 +207,7 @@ if __name__ == "__main__":
     #
     #     ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
     #     plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
-    #     plt.grid(False, axis="x")
+    #     plt.grid(True, axis="y")
     #
     #     y_min = plt.ylim()[0]
     #     for i, a in enumerate(bars):
