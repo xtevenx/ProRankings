@@ -6,8 +6,8 @@ _line_plot_end = "2022-01-08 00:00:00"
 _bar_output = "data/output_bar.png"
 _tourney_output = "data/output_tourney.png"
 
-_plot_size = (10.11, 5.69)
-_plot_dpi = 189.91
+_plot_size = (9.6, 5.4)
+_plot_dpi = 200
 
 _bar_number_teams = 12
 _line_smooth_factor = 1.5
