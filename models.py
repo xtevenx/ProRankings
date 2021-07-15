@@ -56,7 +56,7 @@ class TeamData:
 
     def finalize(self, date):
         if self.games_bank:
-            self.rating, self.deviation, self.volatility = glicko2_utils.get_new_stats(
+            self.rating, self.deviation, self.volatility = glicko2_utils.update_stats(
                 self.rating, self.deviation, self.volatility, self.games_bank)
             self.rating_history.append((date, self.rating))
 
@@ -70,7 +70,7 @@ class TeamData:
         self.games_bank_end = new_bank_end
 
     def soft_reset_stats(self):
-        self.rating, self.deviation, self.volatility = glicko2_utils.get_new_stats(
+        self.rating, self.deviation, self.volatility = glicko2_utils.update_stats(
             self.rating, self.deviation, self.volatility,
             ((glicko2_utils.INITIAL_RATING, glicko2_utils.INITIAL_DEVIATION, 0.5),) * _RATING_RESET_FACTOR
         )
