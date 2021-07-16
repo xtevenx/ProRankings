@@ -124,8 +124,8 @@ def _get_sigma_p(mu: float, phi: float, sigma: float, results: ResultList) -> fl
 
 
 # Public functions.
-def update_stats(rating: float, deviation: float, volatility: float, results: ResultList
-                 ) -> (float, float, float):
+def update_stats(rating: float, deviation: float, volatility: float, results: ResultList,
+                 time: float = 1) -> (float, float, float):
     """Get new stats for a player based on a collection of games.
 
     Calculate a new rating, deviation, and volatility for a player based on
@@ -139,13 +139,16 @@ def update_stats(rating: float, deviation: float, volatility: float, results: Re
     :param float volatility: The current rating volatility of the player.
     :param ResultList results: The collection of game results with which to
         calculate the new stats.
+    :param float time: The amount of time that has passed since the stats were
+        last updated. This value is in an arbitrary unit determined by the
+        rating system manager.
 
     :return tuple: Three values representing the player's new rating,
         deviation and volatility respectively.
     """
 
     if not results:
-        deviation = update_deviation(deviation, volatility)
+        deviation = update_deviation(deviation, volatility, time=time)
         return rating, deviation, volatility
 
     # Step 0
@@ -161,7 +164,7 @@ def update_stats(rating: float, deviation: float, volatility: float, results: Re
     sigma_p = _get_sigma_p(mu, phi, sigma, v2_results)
 
     # Step 6
-    phi_s = math.sqrt(phi ** 2 + sigma_p ** 2)
+    phi_s = math.sqrt(phi ** 2 + time * sigma_p ** 2)
 
     # Step 7
     phi_p = 1 / math.sqrt(1 / phi_s ** 2 + 1 / _get_v(mu, v2_results))
@@ -180,12 +183,8 @@ def update_stats(rating: float, deviation: float, volatility: float, results: Re
 
 def update_deviation(deviation: float, volatility: float, time: float = 1) -> float:
     """Update a rating deviation."""
-
     _, phi = _convert_v2(float(), deviation)
-
-    for _ in range(math.floor(time)):
-        phi = math.sqrt(phi ** 2 + volatility ** 2)
-
+    phi = math.sqrt(phi ** 2 + time * volatility ** 2)
     _, deviation = _convert_v1(float(), phi)
     return deviation
 
