@@ -1,4 +1,6 @@
+import datetime
 import time
+
 import glicko2_utils
 
 _RATING_INTERVAL = 7
@@ -11,20 +13,9 @@ _RATING_RESET_FACTOR: int = 32
 _DEVIATION_RESET_TIME: int = 365 // _RATING_INTERVAL
 
 
-def convert_to_days(utc_string: str) -> int:
-    # remove the time of day from the date and time.
-    utc_string = utc_string.split()[0]
-
-    # calculate the amount of days since year zero.
-    year, month, day = [int(n) for n in utc_string.split("-")]
-
-    days = 365 * year
-    days += (year // 4) - (year // 100) + (year // 400)
-    days += sum(_DAYS_PER_MONTH[:month - 1])
-    days += (month > 2) and (year % 400 == 0 or (year % 4 == 0 and year % 100 != 0))
-    days += day
-
-    return days
+def convert_to_days(str_: str) -> float:
+    dt = datetime.datetime.strptime(str_, "%Y-%m-%d %H:%M:%S")
+    return dt.timestamp() / 60 / 60 / 24
 
 
 class TeamData:
