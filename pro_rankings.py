@@ -264,58 +264,62 @@ def get_teams_data():
     return teams
 
 
-def get_team_names(tournaments=_MAJOR_LEAGUES) -> set:
-    # create database access object
-    site: mwclient.Site = mwclient.Site("lol.fandom.com", path="/")
+def get_tournaments_teams(tournaments) -> set:
+    """Get the set of participant team names from a list of tournament names."""
 
-    # iterate through tournaments and collect teams.
-    team_names: set = set()
+    _names = set()
+    for _n in tournaments:
+        _names |= get_tournament_teams(_n)
 
-    for league_name in tournaments:
-        _QUERY_DELAY.ensure_delay()
-        response: dict = site.api(
-            "cargoquery",
-            limit="max",
-            tables="Standings=S",
-            fields="S.Team",
-            where=f"S.OverviewPage='{league_name}'"
-        )
+    print(f"Finished gathering {len(_names)} team names.")
+    return _names
 
-        # add data to the set of all teams.
-        query_result: dict = response.get("cargoquery")
-        for _t in query_result:
-            team_name = _t.get("title").get("Team")
-            if team_name.startswith("TBD "):
-                continue
-            team_names.add(team_name)
 
-        # display progress for this iteration.
-        print(f"Collected {len(query_result)} team names from `{league_name}` ... ")
+def get_tournament_teams(tournament) -> set:
+    """Get the set of participant team names for a tournament name."""
 
-    print(f"Finished gathering {len(team_names)} team names.")
-    return team_names
+    _QUERY_DELAY.ensure_delay()
+    _response: dict = mwclient.Site(
+        "lol.fandom.com", path="/"
+    ).api(
+        "cargoquery",
+        limit="max",
+        tables="Standings=S",
+        fields="S.Team",
+        where=f"S.OverviewPage='{tournament}'"
+    ).get("cargoquery")
+
+    _names = tuple(_d["title"]["Team"] for _d in _response)
+    _names = set(_n for _n in _names if not _n.startswith("TBD "))
+
+    print(f"Collected {len(_names)} team names from `{tournament}` ... ")
+    return _names
 
 
 if __name__ == "__main__":
     current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     teams_dictionary = get_teams_data()
 
-    team_names = get_team_names(_MAJOR_LEAGUES)
+    team_names = get_tournaments_teams(_MAJOR_LEAGUES)
     # team_names = get_team_names([
     #     "2020 Season World Championship/Main Event",
     #     "2020 Season World Championship/Play-in"
     # ])
 
     teams_list = [t for t in teams_dictionary.values() if t.name in team_names]
-    # teams_list: list[TeamData] = [
-    #     t for t in teams_dictionary.values()
-    #     if convert_to_days(current_date) - t.last_game < 30 and t.deviation < 100]
-    teams_list = sorted(teams_list, key=lambda t: -t.rating)
+    teams_list.sort(key=lambda t: t.rating, reverse=True)
 
-    longest_name = len(max(teams_list, key=lambda t: len(t.name)).name)
+    longest_name = max(teams_list, key=lambda t: len(t.name)).name
     for i, team in enumerate(teams_list):
         beautified_rank = f"{i + 1}.".rjust(3)
-        beautified_name = team.name.ljust(longest_name + 2)
-        beautified_rating = f"{team.rating:.1f}".rjust(6)
-        beautified_deviation = f"{team.deviation:.1f}".rjust(4)
+        beautified_name = team.name.ljust(len(longest_name) + 2)
+        beautified_rating = f"{team.rating:.0f}".rjust(4)
+        beautified_deviation = f"{2 * team.deviation:.0f}".rjust(3)
         print(f"{beautified_rank} {beautified_name} {beautified_rating} ± {beautified_deviation}")
+
+    # Calculate average ratings for each major league.
+    for league_name in _MAJOR_LEAGUES:
+        league_teams = get_tournaments_teams((league_name,))
+        league_teams = [t for t in teams_list if t.name in league_teams]
+        avg_rating = sum(t.rating for t in league_teams) / len(league_teams)
+        print(f"{league_name} average rating: {avg_rating:.2f}")
