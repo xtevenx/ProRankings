@@ -18,11 +18,11 @@ class TeamData:
         self.deviation: float = glicko2_utils.INITIAL_DEVIATION
         self.volatility: float = glicko2_utils.INITIAL_VOLATILITY
 
-        # In number of days after the Unix epoch.
-        self._last_game: float = convert_to_days(creation_date)
-
         # Format: [(date: str, rating: float), ... ]
         self.rating_history: list = [(creation_date, self.rating)]
+
+        # In number of days after the Unix epoch.
+        self._last_game: float = convert_to_days(creation_date)
 
     def update_rating(self, opponent: "TeamData", score: float, date: str) -> None:
         self.rating, self.deviation, self.volatility = glicko2_utils.update_stats(
@@ -38,6 +38,7 @@ class TeamData:
             time=(date_days := convert_to_days(date)) - self._last_game
         )
 
+        self.rating_history.append((date, self.rating))
         self._last_game = date_days
 
     def soft_reset_stats(self) -> None:
