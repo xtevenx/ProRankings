@@ -17,7 +17,6 @@ if __name__ == "__main__":
 
     teams_dictionary = get_teams_data()
     current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    [t.finalize(current_date) for t in teams_dictionary.values()]
 
     print("Loading plotting libraries ... ")
 

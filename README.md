@@ -42,10 +42,9 @@ However, there are some things of note:
 
 *   Each game in Mid-Season Invitationals or World Championships count for
     twice as much as other games.
-*   At the start of each season, the ratings are reset approximately 40%
-    towards the average, and the rating deviations are adjusted to be
-    equivalent to if there was a year without play. This is done to try to
-    account for the rapidly changing meta.
+*   At the start of each season, the rating deviations are adjusted to be
+    equivalent to if there was a year without play. This increases the rating's
+    volatility and is done to try to account for the rapidly changing meta.
 *   The average rating is set to the average FIDE standard rating which is, as
     of June 2021, 1645. There is no meaning behind this and is done purely based
     on personal preference (in other words, for fun).
