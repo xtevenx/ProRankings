@@ -5,7 +5,7 @@ import mwclient
 from models import QueryDelay, TeamData
 
 # iterable of all the major leagues.
-_MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
+MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # how much extra do interregional games count towards one's rating.
 _INTERREGIONAL_BONUS: int = 1
@@ -300,7 +300,7 @@ if __name__ == "__main__":
     current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     teams_dictionary = get_teams_data()
 
-    team_names = get_tournaments_teams(_MAJOR_LEAGUES)
+    team_names = get_tournaments_teams(MAJOR_LEAGUES)
     # team_names = get_team_names([
     #     "2020 Season World Championship/Main Event",
     #     "2020 Season World Championship/Play-in"
@@ -318,7 +318,7 @@ if __name__ == "__main__":
         print(f"{beautified_rank} {beautified_name} {beautified_rating} ± {beautified_deviation}")
 
     # Calculate average ratings for each major league.
-    for league_name in _MAJOR_LEAGUES:
+    for league_name in MAJOR_LEAGUES:
         league_teams = get_tournaments_teams((league_name,))
         league_teams = [t for t in teams_list if t.name in league_teams]
         avg_rating = sum(t.rating for t in league_teams) / len(league_teams)

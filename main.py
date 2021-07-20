@@ -121,7 +121,7 @@ if __name__ == "__main__":
     if "bar":
         print("Preparing data for bar graph ... ")
 
-        team_names = get_tournaments_teams()
+        team_names = get_tournaments_teams(MAJOR_LEAGUES)
         teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
 
         all_names = {t[0] for t in teams_data}
