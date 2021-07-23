@@ -4,7 +4,7 @@ import zipfile
 
 if __name__ == "__main__":
     print("Downloading data file ... ")
-    url = "http://ratings.fide.com/download/players_list_xml.zip"
+    url = "https://ratings.fide.com/download/players_list_xml.zip"
     urllib.request.urlretrieve(url, "players_list_xml.zip")
 
     print("Extracting data file ... ")
