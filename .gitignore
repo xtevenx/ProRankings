@@ -144,3 +144,5 @@ cython_debug/
 
 # Generated script files
 data/past_data.json
+players_list_xml.zip
+players_list_xml_foa.xml
