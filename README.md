@@ -35,8 +35,9 @@ This chart displays the calculated rating progression for select teams.
 About the Rating System
 -----------------------
 
-The ratings are calculated using the [Glicko-2][1] rating system on weekly
-intervals.
+The ratings are calculated using the [Glicko-2][1] rating system. Each game
+counts as its own rating interval and the rating deviation is adjusted
+accordingly to the time since the last game.
 
 However, there are some things of note:
 
