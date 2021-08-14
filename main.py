@@ -227,4 +227,21 @@ if __name__ == "__main__":
     #     plt.savefig(_tourney_output, dpi=_plot_dpi)
     #     plt.clf()
 
+    if "readme":
+        print("Generating README.md ... ")
+
+        with open("TEMPLATE.md", "r") as fp:
+            template = fp.read()
+
+        team_names = get_tournaments_teams(MAJOR_LEAGUES)
+        teams_data = [(k, v.rating) for k, v in teams_dictionary.items() if k in team_names]
+        teams_data.sort(key=lambda t: t[1], reverse=True)
+
+        string_list = [f"| {i + 1} | {n} | {r:.0f} |" for i, (n, r) in enumerate(teams_data)]
+        string_table = "| | Team | Rating |\n| ---: | --- | --- |\n" + "\n".join(string_list)
+        template = template.replace("{{ RatingTable }}", string_table)
+
+        with open("README.md", "w+") as fp:
+            fp.write(template)
+
     print("Done.")
