@@ -32,6 +32,59 @@ Rating Progression of Select Teams
 This chart displays the calculated rating progression for select teams.
 ![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png "Rating Progression of Select Teams")
 
+Rating List for Major Regions
+-----------------------------
+
+| | Team | Rating |
+| ---: | --- | --- |
+| 1 | Royal Never Give Up | 2513 |
+| 2 | FunPlus Phoenix | 2511 |
+| 3 | DWG KIA | 2501 |
+| 4 | MAD Lions | 2469 |
+| 5 | EDward Gaming | 2456 |
+| 6 | Team WE | 2414 |
+| 7 | Rogue (European Team) | 2385 |
+| 8 | Rare Atom | 2366 |
+| 9 | LNG Esports | 2360 |
+| 10 | Top Esports | 2359 |
+| 11 | Suning | 2355 |
+| 12 | Gen.G | 2352 |
+| 13 | G2 Esports | 2345 |
+| 14 | T1 | 2340 |
+| 15 | Afreeca Freecs | 2333 |
+| 16 | Liiv SANDBOX | 2322 |
+| 17 | Nongshim RedForce | 2321 |
+| 18 | Bilibili Gaming | 2319 |
+| 19 | Misfits Gaming | 2308 |
+| 20 | TSM | 2308 |
+| 21 | Team Liquid | 2307 |
+| 22 | Evil Geniuses.NA | 2306 |
+| 23 | 100 Thieves | 2302 |
+| 24 | Cloud9 | 2300 |
+| 25 | Fnatic | 2258 |
+| 26 | Hanwha Life Esports | 2253 |
+| 27 | KT Rolster | 2248 |
+| 28 | JD Gaming | 2248 |
+| 29 | Oh My God | 2225 |
+| 30 | Fredit BRION | 2214 |
+| 31 | Invictus Gaming | 2213 |
+| 32 | Immortals | 2202 |
+| 33 | LGD Gaming | 2201 |
+| 34 | Rogue Warriors | 2193 |
+| 35 | Team Vitality | 2171 |
+| 36 | Excel Esports | 2151 |
+| 37 | Astralis | 2140 |
+| 38 | Ultra Prime | 2137 |
+| 39 | Dignitas | 2118 |
+| 40 | SK Gaming | 2094 |
+| 41 | DRX | 2083 |
+| 42 | Golden Guardians | 2077 |
+| 43 | ThunderTalk Gaming | 2071 |
+| 44 | FlyQuest | 2043 |
+| 45 | FC Schalke 04 Esports | 2036 |
+| 46 | Counter Logic Gaming | 2005 |
+| 47 | Victory Five | 1944 |
+
 About the Rating System
 -----------------------
 
