@@ -36,7 +36,7 @@ Rating List for Major Regions
 -----------------------------
 
 | | Team | Rating |
-| ---: | --- | --- |
+| --: | --- | :-: |
 | 1 | Royal Never Give Up | 2513 |
 | 2 | FunPlus Phoenix | 2511 |
 | 3 | DWG KIA | 2501 |
