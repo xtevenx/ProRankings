@@ -13,10 +13,12 @@ a {
 
 .markdown-body table {
     display: table;
+    margin: 1% 3%;  /* controls: width */
     table-layout: auto;
+    width: calc(100% - 2*3%);  /* dependant on: margin */
 }
 
 .markdown-body table th, .markdown-body table td {
     background-color: #000000;
-    border: 1px solid #ffffff9f;
+    border: 1px solid #ffffff5f;
 }
