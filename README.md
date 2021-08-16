@@ -51,16 +51,16 @@ Rating List for Major Regions
 | 12 | Gen.G | 2352 |
 | 13 | G2 Esports | 2345 |
 | 14 | T1 | 2340 |
-| 15 | Afreeca Freecs | 2333 |
-| 16 | Liiv SANDBOX | 2322 |
-| 17 | Nongshim RedForce | 2321 |
-| 18 | Bilibili Gaming | 2319 |
-| 19 | Misfits Gaming | 2308 |
-| 20 | TSM | 2308 |
-| 21 | Team Liquid | 2307 |
-| 22 | Evil Geniuses.NA | 2306 |
-| 23 | 100 Thieves | 2302 |
-| 24 | Cloud9 | 2300 |
+| 15 | Team Liquid | 2336 |
+| 16 | Afreeca Freecs | 2333 |
+| 17 | Liiv SANDBOX | 2322 |
+| 18 | Nongshim RedForce | 2321 |
+| 19 | Bilibili Gaming | 2319 |
+| 20 | Misfits Gaming | 2308 |
+| 21 | Evil Geniuses.NA | 2306 |
+| 22 | 100 Thieves | 2302 |
+| 23 | Cloud9 | 2300 |
+| 24 | TSM | 2277 |
 | 25 | Fnatic | 2258 |
 | 26 | Hanwha Life Esports | 2253 |
 | 27 | KT Rolster | 2248 |
