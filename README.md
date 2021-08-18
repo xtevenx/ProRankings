@@ -49,14 +49,14 @@ Rating List for Major Regions
 | 10 | Top Esports | 2359 |
 | 11 | Suning | 2355 |
 | 12 | Gen.G | 2352 |
-| 13 | Afreeca Freecs | 2346 |
-| 14 | G2 Esports | 2345 |
-| 15 | T1 | 2340 |
-| 16 | Team Liquid | 2336 |
-| 17 | Liiv SANDBOX | 2322 |
-| 18 | Bilibili Gaming | 2319 |
-| 19 | Misfits Gaming | 2308 |
-| 20 | Nongshim RedForce | 2306 |
+| 13 | G2 Esports | 2345 |
+| 14 | T1 | 2340 |
+| 15 | Team Liquid | 2336 |
+| 16 | Afreeca Freecs | 2332 |
+| 17 | Nongshim RedForce | 2322 |
+| 18 | Liiv SANDBOX | 2322 |
+| 19 | Bilibili Gaming | 2319 |
+| 20 | Misfits Gaming | 2308 |
 | 21 | Evil Geniuses.NA | 2306 |
 | 22 | 100 Thieves | 2302 |
 | 23 | Cloud9 | 2300 |
