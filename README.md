@@ -53,13 +53,13 @@ This table contains rating data for all major region teams.
 | 9 | LNG Esports | 2360 |
 | 10 | Top Esports | 2359 |
 | 11 | Suning | 2355 |
-| 12 | Gen.G | 2352 |
-| 13 | Nongshim RedForce | 2348 |
-| 14 | G2 Esports | 2345 |
-| 15 | T1 | 2340 |
+| 12 | T1 | 2355 |
+| 13 | Gen.G | 2352 |
+| 14 | Nongshim RedForce | 2348 |
+| 15 | G2 Esports | 2345 |
 | 16 | Team Liquid | 2336 |
-| 17 | Liiv SANDBOX | 2322 |
-| 18 | Bilibili Gaming | 2319 |
+| 17 | Bilibili Gaming | 2319 |
+| 18 | Liiv SANDBOX | 2309 |
 | 19 | Misfits Gaming | 2308 |
 | 20 | Afreeca Freecs | 2306 |
 | 21 | Evil Geniuses.NA | 2306 |
