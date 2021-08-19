@@ -49,22 +49,22 @@ This table contains rating data for all major region teams.
 | 5 | EDward Gaming | 2456 |
 | 6 | Team WE | 2414 |
 | 7 | Rogue (European Team) | 2385 |
-| 8 | Rare Atom | 2366 |
-| 9 | LNG Esports | 2360 |
-| 10 | Top Esports | 2359 |
-| 11 | Suning | 2355 |
-| 12 | T1 | 2355 |
+| 8 | T1 | 2367 |
+| 9 | Rare Atom | 2366 |
+| 10 | LNG Esports | 2360 |
+| 11 | Top Esports | 2359 |
+| 12 | Suning | 2355 |
 | 13 | Gen.G | 2352 |
 | 14 | Nongshim RedForce | 2348 |
 | 15 | G2 Esports | 2345 |
 | 16 | Team Liquid | 2336 |
 | 17 | Bilibili Gaming | 2319 |
-| 18 | Liiv SANDBOX | 2309 |
-| 19 | Misfits Gaming | 2308 |
-| 20 | Afreeca Freecs | 2306 |
-| 21 | Evil Geniuses.NA | 2306 |
-| 22 | 100 Thieves | 2302 |
-| 23 | Cloud9 | 2300 |
+| 18 | Misfits Gaming | 2308 |
+| 19 | Afreeca Freecs | 2306 |
+| 20 | Evil Geniuses.NA | 2306 |
+| 21 | 100 Thieves | 2302 |
+| 22 | Cloud9 | 2300 |
+| 23 | Liiv SANDBOX | 2297 |
 | 24 | TSM | 2277 |
 | 25 | Fnatic | 2258 |
 | 26 | Hanwha Life Esports | 2253 |
