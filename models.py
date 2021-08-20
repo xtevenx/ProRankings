@@ -32,7 +32,7 @@ class TeamData:
             results=((opponent.rating, opponent.deviation, score),),
             # By the way, this next line is horrible code design because
             # `date_days` is defined in a very nondescript manner yet is used
-            # later and not in the same "code block". The # only reason it is
+            # later and not in the same "code block". The only reason it is
             # defined here is because... idk it didn't look good defining it
             # before lol.
             time=(date_days := convert_to_days(date)) - self._last_game
