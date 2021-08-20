@@ -1,9 +1,8 @@
 This site displays calculated ratings for professional League of Legends teams.
 Only teams from the four major regions are included in the below charts, however
 all games are accounted for when calculating the ratings. Due to the nature of
-the rating system (see notes below), the ratings may be very inaccurate at the
-start of each season, and generally become more accurate as more games are
-played.
+the rating system, the ratings may be very inaccurate at the start of each
+season, and generally become more accurate as more games are played.
 
 View the source on [GitHub][2].
 
@@ -18,7 +17,8 @@ Ratings of Top Teams
 --------------------
 
 This chart displays the calculated ratings for the top teams in the four major
-leagues ([LCS][3], [LEC][4], [LCK][5], [LPL][6]).
+regions ([LCS][3], [LEC][4], [LCK][5], [LPL][6]). The top 12 teams are on this
+chart, the remainder can be found in the table below.
 
 [comment]: <> (Note: the top teams from minor leagues may have their ratings inflated if they )
 [comment]: <> (dominated their league. This is because if there are no inter-region games, )
@@ -29,38 +29,43 @@ leagues ([LCS][3], [LEC][4], [LCK][5], [LPL][6]).
 Rating Progression of Select Teams
 ----------------------------------
 
-This chart displays the calculated rating progression for select teams.
+This chart displays the calculated rating progression for select teams. These
+teams are chosen by a combination of their performance, personal preference, and
+which way the wind happened to be blowing when they were picked.
+
 ![image missing](https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png "Rating Progression of Select Teams")
 
 Rating List for Major Regions
 -----------------------------
 
+This table contains rating data for all major region teams.
+
 | | Team | Rating |
 | --: | --- | :-: |
-| 1 | Royal Never Give Up | 2513 |
-| 2 | FunPlus Phoenix | 2511 |
-| 3 | DWG KIA | 2501 |
-| 4 | MAD Lions | 2469 |
+| 1 | FunPlus Phoenix | 2511 |
+| 2 | DWG KIA | 2501 |
+| 3 | MAD Lions | 2469 |
+| 4 | Royal Never Give Up | 2459 |
 | 5 | EDward Gaming | 2456 |
 | 6 | Team WE | 2414 |
-| 7 | Rogue (European Team) | 2385 |
-| 8 | Rare Atom | 2366 |
-| 9 | LNG Esports | 2360 |
-| 10 | Top Esports | 2359 |
-| 11 | Suning | 2355 |
-| 12 | Gen.G | 2352 |
-| 13 | Nongshim RedForce | 2348 |
-| 14 | G2 Esports | 2345 |
-| 15 | T1 | 2340 |
-| 16 | Team Liquid | 2336 |
-| 17 | Liiv SANDBOX | 2322 |
+| 7 | LNG Esports | 2398 |
+| 8 | Rogue (European Team) | 2385 |
+| 9 | T1 | 2378 |
+| 10 | Rare Atom | 2366 |
+| 11 | Top Esports | 2359 |
+| 12 | Suning | 2355 |
+| 13 | Gen.G | 2352 |
+| 14 | Nongshim RedForce | 2348 |
+| 15 | G2 Esports | 2345 |
+| 16 | Cloud9 | 2342 |
+| 17 | Team Liquid | 2336 |
 | 18 | Bilibili Gaming | 2319 |
 | 19 | Misfits Gaming | 2308 |
 | 20 | Afreeca Freecs | 2306 |
-| 21 | Evil Geniuses.NA | 2306 |
-| 22 | 100 Thieves | 2302 |
-| 23 | Cloud9 | 2300 |
-| 24 | TSM | 2277 |
+| 21 | 100 Thieves | 2302 |
+| 22 | Liiv SANDBOX | 2286 |
+| 23 | TSM | 2277 |
+| 24 | Evil Geniuses.NA | 2263 |
 | 25 | Fnatic | 2258 |
 | 26 | Hanwha Life Esports | 2253 |
 | 27 | KT Rolster | 2248 |
@@ -88,20 +93,24 @@ Rating List for Major Regions
 About the Rating System
 -----------------------
 
-The ratings are calculated using the [Glicko-2][1] rating system. Each game
-counts as its own rating interval and the rating deviation is adjusted
-accordingly to the time since the last game.
+The ratings are calculated using the [Glicko-2][1] rating system.
 
 However, there are some things of note:
 
-*   Each game in Mid-Season Invitationals or World Championships count for
-    twice as much as other games.
+*   Each game in Mid-Season Invitationals or World Championships counts for
+    twice as much as other games in terms of rating calculations.
 *   At the start of each season, the rating deviations are adjusted to be
     equivalent to if there was a year without play. This increases the rating's
-    volatility and is done to try to account for the rapidly changing meta.
+    volatility and is done to try to account for season start meta shifts.
 *   The average rating is set to the average FIDE standard rating which is, as
-    of June 2021, 1645. There is no meaning behind this and is done purely based
-    on personal preference (in other words, for fun).
+    of June 2021, 1645. There is no meaning behind this and is done purely for
+    entertainment purposes.
+
+More technical things to note:
+
+*   The rating interval is set to one day, however, the ratings are calculated
+    after each game. This induces artificially high rating volatility values,
+    but the game has a volatile meta so that's not a bug it's a feature.
 
 Acknowledgements
 ----------------
