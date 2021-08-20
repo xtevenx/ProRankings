@@ -59,11 +59,11 @@ This table contains rating data for all major region teams.
 | 15 | G2 Esports | 2345 |
 | 16 | Team Liquid | 2336 |
 | 17 | Bilibili Gaming | 2319 |
-| 18 | Misfits Gaming | 2308 |
-| 19 | Afreeca Freecs | 2306 |
-| 20 | Evil Geniuses.NA | 2306 |
+| 18 | Cloud9 | 2316 |
+| 19 | Misfits Gaming | 2308 |
+| 20 | Afreeca Freecs | 2306 |
 | 21 | 100 Thieves | 2302 |
-| 22 | Cloud9 | 2300 |
+| 22 | Evil Geniuses.NA | 2290 |
 | 23 | Liiv SANDBOX | 2286 |
 | 24 | TSM | 2277 |
 | 25 | Fnatic | 2258 |
