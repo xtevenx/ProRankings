@@ -57,15 +57,15 @@ This table contains rating data for all major region teams.
 | 13 | Gen.G | 2352 |
 | 14 | Nongshim RedForce | 2348 |
 | 15 | G2 Esports | 2345 |
-| 16 | Team Liquid | 2336 |
-| 17 | Cloud9 | 2330 |
+| 16 | Cloud9 | 2342 |
+| 17 | Team Liquid | 2336 |
 | 18 | Bilibili Gaming | 2319 |
 | 19 | Misfits Gaming | 2308 |
 | 20 | Afreeca Freecs | 2306 |
 | 21 | 100 Thieves | 2302 |
 | 22 | Liiv SANDBOX | 2286 |
 | 23 | TSM | 2277 |
-| 24 | Evil Geniuses.NA | 2275 |
+| 24 | Evil Geniuses.NA | 2263 |
 | 25 | Fnatic | 2258 |
 | 26 | Hanwha Life Esports | 2253 |
 | 27 | KT Rolster | 2248 |
