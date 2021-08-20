@@ -47,11 +47,11 @@ This table contains rating data for all major region teams.
 | 3 | MAD Lions | 2469 |
 | 4 | Royal Never Give Up | 2460 |
 | 5 | EDward Gaming | 2456 |
-| 6 | Team WE | 2415 |
+| 6 | Team WE | 2416 |
 | 7 | LNG Esports | 2398 |
 | 8 | Rogue (European Team) | 2385 |
 | 9 | T1 | 2378 |
-| 10 | Rare Atom | 2366 |
+| 10 | Rare Atom | 2362 |
 | 11 | Top Esports | 2359 |
 | 12 | Suning | 2355 |
 | 13 | Gen.G | 2352 |
