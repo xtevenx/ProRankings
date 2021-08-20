@@ -45,9 +45,9 @@ This table contains rating data for all major region teams.
 | 1 | FunPlus Phoenix | 2511 |
 | 2 | DWG KIA | 2501 |
 | 3 | MAD Lions | 2469 |
-| 4 | Royal Never Give Up | 2459 |
+| 4 | Royal Never Give Up | 2460 |
 | 5 | EDward Gaming | 2456 |
-| 6 | Team WE | 2414 |
+| 6 | Team WE | 2415 |
 | 7 | LNG Esports | 2398 |
 | 8 | Rogue (European Team) | 2385 |
 | 9 | T1 | 2378 |
@@ -55,40 +55,40 @@ This table contains rating data for all major region teams.
 | 11 | Top Esports | 2359 |
 | 12 | Suning | 2355 |
 | 13 | Gen.G | 2352 |
-| 14 | Nongshim RedForce | 2348 |
-| 15 | G2 Esports | 2345 |
+| 14 | Nongshim RedForce | 2349 |
+| 15 | G2 Esports | 2346 |
 | 16 | Cloud9 | 2342 |
 | 17 | Team Liquid | 2336 |
 | 18 | Bilibili Gaming | 2319 |
-| 19 | Misfits Gaming | 2308 |
+| 19 | Misfits Gaming | 2309 |
 | 20 | Afreeca Freecs | 2306 |
 | 21 | 100 Thieves | 2302 |
 | 22 | Liiv SANDBOX | 2286 |
-| 23 | TSM | 2277 |
-| 24 | Evil Geniuses.NA | 2263 |
-| 25 | Fnatic | 2258 |
-| 26 | Hanwha Life Esports | 2253 |
+| 23 | TSM | 2278 |
+| 24 | Evil Geniuses.NA | 2264 |
+| 25 | Fnatic | 2259 |
+| 26 | Hanwha Life Esports | 2254 |
 | 27 | KT Rolster | 2248 |
 | 28 | JD Gaming | 2248 |
-| 29 | Oh My God | 2225 |
+| 29 | Oh My God | 2226 |
 | 30 | Fredit BRION | 2214 |
-| 31 | Invictus Gaming | 2213 |
+| 31 | Invictus Gaming | 2214 |
 | 32 | Immortals | 2202 |
 | 33 | LGD Gaming | 2201 |
 | 34 | Rogue Warriors | 2193 |
 | 35 | Team Vitality | 2171 |
-| 36 | Excel Esports | 2151 |
+| 36 | Excel Esports | 2152 |
 | 37 | Astralis | 2140 |
 | 38 | Ultra Prime | 2137 |
-| 39 | Dignitas | 2118 |
-| 40 | SK Gaming | 2094 |
+| 39 | Dignitas | 2119 |
+| 40 | SK Gaming | 2095 |
 | 41 | DRX | 2083 |
-| 42 | Golden Guardians | 2077 |
-| 43 | ThunderTalk Gaming | 2071 |
+| 42 | Golden Guardians | 2078 |
+| 43 | ThunderTalk Gaming | 2072 |
 | 44 | FlyQuest | 2043 |
 | 45 | FC Schalke 04 Esports | 2036 |
-| 46 | Counter Logic Gaming | 2005 |
-| 47 | Victory Five | 1944 |
+| 46 | Counter Logic Gaming | 2006 |
+| 47 | Victory Five | 1945 |
 
 About the Rating System
 -----------------------
