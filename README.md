@@ -61,8 +61,8 @@ This table contains rating data for all major region teams.
 | 17 | Team Liquid | 2336 |
 | 18 | Bilibili Gaming | 2319 |
 | 19 | Afreeca Freecs | 2306 |
-| 20 | 100 Thieves | 2302 |
-| 21 | TSM | 2293 |
+| 20 | TSM | 2305 |
+| 21 | 100 Thieves | 2302 |
 | 22 | Liiv SANDBOX | 2286 |
 | 23 | Misfits Gaming | 2283 |
 | 24 | Fnatic | 2283 |
@@ -75,7 +75,7 @@ This table contains rating data for all major region teams.
 | 31 | Invictus Gaming | 2214 |
 | 32 | LGD Gaming | 2201 |
 | 33 | Rogue Warriors | 2193 |
-| 34 | Immortals | 2188 |
+| 34 | Immortals | 2175 |
 | 35 | Team Vitality | 2171 |
 | 36 | Excel Esports | 2152 |
 | 37 | Astralis | 2140 |
