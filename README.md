@@ -42,7 +42,7 @@ This table contains rating data for all major region teams.
 
 | | Team | Rating |
 | --: | --- | :-: |
-| 1 | DWG KIA | 2520 |
+| 1 | DWG KIA | 2528 |
 | 2 | FunPlus Phoenix | 2511 |
 | 3 | MAD Lions | 2469 |
 | 4 | Royal Never Give Up | 2460 |
@@ -58,7 +58,7 @@ This table contains rating data for all major region teams.
 | 14 | G2 Esports | 2346 |
 | 15 | Cloud9 | 2342 |
 | 16 | Team Liquid | 2336 |
-| 17 | Nongshim RedForce | 2334 |
+| 17 | Nongshim RedForce | 2327 |
 | 18 | Bilibili Gaming | 2319 |
 | 19 | Afreeca Freecs | 2306 |
 | 20 | 100 Thieves | 2302 |
