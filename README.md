@@ -44,15 +44,15 @@ This table contains rating data for all major region teams.
 | --: | --- | :-: |
 | 1 | FunPlus Phoenix | 2546 |
 | 2 | DWG KIA | 2528 |
-| 3 | MAD Lions | 2469 |
+| 3 | MAD Lions | 2496 |
 | 4 | Royal Never Give Up | 2460 |
 | 5 | EDward Gaming | 2456 |
 | 6 | Team WE | 2416 |
-| 7 | Rogue (European Team) | 2385 |
-| 8 | T1 | 2378 |
-| 9 | LNG Esports | 2376 |
-| 10 | Rare Atom | 2362 |
-| 11 | Top Esports | 2359 |
+| 7 | T1 | 2378 |
+| 8 | LNG Esports | 2376 |
+| 9 | Rare Atom | 2362 |
+| 10 | Top Esports | 2359 |
+| 11 | Rogue (European Team) | 2356 |
 | 12 | Suning | 2355 |
 | 13 | Gen.G | 2352 |
 | 14 | G2 Esports | 2346 |
