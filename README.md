@@ -62,9 +62,9 @@ This table contains rating data for all major region teams.
 | 18 | Bilibili Gaming | 2319 |
 | 19 | Afreeca Freecs | 2306 |
 | 20 | 100 Thieves | 2302 |
-| 21 | Liiv SANDBOX | 2286 |
-| 22 | Misfits Gaming | 2283 |
-| 23 | TSM | 2283 |
+| 21 | TSM | 2296 |
+| 22 | Liiv SANDBOX | 2286 |
+| 23 | Misfits Gaming | 2283 |
 | 24 | Fnatic | 2283 |
 | 25 | Evil Geniuses.NA | 2264 |
 | 26 | Hanwha Life Esports | 2254 |
@@ -74,8 +74,8 @@ This table contains rating data for all major region teams.
 | 30 | Fredit BRION | 2214 |
 | 31 | Invictus Gaming | 2214 |
 | 32 | LGD Gaming | 2201 |
-| 33 | Immortals | 2199 |
-| 34 | Rogue Warriors | 2193 |
+| 33 | Rogue Warriors | 2193 |
+| 34 | Immortals | 2186 |
 | 35 | Team Vitality | 2171 |
 | 36 | Excel Esports | 2152 |
 | 37 | Astralis | 2140 |
