@@ -239,8 +239,8 @@ if __name__ == "__main__":
         teams_data.sort(key=lambda t: t[1], reverse=True)
 
         string_list = [
-            f"| {i + 1} | {n} | {r:.0f} | {d:.2f} |" for i, (n, r, d) in enumerate(teams_data)]
-        header = "| | Team | Rating | Deviation |\n| --: | --- | :-: | :-: |\n"
+            f"| {i + 1} | {n} | {r:.1f} | {d:.1f} |" for i, (n, r, d) in enumerate(teams_data)]
+        header = "| | Team | Rating | RD |\n| --: | --- | :-: | :-: |\n"
         template = template.replace("{{ RatingTable }}", header + "\n".join(string_list))
 
         with open("README.md", "w+") as fp:

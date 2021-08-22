@@ -38,7 +38,9 @@ which way the wind happened to be blowing when they were picked.
 Rating List for Major Regions
 -----------------------------
 
-This table contains rating data for all major region teams.
+This table contains rating data for all major region teams. The RD represents
+the "rating deviation", which roughly represents how confident the rating system
+is in its rating estimate for that team.
 
 {{ RatingTable }}
 
