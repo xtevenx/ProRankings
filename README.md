@@ -57,10 +57,10 @@ This table contains rating data for all major region teams.
 | 13 | G2 Esports | 2346 |
 | 14 | Rogue (European Team) | 2344 |
 | 15 | Cloud9 | 2342 |
-| 16 | Nongshim RedForce | 2327 |
-| 17 | 100 Thieves | 2324 |
+| 16 | Team Liquid | 2331 |
+| 17 | Nongshim RedForce | 2327 |
 | 18 | Bilibili Gaming | 2319 |
-| 19 | Team Liquid | 2317 |
+| 19 | 100 Thieves | 2308 |
 | 20 | Afreeca Freecs | 2306 |
 | 21 | TSM | 2296 |
 | 22 | Liiv SANDBOX | 2286 |
