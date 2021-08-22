@@ -54,15 +54,15 @@ This table contains rating data for all major region teams.
 | 10 | Top Esports | 2359 |
 | 11 | Suning | 2355 |
 | 12 | Gen.G | 2352 |
-| 13 | Team Liquid | 2351 |
-| 14 | G2 Esports | 2346 |
-| 15 | Rogue (European Team) | 2344 |
-| 16 | Cloud9 | 2342 |
-| 17 | Nongshim RedForce | 2327 |
+| 13 | G2 Esports | 2346 |
+| 14 | Rogue (European Team) | 2344 |
+| 15 | Cloud9 | 2342 |
+| 16 | Nongshim RedForce | 2327 |
+| 17 | 100 Thieves | 2324 |
 | 18 | Bilibili Gaming | 2319 |
-| 19 | Afreeca Freecs | 2306 |
-| 20 | TSM | 2296 |
-| 21 | 100 Thieves | 2286 |
+| 19 | Team Liquid | 2317 |
+| 20 | Afreeca Freecs | 2306 |
+| 21 | TSM | 2296 |
 | 22 | Liiv SANDBOX | 2286 |
 | 23 | Misfits Gaming | 2283 |
 | 24 | Fnatic | 2283 |
