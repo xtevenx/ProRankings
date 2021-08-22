@@ -55,19 +55,19 @@ is in its rating estimate for that team.
 | 9 | Rare Atom | 2361.7 | 72.9 |
 | 10 | Top Esports | 2359.4 | 71.2 |
 | 11 | Suning | 2355.4 | 69.8 |
-| 12 | G2 Esports | 2354.9 | 83.1 |
-| 13 | Rogue (European Team) | 2344.3 | 82.5 |
-| 14 | Team Liquid | 2344.2 | 70.4 |
-| 15 | Cloud9 | 2342.4 | 73.1 |
+| 12 | Rogue (European Team) | 2344.3 | 82.5 |
+| 13 | Team Liquid | 2344.2 | 70.4 |
+| 14 | Cloud9 | 2342.4 | 73.1 |
+| 15 | G2 Esports | 2333.3 | 81.1 |
 | 16 | Gen.G | 2330.1 | 69.0 |
 | 17 | Nongshim RedForce | 2326.8 | 67.8 |
 | 18 | Bilibili Gaming | 2319.5 | 73.6 |
 | 19 | Afreeca Freecs | 2306.5 | 67.7 |
 | 20 | TSM | 2295.8 | 76.3 |
-| 21 | 100 Thieves | 2293.9 | 73.9 |
-| 22 | Liiv SANDBOX | 2286.0 | 69.4 |
-| 23 | Misfits Gaming | 2283.4 | 77.4 |
-| 24 | Fnatic | 2277.0 | 73.2 |
+| 21 | Fnatic | 2294.4 | 71.8 |
+| 22 | 100 Thieves | 2293.9 | 73.9 |
+| 23 | Liiv SANDBOX | 2286.0 | 69.4 |
+| 24 | Misfits Gaming | 2283.4 | 77.4 |
 | 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
 | 26 | Hanwha Life Esports | 2253.5 | 72.7 |
 | 27 | KT Rolster | 2248.1 | 69.8 |
