@@ -50,7 +50,7 @@ is in its rating estimate for that team.
 | 4 | Royal Never Give Up | 2459.5 | 74.5 |
 | 5 | EDward Gaming | 2455.9 | 79.2 |
 | 6 | Team WE | 2416.3 | 66.5 |
-| 7 | T1 | 2390.3 | 69.3 |
+| 7 | T1 | 2401.1 | 68.1 |
 | 8 | LNG Esports | 2376.4 | 63.6 |
 | 9 | Rare Atom | 2361.7 | 72.9 |
 | 10 | Top Esports | 2359.4 | 71.2 |
@@ -59,7 +59,7 @@ is in its rating estimate for that team.
 | 13 | Rogue (European Team) | 2344.3 | 82.5 |
 | 14 | Team Liquid | 2344.2 | 70.4 |
 | 15 | Cloud9 | 2342.4 | 73.1 |
-| 16 | Gen.G | 2341.7 | 70.3 |
+| 16 | Gen.G | 2330.1 | 69.0 |
 | 17 | Nongshim RedForce | 2326.8 | 67.8 |
 | 18 | Bilibili Gaming | 2319.5 | 73.6 |
 | 19 | Afreeca Freecs | 2306.5 | 67.7 |
