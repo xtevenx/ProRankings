@@ -189,8 +189,36 @@ def update_deviation(deviation: float, volatility: float, time: float = 1) -> fl
     return deviation
 
 
+def win_pct(rating_1: float, deviation_1: float, rating_2: float, deviation_2: float) -> float:
+    """Get the estimated win percentage for a match-up.
+
+    Calculates the estimated win percentage for Player 1 in their match-up
+    against Player 2 given both of their stats.
+
+    The ratings and rating deviations used as arguments to this function are
+    all in the Glicko-1 rating system's scale.
+
+    :param float rating_1: The rating of Player 1.
+    :param float deviation_1: The rating deviation of Player 1.
+    :param float rating_2: The rating of Player 2.
+    :param float deviation_2: The rating deviation of Player 2.
+
+    :return float: A fraction between zero and one representing the estimated
+        win percentage.
+    """
+
+    mu_1, phi_1 = _convert_v2(rating_1, deviation_1)
+    mu_2, phi_2 = _convert_v2(rating_2, deviation_2)
+
+    return _e(mu_1, mu_2, math.sqrt(phi_1 ** 2 + phi_2 ** 2))
+
+
 if __name__ == "__main__":
     TAU: float = 0.5
 
     print(update_stats(rating=1500, deviation=200, volatility=0.06,
                        results=((1400, 30, 1), (1550, 100, 0), (1700, 300, 0))))
+
+    print(win_pct(1500, 200, 1400, 30))
+    print(win_pct(1500, 200, 1550, 100))
+    print(win_pct(1500, 200, 1700, 300))
