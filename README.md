@@ -48,10 +48,10 @@ is in its rating estimate for that team.
 | 2 | DWG KIA | 2527.8 | 75.0 |
 | 3 | MAD Lions | 2507.2 | 80.2 |
 | 4 | Royal Never Give Up | 2459.5 | 74.5 |
-| 5 | EDward Gaming | 2433.2 | 77.1 |
+| 5 | EDward Gaming | 2452.0 | 73.1 |
 | 6 | Team WE | 2430.6 | 62.8 |
 | 7 | T1 | 2401.1 | 68.1 |
-| 8 | LNG Esports | 2376.4 | 63.6 |
+| 8 | LNG Esports | 2362.7 | 63.6 |
 | 9 | Rare Atom | 2361.7 | 72.9 |
 | 10 | Top Esports | 2359.4 | 71.2 |
 | 11 | Suning | 2355.4 | 69.8 |
