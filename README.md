@@ -55,17 +55,17 @@ is in its rating estimate for that team.
 | 9 | Rare Atom | 2361.7 | 72.9 |
 | 10 | Top Esports | 2359.4 | 71.2 |
 | 11 | Suning | 2355.4 | 69.8 |
-| 12 | Cloud9 | 2349.6 | 68.1 |
-| 13 | Team Liquid | 2344.2 | 70.4 |
-| 14 | Gen.G | 2330.1 | 69.0 |
-| 15 | Nongshim RedForce | 2326.8 | 67.8 |
-| 16 | Fnatic | 2325.4 | 73.3 |
-| 17 | Rogue (European Team) | 2323.3 | 84.4 |
-| 18 | Bilibili Gaming | 2319.5 | 73.6 |
-| 19 | G2 Esports | 2313.9 | 79.1 |
-| 20 | Afreeca Freecs | 2306.5 | 67.7 |
-| 21 | 100 Thieves | 2293.9 | 73.9 |
-| 22 | TSM | 2290.5 | 69.9 |
+| 12 | Fnatic | 2350.8 | 70.5 |
+| 13 | Cloud9 | 2349.6 | 68.1 |
+| 14 | Team Liquid | 2344.2 | 70.4 |
+| 15 | Gen.G | 2330.1 | 69.0 |
+| 16 | Nongshim RedForce | 2326.8 | 67.8 |
+| 17 | Bilibili Gaming | 2319.5 | 73.6 |
+| 18 | G2 Esports | 2313.9 | 79.1 |
+| 19 | Afreeca Freecs | 2306.5 | 67.7 |
+| 20 | 100 Thieves | 2293.9 | 73.9 |
+| 21 | TSM | 2290.5 | 69.9 |
+| 22 | Rogue (European Team) | 2288.2 | 80.1 |
 | 23 | Liiv SANDBOX | 2286.0 | 69.4 |
 | 24 | Misfits Gaming | 2283.4 | 77.4 |
 | 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
