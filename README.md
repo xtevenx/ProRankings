@@ -56,13 +56,13 @@ is in its rating estimate for that team.
 | 10 | Top Esports | 2359.4 | 71.2 |
 | 11 | Suning | 2355.4 | 69.8 |
 | 12 | Cloud9 | 2349.6 | 68.1 |
-| 13 | Rogue (European Team) | 2344.3 | 82.5 |
-| 14 | Team Liquid | 2344.2 | 70.4 |
-| 15 | Gen.G | 2330.1 | 69.0 |
-| 16 | Nongshim RedForce | 2326.8 | 67.8 |
-| 17 | Bilibili Gaming | 2319.5 | 73.6 |
-| 18 | G2 Esports | 2313.9 | 79.1 |
-| 19 | Fnatic | 2309.0 | 70.5 |
+| 13 | Team Liquid | 2344.2 | 70.4 |
+| 14 | Gen.G | 2330.1 | 69.0 |
+| 15 | Nongshim RedForce | 2326.8 | 67.8 |
+| 16 | Fnatic | 2325.4 | 73.3 |
+| 17 | Rogue (European Team) | 2323.3 | 84.4 |
+| 18 | Bilibili Gaming | 2319.5 | 73.6 |
+| 19 | G2 Esports | 2313.9 | 79.1 |
 | 20 | Afreeca Freecs | 2306.5 | 67.7 |
 | 21 | 100 Thieves | 2293.9 | 73.9 |
 | 22 | TSM | 2290.5 | 69.9 |
