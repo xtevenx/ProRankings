@@ -44,28 +44,28 @@ is in its rating estimate for that team.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | FunPlus Phoenix | 2545.6 | 78.4 |
-| 2 | DWG KIA | 2527.8 | 75.0 |
-| 3 | MAD Lions | 2507.2 | 80.2 |
+| 1 | FunPlus Phoenix | 2578.8 | 77.3 |
+| 2 | DWG KIA | 2536.9 | 73.7 |
+| 3 | MAD Lions | 2513.9 | 78.1 |
 | 4 | Royal Never Give Up | 2459.5 | 74.5 |
-| 5 | EDward Gaming | 2433.2 | 77.1 |
-| 6 | Team WE | 2430.6 | 62.8 |
-| 7 | T1 | 2401.1 | 68.1 |
-| 8 | LNG Esports | 2376.4 | 63.6 |
-| 9 | Rare Atom | 2361.7 | 72.9 |
-| 10 | Top Esports | 2359.4 | 71.2 |
-| 11 | Suning | 2355.4 | 69.8 |
-| 12 | Cloud9 | 2349.6 | 68.1 |
-| 13 | Rogue (European Team) | 2344.3 | 82.5 |
-| 14 | Team Liquid | 2344.2 | 70.4 |
-| 15 | Gen.G | 2330.1 | 69.0 |
-| 16 | Nongshim RedForce | 2326.8 | 67.8 |
-| 17 | Bilibili Gaming | 2319.5 | 73.6 |
+| 5 | EDward Gaming | 2452.0 | 73.1 |
+| 6 | Team WE | 2408.4 | 64.1 |
+| 7 | T1 | 2394.5 | 68.2 |
+| 8 | 100 Thieves | 2367.7 | 68.7 |
+| 9 | LNG Esports | 2362.7 | 63.6 |
+| 10 | Rare Atom | 2361.7 | 72.9 |
+| 11 | Top Esports | 2359.4 | 71.2 |
+| 12 | Suning | 2355.4 | 69.8 |
+| 13 | Fnatic | 2346.8 | 67.0 |
+| 14 | Gen.G | 2330.1 | 69.0 |
+| 15 | Nongshim RedForce | 2326.8 | 67.8 |
+| 16 | Bilibili Gaming | 2319.5 | 73.6 |
+| 17 | Cloud9 | 2319.2 | 67.4 |
 | 18 | G2 Esports | 2313.9 | 79.1 |
-| 19 | Fnatic | 2309.0 | 70.5 |
-| 20 | Afreeca Freecs | 2306.5 | 67.7 |
-| 21 | 100 Thieves | 2293.9 | 73.9 |
-| 22 | TSM | 2290.5 | 69.9 |
+| 19 | Afreeca Freecs | 2306.5 | 67.7 |
+| 20 | Team Liquid | 2302.1 | 71.5 |
+| 21 | TSM | 2290.5 | 69.9 |
+| 22 | Rogue (European Team) | 2288.2 | 80.1 |
 | 23 | Liiv SANDBOX | 2286.0 | 69.4 |
 | 24 | Misfits Gaming | 2283.4 | 77.4 |
 | 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
