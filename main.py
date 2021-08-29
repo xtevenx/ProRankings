@@ -178,7 +178,10 @@ if __name__ == "__main__":
     # if "tournament":
     #     print("Preparing data for tournament bar graph ... ")
     #
-    #     team_names = get_team_names(["2021 Mid-Season Invitational"])
+    #     team_names = get_tournaments_teams([
+    #         "2021 Season World Championship/Main Event",
+    #         "2021 Season World Championship/Play-in",
+    #     ])
     #     teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
     #
     #     all_names = {t[0] for t in teams_data}
@@ -205,7 +208,7 @@ if __name__ == "__main__":
     #     bar_colors = sns.color_palette(palette="hls", n_colors=len(teams_data))
     #     bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
     #
-    #     plt.title("Ratings of Teams at MSI 2021")
+    #     plt.title("Ratings of Teams at Worlds 2021")
     #     plt.xticks(ticks=[])
     #
     #     ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
