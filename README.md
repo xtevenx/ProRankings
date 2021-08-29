@@ -51,19 +51,19 @@ is in its rating estimate for that team.
 | 5 | EDward Gaming | 2452.0 | 73.1 |
 | 6 | Team WE | 2408.4 | 64.1 |
 | 7 | T1 | 2394.5 | 68.2 |
-| 8 | LNG Esports | 2362.7 | 63.6 |
-| 9 | Rare Atom | 2361.7 | 72.9 |
-| 10 | Top Esports | 2359.4 | 71.2 |
-| 11 | Suning | 2355.4 | 69.8 |
-| 12 | Fnatic | 2346.8 | 67.0 |
-| 13 | 100 Thieves | 2343.4 | 71.2 |
+| 8 | 100 Thieves | 2367.7 | 68.7 |
+| 9 | LNG Esports | 2362.7 | 63.6 |
+| 10 | Rare Atom | 2361.7 | 72.9 |
+| 11 | Top Esports | 2359.4 | 71.2 |
+| 12 | Suning | 2355.4 | 69.8 |
+| 13 | Fnatic | 2346.8 | 67.0 |
 | 14 | Gen.G | 2330.1 | 69.0 |
-| 15 | Team Liquid | 2328.6 | 74.5 |
-| 16 | Nongshim RedForce | 2326.8 | 67.8 |
-| 17 | Bilibili Gaming | 2319.5 | 73.6 |
-| 18 | Cloud9 | 2319.2 | 67.4 |
-| 19 | G2 Esports | 2313.9 | 79.1 |
-| 20 | Afreeca Freecs | 2306.5 | 67.7 |
+| 15 | Nongshim RedForce | 2326.8 | 67.8 |
+| 16 | Bilibili Gaming | 2319.5 | 73.6 |
+| 17 | Cloud9 | 2319.2 | 67.4 |
+| 18 | G2 Esports | 2313.9 | 79.1 |
+| 19 | Afreeca Freecs | 2306.5 | 67.7 |
+| 20 | Team Liquid | 2302.1 | 71.5 |
 | 21 | TSM | 2290.5 | 69.9 |
 | 22 | Rogue (European Team) | 2288.2 | 80.1 |
 | 23 | Liiv SANDBOX | 2286.0 | 69.4 |
