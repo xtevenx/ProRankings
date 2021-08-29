@@ -56,9 +56,9 @@ is in its rating estimate for that team.
 | 10 | Top Esports | 2359.4 | 71.2 |
 | 11 | Suning | 2355.4 | 69.8 |
 | 12 | Fnatic | 2346.8 | 67.0 |
-| 13 | Team Liquid | 2344.2 | 70.4 |
+| 13 | 100 Thieves | 2343.4 | 71.2 |
 | 14 | Gen.G | 2330.1 | 69.0 |
-| 15 | 100 Thieves | 2328.5 | 72.1 |
+| 15 | Team Liquid | 2328.6 | 74.5 |
 | 16 | Nongshim RedForce | 2326.8 | 67.8 |
 | 17 | Bilibili Gaming | 2319.5 | 73.6 |
 | 18 | Cloud9 | 2319.2 | 67.4 |
