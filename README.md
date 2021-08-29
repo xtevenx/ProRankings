@@ -46,17 +46,17 @@ is in its rating estimate for that team.
 | --: | --- | :-: | :-: |
 | 1 | FunPlus Phoenix | 2578.8 | 77.3 |
 | 2 | DWG KIA | 2536.9 | 73.7 |
-| 3 | MAD Lions | 2518.7 | 83.3 |
+| 3 | MAD Lions | 2492.3 | 81.5 |
 | 4 | Royal Never Give Up | 2459.5 | 74.5 |
 | 5 | EDward Gaming | 2452.0 | 73.1 |
 | 6 | Team WE | 2408.4 | 64.1 |
 | 7 | T1 | 2394.5 | 68.2 |
 | 8 | LNG Esports | 2362.7 | 63.6 |
-| 9 | Rare Atom | 2361.7 | 72.9 |
-| 10 | Top Esports | 2359.4 | 71.2 |
-| 11 | Suning | 2355.4 | 69.8 |
-| 12 | Team Liquid | 2344.2 | 70.4 |
-| 13 | Fnatic | 2343.1 | 70.0 |
+| 9 | Fnatic | 2362.4 | 69.1 |
+| 10 | Rare Atom | 2361.7 | 72.9 |
+| 11 | Top Esports | 2359.4 | 71.2 |
+| 12 | Suning | 2355.4 | 69.8 |
+| 13 | Team Liquid | 2344.2 | 70.4 |
 | 14 | Gen.G | 2330.1 | 69.0 |
 | 15 | 100 Thieves | 2328.5 | 72.1 |
 | 16 | Nongshim RedForce | 2326.8 | 67.8 |
