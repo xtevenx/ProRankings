@@ -65,11 +65,11 @@ is in its rating estimate for that team.
 | 19 | Afreeca Freecs | 2306.5 | 67.7 |
 | 20 | Team Liquid | 2302.1 | 71.5 |
 | 21 | TSM | 2290.5 | 69.9 |
-| 22 | Rogue (European Team) | 2288.2 | 80.1 |
-| 23 | Misfits Gaming | 2283.4 | 77.4 |
-| 24 | Hanwha Life Esports | 2274.8 | 77.9 |
-| 25 | Liiv SANDBOX | 2266.5 | 73.3 |
-| 26 | Evil Geniuses.NA | 2263.6 | 72.2 |
+| 22 | Hanwha Life Esports | 2290.1 | 76.1 |
+| 23 | Rogue (European Team) | 2288.2 | 80.1 |
+| 24 | Misfits Gaming | 2283.4 | 77.4 |
+| 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
+| 26 | Liiv SANDBOX | 2252.4 | 71.9 |
 | 27 | KT Rolster | 2248.1 | 69.8 |
 | 28 | JD Gaming | 2247.9 | 75.8 |
 | 29 | Oh My God | 2225.6 | 76.1 |
