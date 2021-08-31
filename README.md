@@ -67,9 +67,9 @@ is in its rating estimate for that team.
 | 21 | TSM | 2290.5 | 69.9 |
 | 22 | Rogue (European Team) | 2288.2 | 80.1 |
 | 23 | Misfits Gaming | 2283.4 | 77.4 |
-| 24 | Liiv SANDBOX | 2282.6 | 74.9 |
-| 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
-| 26 | Hanwha Life Esports | 2257.4 | 79.8 |
+| 24 | Hanwha Life Esports | 2274.8 | 77.9 |
+| 25 | Liiv SANDBOX | 2266.5 | 73.3 |
+| 26 | Evil Geniuses.NA | 2263.6 | 72.2 |
 | 27 | KT Rolster | 2248.1 | 69.8 |
 | 28 | JD Gaming | 2247.9 | 75.8 |
 | 29 | Oh My God | 2225.6 | 76.1 |
