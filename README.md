@@ -58,13 +58,13 @@ is in its rating estimate for that team.
 | 12 | Suning | 2355.4 | 69.8 |
 | 13 | Fnatic | 2346.8 | 67.0 |
 | 14 | Gen.G | 2330.1 | 69.0 |
-| 15 | Bilibili Gaming | 2319.5 | 73.6 |
-| 16 | Cloud9 | 2319.2 | 67.4 |
-| 17 | G2 Esports | 2313.9 | 79.1 |
-| 18 | Nongshim RedForce | 2309.7 | 74.4 |
-| 19 | Hanwha Life Esports | 2306.7 | 75.0 |
-| 20 | Afreeca Freecs | 2306.5 | 67.7 |
-| 21 | Team Liquid | 2302.1 | 71.5 |
+| 15 | Hanwha Life Esports | 2321.3 | 73.5 |
+| 16 | Bilibili Gaming | 2319.5 | 73.6 |
+| 17 | Cloud9 | 2319.2 | 67.4 |
+| 18 | G2 Esports | 2313.9 | 79.1 |
+| 19 | Afreeca Freecs | 2306.5 | 67.7 |
+| 20 | Team Liquid | 2302.1 | 71.5 |
+| 21 | Nongshim RedForce | 2294.7 | 72.9 |
 | 22 | TSM | 2290.5 | 69.9 |
 | 23 | Rogue (European Team) | 2288.2 | 80.1 |
 | 24 | Misfits Gaming | 2283.4 | 77.4 |
