@@ -50,9 +50,9 @@ if __name__ == "__main__":
 
         plot_teams = [
             ("DWG KIA", "#00bcd4"),  # this worlds 1st  (cyan)
-            ("Nongshim RedForce", "#f44336"),  # curr lck 1st (red)
+            ("T1", "#f44336"),  # curr lck 1st (red)
             # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
-            ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
+            ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
             # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
             ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
             ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
