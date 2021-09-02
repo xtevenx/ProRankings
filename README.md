@@ -44,10 +44,10 @@ is in its rating estimate for that team.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | FunPlus Phoenix | 2578.8 | 77.3 |
-| 2 | DWG KIA | 2536.9 | 73.7 |
-| 3 | MAD Lions | 2513.9 | 78.1 |
-| 4 | EDward Gaming | 2488.0 | 70.7 |
+| 1 | DWG KIA | 2536.9 | 73.7 |
+| 2 | FunPlus Phoenix | 2536.3 | 74.2 |
+| 3 | EDward Gaming | 2523.2 | 68.3 |
+| 4 | MAD Lions | 2513.9 | 78.1 |
 | 5 | Royal Never Give Up | 2459.5 | 74.5 |
 | 6 | T1 | 2395.1 | 65.9 |
 | 7 | Team WE | 2381.6 | 62.8 |
