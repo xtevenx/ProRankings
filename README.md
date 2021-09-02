@@ -44,21 +44,21 @@ is in its rating estimate for that team.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | FunPlus Phoenix | 2578.8 | 77.3 |
-| 2 | DWG KIA | 2536.9 | 73.7 |
-| 3 | MAD Lions | 2513.9 | 78.1 |
-| 4 | Royal Never Give Up | 2459.5 | 74.5 |
-| 5 | EDward Gaming | 2452.0 | 73.1 |
-| 6 | Team WE | 2408.4 | 64.1 |
-| 7 | T1 | 2394.5 | 68.2 |
+| 1 | DWG KIA | 2536.9 | 73.7 |
+| 2 | FunPlus Phoenix | 2536.3 | 74.2 |
+| 3 | EDward Gaming | 2523.2 | 68.3 |
+| 4 | MAD Lions | 2513.9 | 78.1 |
+| 5 | Royal Never Give Up | 2459.5 | 74.5 |
+| 6 | T1 | 2395.1 | 65.9 |
+| 7 | Team WE | 2381.6 | 62.8 |
 | 8 | 100 Thieves | 2367.7 | 68.7 |
 | 9 | LNG Esports | 2362.7 | 63.6 |
 | 10 | Rare Atom | 2361.7 | 72.9 |
 | 11 | Top Esports | 2359.4 | 71.2 |
 | 12 | Suning | 2355.4 | 69.8 |
 | 13 | Fnatic | 2346.8 | 67.0 |
-| 14 | Gen.G | 2330.1 | 69.0 |
-| 15 | Nongshim RedForce | 2326.8 | 67.8 |
+| 14 | Hanwha Life Esports | 2333.0 | 66.5 |
+| 15 | Gen.G | 2330.1 | 69.0 |
 | 16 | Bilibili Gaming | 2319.5 | 73.6 |
 | 17 | Cloud9 | 2319.2 | 67.4 |
 | 18 | G2 Esports | 2313.9 | 79.1 |
@@ -66,10 +66,10 @@ is in its rating estimate for that team.
 | 20 | Team Liquid | 2302.1 | 71.5 |
 | 21 | TSM | 2290.5 | 69.9 |
 | 22 | Rogue (European Team) | 2288.2 | 80.1 |
-| 23 | Liiv SANDBOX | 2286.0 | 69.4 |
-| 24 | Misfits Gaming | 2283.4 | 77.4 |
+| 23 | Misfits Gaming | 2283.4 | 77.4 |
+| 24 | Nongshim RedForce | 2281.5 | 71.4 |
 | 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
-| 26 | Hanwha Life Esports | 2253.5 | 72.7 |
+| 26 | Liiv SANDBOX | 2252.4 | 71.9 |
 | 27 | KT Rolster | 2248.1 | 69.8 |
 | 28 | JD Gaming | 2247.9 | 75.8 |
 | 29 | Oh My God | 2225.6 | 76.1 |
