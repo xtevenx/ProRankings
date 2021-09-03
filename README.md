@@ -48,13 +48,13 @@ is in its rating estimate for that team.
 | 2 | FunPlus Phoenix | 2536.3 | 74.2 |
 | 3 | EDward Gaming | 2523.2 | 68.3 |
 | 4 | MAD Lions | 2513.9 | 78.1 |
-| 5 | Royal Never Give Up | 2459.5 | 74.5 |
+| 5 | Royal Never Give Up | 2499.0 | 78.8 |
 | 6 | T1 | 2395.1 | 65.9 |
-| 7 | Team WE | 2381.6 | 62.8 |
-| 8 | 100 Thieves | 2367.7 | 68.7 |
-| 9 | LNG Esports | 2362.7 | 63.6 |
-| 10 | Rare Atom | 2361.7 | 72.9 |
-| 11 | Top Esports | 2359.4 | 71.2 |
+| 7 | 100 Thieves | 2367.7 | 68.7 |
+| 8 | LNG Esports | 2362.7 | 63.6 |
+| 9 | Rare Atom | 2361.7 | 72.9 |
+| 10 | Top Esports | 2359.4 | 71.2 |
+| 11 | Team WE | 2356.6 | 64.0 |
 | 12 | Suning | 2355.4 | 69.8 |
 | 13 | Fnatic | 2346.8 | 67.0 |
 | 14 | Hanwha Life Esports | 2333.0 | 66.5 |
