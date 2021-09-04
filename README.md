@@ -49,19 +49,19 @@ is in its rating estimate for that team.
 | 3 | EDward Gaming | 2523.2 | 68.3 |
 | 4 | MAD Lions | 2513.9 | 78.1 |
 | 5 | Royal Never Give Up | 2499.0 | 78.8 |
-| 6 | T1 | 2395.1 | 65.9 |
-| 7 | 100 Thieves | 2367.7 | 68.7 |
-| 8 | LNG Esports | 2362.7 | 63.6 |
-| 9 | Rare Atom | 2361.7 | 72.9 |
-| 10 | Top Esports | 2359.4 | 71.2 |
-| 11 | Team WE | 2356.6 | 64.0 |
-| 12 | Suning | 2355.4 | 69.8 |
-| 13 | Fnatic | 2346.8 | 67.0 |
-| 14 | Hanwha Life Esports | 2333.0 | 66.5 |
-| 15 | Gen.G | 2330.1 | 69.0 |
-| 16 | Bilibili Gaming | 2319.5 | 73.6 |
-| 17 | Cloud9 | 2319.2 | 67.4 |
-| 18 | G2 Esports | 2313.9 | 79.1 |
+| 6 | LNG Esports | 2397.3 | 67.2 |
+| 7 | T1 | 2395.1 | 65.9 |
+| 8 | 100 Thieves | 2367.7 | 68.7 |
+| 9 | Top Esports | 2359.4 | 71.2 |
+| 10 | Team WE | 2356.6 | 64.0 |
+| 11 | Suning | 2355.4 | 69.8 |
+| 12 | Fnatic | 2346.8 | 67.0 |
+| 13 | Hanwha Life Esports | 2333.0 | 66.5 |
+| 14 | Gen.G | 2330.1 | 69.0 |
+| 15 | Bilibili Gaming | 2319.5 | 73.6 |
+| 16 | Cloud9 | 2319.2 | 67.4 |
+| 17 | G2 Esports | 2313.9 | 79.1 |
+| 18 | Rare Atom | 2313.6 | 77.3 |
 | 19 | Afreeca Freecs | 2306.5 | 67.7 |
 | 20 | Team Liquid | 2302.1 | 71.5 |
 | 21 | TSM | 2290.5 | 69.9 |
