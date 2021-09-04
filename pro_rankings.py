@@ -7,6 +7,18 @@ from models import QueryDelay, TeamData
 # iterable of all the major leagues.
 MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
+# iterable of all premier leagues.
+PREMIER_LEAGUES: tuple = MAJOR_LEAGUES + (
+    "CBLOL/2021 Season/Split 2",
+    "LCL/2021 Season/Summer Season",
+    "LJL/2021 Season/Summer Season",
+    "LLA/2021 Season/Closing Season",
+    "LCO/2021 Season/Split 2",
+    "PCS/2021 Season/Summer Season",
+    "TCL/2021 Season/Summer Season",
+    "VCS/2021 Season/Summer Season",
+)
+
 # how much extra do interregional games count towards one's rating.
 _INTERREGIONAL_BONUS: int = 1
 
@@ -300,7 +312,8 @@ if __name__ == "__main__":
     current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     teams_dictionary = get_teams_data()
 
-    team_names = get_tournaments_teams(MAJOR_LEAGUES)
+    # team_names = get_tournaments_teams(MAJOR_LEAGUES)
+    team_names = get_tournaments_teams(PREMIER_LEAGUES)
     # team_names = get_team_names([
     #     "2020 Season World Championship/Main Event",
     #     "2020 Season World Championship/Play-in"
