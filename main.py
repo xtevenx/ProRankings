@@ -12,6 +12,11 @@ _plot_dpi = 200
 _bar_number_teams = 12
 _line_smooth_factor = 1.5
 
+BAR_CHART = True
+LINE_CHART = True
+TOURNAMENT_CHART = False
+README = True
+
 if __name__ == "__main__":
     from datetime import datetime
 
@@ -45,7 +50,7 @@ if __name__ == "__main__":
 
     plt.grid(color="#ffffff9f")
 
-    if "line":
+    if LINE_CHART:
         print("Preparing data for line graph ... ")
 
         plot_teams = [
@@ -122,7 +127,7 @@ if __name__ == "__main__":
         plt.savefig(_line_output, dpi=_plot_dpi)
         plt.clf()
 
-    if "bar":
+    if BAR_CHART:
         print("Preparing data for bar graph ... ")
 
         team_names = get_tournaments_teams(MAJOR_LEAGUES)
@@ -175,62 +180,62 @@ if __name__ == "__main__":
         plt.savefig(_bar_output, dpi=_plot_dpi)
         plt.clf()
 
-    # if "tournament":
-    #     print("Preparing data for tournament bar graph ... ")
-    #
-    #     team_names = get_tournaments_teams([
-    #         "2021 Season World Championship/Main Event",
-    #         "2021 Season World Championship/Play-in",
-    #     ])
-    #     teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
-    #
-    #     all_names = {t[0] for t in teams_data}
-    #     for team_name in team_names:
-    #         if team_name not in all_names:
-    #             print(f"Error: team `{team_name}' not found.")
-    #
-    #     teams_data.sort(key=lambda t: t[1].rating, reverse=True)
-    #
-    #     plot_data = {
-    #         "Rating": [t[1].rating for t in teams_data],
-    #         "Team": [t[0] for t in teams_data]
-    #     }
-    #
-    #     # input data into a DataFrame
-    #     df = pd.DataFrame(plot_data)
-    #     df.sort_values(by="Rating", ascending=False, inplace=True)
-    #
-    #     print("Generating tournament bar graph ... ")
-    #
-    #     _, _ = plt.subplots()
-    #     plt.figure(figsize=_plot_size)
-    #
-    #     bar_colors = sns.color_palette(palette="hls", n_colors=len(teams_data))
-    #     bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
-    #
-    #     plt.title("Ratings of Teams at Worlds 2021")
-    #     plt.xticks(ticks=[])
-    #
-    #     ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
-    #     plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
-    #     plt.grid(True, axis="y")
-    #
-    #     y_min = plt.ylim()[0]
-    #     for i, a in enumerate(bars):
-    #         plt.gca().text(
-    #             x=a.get_x() + a.get_width() / 2,
-    #             y=plt.ylim()[0] + 0.2 * ylim_diff,
-    #             s=plot_data["Team"][i],
-    #             backgroundcolor="#0000009f",
-    #             color="#ffffff9f",
-    #             horizontalalignment="center",
-    #             rotation="vertical"
-    #         )
-    #
-    #     plt.savefig(_tourney_output, dpi=_plot_dpi)
-    #     plt.clf()
+    if TOURNAMENT_CHART:
+        print("Preparing data for tournament bar graph ... ")
 
-    if "readme":
+        team_names = get_tournaments_teams([
+            "2021 Season World Championship/Main Event",
+            "2021 Season World Championship/Play-in",
+        ])
+        teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
+
+        all_names = {t[0] for t in teams_data}
+        for team_name in team_names:
+            if team_name not in all_names:
+                print(f"Error: team `{team_name}' not found.")
+
+        teams_data.sort(key=lambda t: t[1].rating, reverse=True)
+
+        plot_data = {
+            "Rating": [t[1].rating for t in teams_data],
+            "Team": [t[0] for t in teams_data]
+        }
+
+        # input data into a DataFrame
+        df = pd.DataFrame(plot_data)
+        df.sort_values(by="Rating", ascending=False, inplace=True)
+
+        print("Generating tournament bar graph ... ")
+
+        _, _ = plt.subplots()
+        plt.figure(figsize=_plot_size)
+
+        bar_colors = sns.color_palette(palette="hls", n_colors=len(teams_data))
+        bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
+
+        plt.title("Ratings of Teams at Worlds 2021")
+        plt.xticks(ticks=[])
+
+        ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
+        plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
+        plt.grid(True, axis="y")
+
+        y_min = plt.ylim()[0]
+        for i, a in enumerate(bars):
+            plt.gca().text(
+                x=a.get_x() + a.get_width() / 2,
+                y=plt.ylim()[0] + 0.2 * ylim_diff,
+                s=plot_data["Team"][i],
+                backgroundcolor="#0000009f",
+                color="#ffffff9f",
+                horizontalalignment="center",
+                rotation="vertical"
+            )
+
+        plt.savefig(_tourney_output, dpi=_plot_dpi)
+        plt.clf()
+
+    if README:
         print("Generating README.md ... ")
 
         with open("TEMPLATE.md", "r") as fp:
