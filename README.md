@@ -49,13 +49,13 @@ is in its rating estimate for that team.
 | 3 | EDward Gaming | 2523.2 | 68.3 |
 | 4 | MAD Lions | 2513.9 | 78.1 |
 | 5 | Royal Never Give Up | 2499.0 | 78.8 |
-| 6 | LNG Esports | 2397.3 | 67.2 |
+| 6 | LNG Esports | 2414.1 | 63.6 |
 | 7 | T1 | 2395.1 | 65.9 |
 | 8 | 100 Thieves | 2367.7 | 68.7 |
 | 9 | Top Esports | 2359.4 | 71.2 |
-| 10 | Team WE | 2356.6 | 64.0 |
-| 11 | Suning | 2355.4 | 69.8 |
-| 12 | Fnatic | 2346.8 | 67.0 |
+| 10 | Suning | 2355.4 | 69.8 |
+| 11 | Fnatic | 2346.8 | 67.0 |
+| 12 | Team WE | 2340.7 | 61.8 |
 | 13 | Hanwha Life Esports | 2333.0 | 66.5 |
 | 14 | Gen.G | 2330.1 | 69.0 |
 | 15 | Bilibili Gaming | 2319.5 | 73.6 |
