@@ -54,8 +54,8 @@ if __name__ == "__main__":
         print("Preparing data for line graph ... ")
 
         plot_teams = [
-            ("DWG KIA", "#00bcd4"),  # this worlds 1st  (cyan)
-            ("T1", "#f44336"),  # curr lck 1st (red)
+            ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
+            # ("T1", "#f44336"),  # curr lck 1st (red)
             # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
             ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
             # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
