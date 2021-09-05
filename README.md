@@ -40,7 +40,8 @@ Rating List for Major Regions
 
 This table contains rating data for all major region teams. The RD represents
 the "rating deviation", which roughly represents how confident the rating system
-is in its rating estimate for that team.
+is in its rating estimate for that team. Twice the RD signifies the 95%
+confidence interval of the rating.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
@@ -113,6 +114,11 @@ More technical things to note:
 *   The rating interval is set to one day, however, the ratings are calculated
     after each game. This induces artificially high rating volatility values,
     but the game has a volatile meta so that's not a bug it's a feature.
+
+### Worlds Pick'em Performance
+
+*   The rating system scored 85/124 in the 2020 World Championships Pick'em.
+    This is a score total of 68% which was in the top 5% of players.
 
 Acknowledgements
 ----------------
