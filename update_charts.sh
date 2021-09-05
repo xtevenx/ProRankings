@@ -1,8 +1,6 @@
 git fetch --all && git reset --hard origin/master
 python3 -m pip install -r requirements.txt --user || python3 -m pip install -r requirements.txt
 python3 main.py
-git diff --exit-code --quiet data/output_bar.png || git add data/output_bar.png
-git diff --exit-code --quiet data/output_tourney.png || git add data/output_tourney.png
-git diff --exit-code --quiet data/output_line.png || git add data/output_line.png
-git diff --exit-code --quiet README.md || git add README.md
+git add data/output_bar.png data/output_tourney.png data/output_line.png
+git add README.md README.html
 git commit -m "Update rating charts for `date '+%Y-%m-%d %H:00:00'`." && git push

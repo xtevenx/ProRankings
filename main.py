@@ -1,3 +1,4 @@
+from math import floor
 from pro_rankings import *
 
 _line_output = "data/output_line.png"
@@ -16,6 +17,7 @@ BAR_CHART = True
 LINE_CHART = True
 TOURNAMENT_CHART = False
 README = True
+HTML = True
 
 if __name__ == "__main__":
     from datetime import datetime
@@ -127,23 +129,21 @@ if __name__ == "__main__":
         plt.savefig(_line_output, dpi=_plot_dpi)
         plt.clf()
 
+    team_names = get_tournaments_teams(MAJOR_LEAGUES)
+    majors_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
+
+    all_names = {t[0] for t in majors_data}
+    for team_name in team_names:
+        if team_name not in all_names:
+            print(f"Error: team `{team_name}' not found.")
+
+    majors_data.sort(key=lambda t: t[1].rating, reverse=True)
+    majors_data = majors_data[:_bar_number_teams]
+
     if BAR_CHART:
-        print("Preparing data for bar graph ... ")
-
-        team_names = get_tournaments_teams(MAJOR_LEAGUES)
-        teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
-
-        all_names = {t[0] for t in teams_data}
-        for team_name in team_names:
-            if team_name not in all_names:
-                print(f"Error: team `{team_name}' not found.")
-
-        teams_data.sort(key=lambda t: t[1].rating, reverse=True)
-        teams_data = teams_data[:_bar_number_teams]
-
         plot_data = {
-            "Rating": [t[1].rating for t in teams_data],
-            "Team": [t[0] for t in teams_data]
+            "Rating": [t[1].rating for t in majors_data],
+            "Team": [t[0] for t in majors_data]
         }
 
         # input data into a DataFrame
@@ -252,6 +252,47 @@ if __name__ == "__main__":
         template = template.replace("{{ RatingTable }}", header + "\n".join(string_list))
 
         with open("README.md", "w+") as fp:
+            fp.write(template)
+
+    if HTML:
+        print("Generating README.html ... ")
+
+        with open("assets/js/chart-config.template", "r") as fp:
+            text = fp.read()
+
+        labels = [t[0] for t in majors_data]
+        ratings = [round(t[1].rating, 1) for t in majors_data]
+        bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
+        bar_colors = ["#" + "".join((hex(floor(256 * x))[2:] for x in t)) for t in bar_colors]
+        ylim_diff = 0.146 * (max(ratings) - min(ratings))
+
+        text = text.replace("{{ labels }}", str(labels))
+        text = text.replace("{{ data }}", str(ratings))
+        text = text.replace("{{ colors }}", str(bar_colors))
+        text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
+        text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
+
+        team_names = get_tournaments_teams(MAJOR_LEAGUES)
+        teams_data = [
+            (k, v.rating, v.deviation) for k, v in teams_dictionary.items() if k in team_names]
+        teams_data.sort(key=lambda t: t[1], reverse=True)
+
+        with open("assets/js/chart-config.js", "w") as fp:
+            fp.write(text)
+
+        with open("TEMPLATE.html", "r", encoding="utf-8") as fp:
+            template = fp.read()
+
+        template = template.replace("{{ ratingTable }}", "\n".join(
+            '        <tr>'
+            f'<td style="text-align: right">{i + 1}</td>'
+            f'<td>{n}</td>'
+            f'<td style="text-align: center">{r:.1f}</td>'
+            f'<td style="text-align: center">{d:.1f}</td>'
+            '</tr>'
+            for i, (n, r, d) in enumerate(teams_data)).strip())
+
+        with open("README.html", "w+") as fp:
             fp.write(template)
 
     print("Done.")

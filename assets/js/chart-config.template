@@ -1,0 +1,29 @@
+const topChartConfig = {
+    type: "bar",
+    data: {
+        labels: {{ labels }},
+        datasets: [{
+            label: "Rating Points",
+            backgroundColor: {{ colors }},
+            data: {{ data }},
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                min: {{ yMin }},
+                max: {{ yMax }}
+            }
+        }
+    }
+};

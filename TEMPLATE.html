@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ProRankings | Calculated rating data of professional League of Legends teams.</title>
+
+    <link rel="stylesheet" href="/ProRankings/assets/css/style.css">
+
+    <!-- You can set your favicon here. -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/ProRankings/favicon.ico" -->
+</head>
+
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+
+    <h1><a href="https://xtevenx.github.io/ProRankings/">ProRankings</a></h1>
+
+    <p> This site displays calculated ratings for professional League of Legends teams. Only teams
+        from the four major regions are included in the below charts, however all games are
+        accounted for when calculating the ratings. Due to the nature of the rating system, the
+        ratings may be very inaccurate at the start of each season, and generally become more
+        accurate as more games are played.</p>
+
+    <p>View the source on <a href="https://github.com/xtevenx/ProRankings">GitHub</a>.</p>
+
+    <h2 id="ratings-of-top-teams">Ratings of Top Teams</h2>
+
+    <p> This chart displays the calculated ratings for the top teams in the four major regions
+        (<a href="https://lol.fandom.com/wiki/LCS/2021_Season">LCS</a>,
+        <a href="https://lol.fandom.com/wiki/LEC/2021_Season">LEC</a>,
+        <a href="https://lol.fandom.com/wiki/LCK/2021_Season">LCK</a>,
+        <a href="https://lol.fandom.com/wiki/LPL/2021_Season">LPL</a>). The top 12 teams are on
+        this chart, the remainder can be found in the table below.</p>
+
+    <div>
+        <canvas id="topChart"></canvas>
+    </div>
+
+    <h2 id="rating-progression-of-select-teams">Rating Progression of Select Teams</h2>
+
+    <p> This chart displays the calculated rating progression for select teams. These teams are
+        chosen by a combination of their performance, personal preference, and which way the wind
+        happened to be blowing when they were picked.</p>
+
+    <p><img src="https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png" alt="image missing"
+            title="Rating Progression of Select Teams"/></p>
+
+    <h2 id="rating-list-for-major-regions">Rating List for Major Regions</h2>
+
+    <p> This table contains rating data for all major region teams. The RD represents the "rating
+        deviation", which roughly represents how confident the rating system is in its rating
+        estimate for that team.</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="text-align: right"></th>
+            <th>Team</th>
+            <th style="text-align: center">Rating</th>
+            <th style="text-align: center">RD</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{ ratingTable }}
+        </tbody>
+    </table>
+
+    <h2 id="about-the-rating-system">About the Rating System</h2>
+
+    <p> The ratings are calculated using the
+        <a href="http://www.glicko.net/glicko/glicko2.pdf">Glicko-2</a> rating system.</p>
+
+    <p>However, there are some things of note:</p>
+
+    <ul>
+        <li>Each game in Mid-Season Invitationals or World Championships counts for
+            twice as much as other games in terms of rating calculations.
+        </li>
+        <li>At the start of each season, the rating deviations are adjusted to be
+            equivalent to if there was a year without play. This increases the rating's
+            volatility and is done to try to account for season start meta shifts.
+        </li>
+        <li>The average rating is set to the average FIDE standard rating which is, as
+            of June 2021, 1645. There is no meaning behind this and is done purely for
+            entertainment purposes.
+        </li>
+    </ul>
+
+    <p>More technical things to note:</p>
+
+    <ul>
+        <li>The rating interval is set to one day, however, the ratings are calculated
+            after each game. This induces artificially high rating volatility values,
+            but the game has a volatile meta so that's not a bug it's a feature.
+        </li>
+    </ul>
+
+    <h2 id="acknowledgements">Acknowledgements</h2>
+
+    <p> Thanks to <a href="https://lol.fandom.com/Help:API_Documentation">Leaguepedia</a> for
+        maintaining and providing the data utilized in these calculations, and to Mark Glickman for
+        devising the Glicko-2 rating system.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>anchors.add();</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/ProRankings/assets/js/chart-config.js"></script>
+<script>
+    Chart.defaults.font.family = "Open Sans";
+    Chart.defaults.font.size = 14;
+    Chart.defaults.borderColor = "#ffffff5f";
+    new Chart(document.getElementById("topChart"), topChartConfig);
+</script>
+
+</body>
+</html>
