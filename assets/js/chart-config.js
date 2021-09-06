@@ -18,6 +18,9 @@ const topChartConfig = {
             x: {
                 grid: {
                     display: false
+                },
+                ticks: {
+                    autoSkip: false
                 }
             },
             y: {
