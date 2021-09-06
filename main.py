@@ -272,27 +272,29 @@ if __name__ == "__main__":
         text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
         text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
 
-        team_names = get_tournaments_teams(MAJOR_LEAGUES)
-        teams_data = [
-            (k, v.rating, v.deviation) for k, v in teams_dictionary.items() if k in team_names]
-        teams_data.sort(key=lambda t: t[1], reverse=True)
-
         with open("assets/js/chart-config.js", "w") as fp:
             fp.write(text)
 
         with open("TEMPLATE.html", "r", encoding="utf-8") as fp:
             template = fp.read()
 
+        teams_data = []
+        for tournament_name in PREMIER_LEAGUES:
+            team_names = get_tournament_teams(tournament_name)
+            teams_data.extend([(k, tournament_name, v.rating)
+                               for k, v in teams_dictionary.items() if k in team_names])
+        teams_data.sort(key=lambda t: t[2], reverse=True)
+
         template = template.replace("{{ ratingTable }}", "\n".join(
             '            <tr>'
             f'<td style="text-align: right">{i + 1}</td>'
-            f'<td>{n}</td>'
-            f'<td style="text-align: center">{r:.1f}</td>'
-            f'<td style="text-align: center">{d:.1f}</td>'
+            f'<td class="name">{n}</td>'
+            f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
+            f'<td class="rating" style="text-align: center">{r:.1f}</td>'
             '</tr>'
-            for i, (n, r, d) in enumerate(teams_data))[8:])
+            for i, (n, l, r) in enumerate(teams_data))[8:])
 
-        with open("README.html", "w+") as fp:
+        with open("README.html", "w+", encoding="utf-8") as fp:
             fp.write(template)
 
     print("Done.")

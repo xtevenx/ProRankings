@@ -49,18 +49,16 @@
 
     <h2 id="rating-list-for-major-regions">Rating List for Major Regions</h2>
 
-    <p> This table contains rating data for all major region teams. The RD represents the "rating
-        deviation", which roughly represents how confident the rating system is in its rating
-        estimate for that team. Twice the RD signifies the 95% confidence interval of the rating.</p>
+    <p> This table contains rating data for all major region teams.</p>
 
     <div id="rating-table">
         <table>
             <thead>
             <tr>
-                <th style="text-align: right"></th>
+                <th style="text-align: right">Rank</th>
                 <th>Team</th>
+                <th style="text-align: center">League</th>
                 <th style="text-align: center">Rating</th>
-                <th style="text-align: center">RD</th>
             </tr>
             </thead>
             <tbody class="list">
@@ -132,7 +130,7 @@
         integrity="sha256-NEVvGNMGqFvs6adGLZjm5sLgcuX9rGTg1wlGtA1f7M8=" crossorigin="anonymous"></script>
 <script src="/ProRankings/assets/js/list-config.js"></script>
 <script>
-    const ratingList = new List('rating-table', {valueNames: ["rank", "team", "rating", "rd"]});
+    const ratingList = new List('rating-table', {valueNames: ["rank", "team", "league", "rating"]});
 </script>
 
 </body>
