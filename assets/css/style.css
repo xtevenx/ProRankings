@@ -20,3 +20,28 @@ a {
     background-color: #000000;
     border: 1px solid #ffffff5f;
 }
+
+
+/* Checkbutton styling. */
+
+.checkbutton {
+    background-color: #ffffff1f;
+    border-radius: 0.236em;
+    border-width: 0;
+    color: #ffffff9f;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 0 0.191em 0.382em;
+    padding: 0.382em;
+    user-select: none;
+}
+
+.checkbutton.checked {
+    background-color: #017aa7;
+    color: #ffffffdf;
+}
+
+.checkbutton input {
+    display: none;
+}
