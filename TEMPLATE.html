@@ -35,7 +35,7 @@
         this chart, the remainder can be found in the table below.</p>
 
     <div>
-        <canvas id="topChart"></canvas>
+        <canvas id="top-chart"></canvas>
     </div>
 
     <h2 id="rating-progression-of-select-teams">Rating Progression of Select Teams</h2>
@@ -51,7 +51,7 @@
 
     <p> This table contains rating data for all major region teams. The RD represents the "rating
         deviation", which roughly represents how confident the rating system is in its rating
-        estimate for that team.</p>
+        estimate for that team. Twice the RD signifies the 95% confidence interval of the rating.</p>
 
     <table>
         <thead>
@@ -97,6 +97,14 @@
         </li>
     </ul>
 
+    <h3 id="worlds-pickem-performance">Worlds Pick’em Performance</h3>
+
+    <ul>
+        <li>The rating system scored 85/124 in the 2020 World Championships Pick’em.
+            This is a score total of 68% which was in the top 5% of players.
+        </li>
+    </ul>
+
     <h2 id="acknowledgements">Acknowledgements</h2>
 
     <p> Thanks to <a href="https://lol.fandom.com/Help:API_Documentation">Leaguepedia</a> for
@@ -104,16 +112,18 @@
         devising the Glicko-2 rating system.</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js"
+        integrity="sha256-0WMZ9PF4b2hTF66Eglv/9H5Vwk6lnOG4AbmCJxo96WQ=" crossorigin="anonymous"></script>
 <script>anchors.add();</script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
+        integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
 <script src="/ProRankings/assets/js/chart-config.js"></script>
 <script>
     Chart.defaults.font.family = "Open Sans";
     Chart.defaults.font.size = 14;
     Chart.defaults.borderColor = "#ffffff5f";
-    new Chart(document.getElementById("topChart"), topChartConfig);
+    new Chart(document.getElementById("top-chart"), topChartConfig);
 </script>
 
 </body>

@@ -284,13 +284,13 @@ if __name__ == "__main__":
             template = fp.read()
 
         template = template.replace("{{ ratingTable }}", "\n".join(
-            '        <tr>'
+            '            <tr>'
             f'<td style="text-align: right">{i + 1}</td>'
             f'<td>{n}</td>'
             f'<td style="text-align: center">{r:.1f}</td>'
             f'<td style="text-align: center">{d:.1f}</td>'
             '</tr>'
-            for i, (n, r, d) in enumerate(teams_data)).strip())
+            for i, (n, r, d) in enumerate(teams_data))[8:])
 
         with open("README.html", "w+") as fp:
             fp.write(template)
