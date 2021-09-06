@@ -52,6 +52,31 @@
     <p> This table contains rating data for all major region teams.</p>
 
     <div id="rating-table">
+        <input type="checkbox" id="rating-table-lcs" value="LCS" checked>
+        <label for="rating-table-lcs"> LCS</label>
+        <input type="checkbox" id="rating-table-lec" value="LEC" checked>
+        <label for="rating-table-lec"> LEC</label>
+        <input type="checkbox" id="rating-table-lck" value="LCK" checked>
+        <label for="rating-table-lck"> LCK</label>
+        <input type="checkbox" id="rating-table-lpl" value="LPL" checked>
+        <label for="rating-table-lpl"> LPL</label>
+        <input type="checkbox" id="rating-table-cblol" value="CBLOL">
+        <label for="rating-table-cblol"> CBLOL</label>
+        <input type="checkbox" id="rating-table-lcl" value="LCL">
+        <label for="rating-table-lcl"> LCL</label>
+        <input type="checkbox" id="rating-table-ljl" value="LJL">
+        <label for="rating-table-ljl"> LJL</label>
+        <input type="checkbox" id="rating-table-lla" value="LLA">
+        <label for="rating-table-lla"> LLA</label>
+        <input type="checkbox" id="rating-table-lco" value="LCO">
+        <label for="rating-table-lco"> LCO</label>
+        <input type="checkbox" id="rating-table-pcs" value="PCS">
+        <label for="rating-table-pcs"> PCS</label>
+        <input type="checkbox" id="rating-table-tcl" value="TCL">
+        <label for="rating-table-tcl"> TCL</label>
+        <input type="checkbox" id="rating-table-vcs" value="VCS">
+        <label for="rating-table-vcs"> VCS</label>
+
         <table>
             <thead>
             <tr>
@@ -130,7 +155,12 @@
         integrity="sha256-NEVvGNMGqFvs6adGLZjm5sLgcuX9rGTg1wlGtA1f7M8=" crossorigin="anonymous"></script>
 <script src="/ProRankings/assets/js/list-config.js"></script>
 <script>
-    const ratingList = new List('rating-table', {valueNames: ["rank", "team", "league", "rating"]});
+    const ratingList = new List("rating-table", {valueNames: ["name", "league", "rating"]});
+    (window.updateRatingTable = function() {
+        let displayedLeagues = ratingTableCheckboxes.filter(c => c.checked).map(c => c.value);
+        ratingList.filter(function(item) {return displayedLeagues.includes(item.values().league)})
+    })();
+    for (let c of ratingTableCheckboxes) {c.addEventListener("change", updateRatingTable)}
 </script>
 
 </body>
