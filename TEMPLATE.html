@@ -53,19 +53,21 @@
         deviation", which roughly represents how confident the rating system is in its rating
         estimate for that team. Twice the RD signifies the 95% confidence interval of the rating.</p>
 
-    <table>
-        <thead>
-        <tr>
-            <th style="text-align: right"></th>
-            <th>Team</th>
-            <th style="text-align: center">Rating</th>
-            <th style="text-align: center">RD</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{ ratingTable }}
-        </tbody>
-    </table>
+    <div id="rating-table">
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: right"></th>
+                <th>Team</th>
+                <th style="text-align: center">Rating</th>
+                <th style="text-align: center">RD</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            {{ ratingTable }}
+            </tbody>
+        </table>
+    </div>
 
     <h2 id="about-the-rating-system">About the Rating System</h2>
 
@@ -97,7 +99,7 @@
         </li>
     </ul>
 
-    <h3 id="worlds-pickem-performance">Worlds Pick’em Performance</h3>
+    <h3 id="worlds-pickem-performance">Worlds Pick'em Performance</h3>
 
     <ul>
         <li>The rating system scored 85/124 in the 2020 World Championships Pick’em.
@@ -124,6 +126,13 @@
     Chart.defaults.font.size = 14;
     Chart.defaults.borderColor = "#ffffff5f";
     new Chart(document.getElementById("top-chart"), topChartConfig);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/list.js@2.3.1/dist/list.min.js"
+        integrity="sha256-NEVvGNMGqFvs6adGLZjm5sLgcuX9rGTg1wlGtA1f7M8=" crossorigin="anonymous"></script>
+<script src="/ProRankings/assets/js/list-config.js"></script>
+<script>
+    const ratingList = new List('rating-table', {valueNames: ["rank", "team", "rating", "rd"]});
 </script>
 
 </body>
