@@ -53,17 +53,18 @@
         deviation", which roughly represents how confident the rating system is in its rating
         estimate for that team. Twice the RD signifies the 95% confidence interval of the rating.</p>
 
-    <table>
-        <thead>
-        <tr>
-            <th style="text-align: right"></th>
-            <th>Team</th>
-            <th style="text-align: center">Rating</th>
-            <th style="text-align: center">RD</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr><td style="text-align: right">1</td><td>DWG KIA</td><td style="text-align: center">2536.9</td><td style="text-align: center">73.7</td></tr>
+    <div id="rating-table">
+        <table>
+            <thead>
+            <tr>
+                <th style="text-align: right"></th>
+                <th>Team</th>
+                <th style="text-align: center">Rating</th>
+                <th style="text-align: center">RD</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+                <tr><td style="text-align: right">1</td><td>DWG KIA</td><td style="text-align: center">2536.9</td><td style="text-align: center">73.7</td></tr>
             <tr><td style="text-align: right">2</td><td>FunPlus Phoenix</td><td style="text-align: center">2536.3</td><td style="text-align: center">74.2</td></tr>
             <tr><td style="text-align: right">3</td><td>EDward Gaming</td><td style="text-align: center">2523.2</td><td style="text-align: center">68.3</td></tr>
             <tr><td style="text-align: right">4</td><td>MAD Lions</td><td style="text-align: center">2513.9</td><td style="text-align: center">78.1</td></tr>
@@ -110,8 +111,9 @@
             <tr><td style="text-align: right">45</td><td>FC Schalke 04 Esports</td><td style="text-align: center">2036.2</td><td style="text-align: center">89.9</td></tr>
             <tr><td style="text-align: right">46</td><td>Counter Logic Gaming</td><td style="text-align: center">2005.7</td><td style="text-align: center">86.6</td></tr>
             <tr><td style="text-align: right">47</td><td>Victory Five</td><td style="text-align: center">1944.6</td><td style="text-align: center">86.8</td></tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <h2 id="about-the-rating-system">About the Rating System</h2>
 
@@ -143,7 +145,7 @@
         </li>
     </ul>
 
-    <h3 id="worlds-pickem-performance">Worlds Pick’em Performance</h3>
+    <h3 id="worlds-pickem-performance">Worlds Pick'em Performance</h3>
 
     <ul>
         <li>The rating system scored 85/124 in the 2020 World Championships Pick’em.
@@ -170,6 +172,13 @@
     Chart.defaults.font.size = 14;
     Chart.defaults.borderColor = "#ffffff5f";
     new Chart(document.getElementById("top-chart"), topChartConfig);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/list.js@2.3.1/dist/list.min.js"
+        integrity="sha256-NEVvGNMGqFvs6adGLZjm5sLgcuX9rGTg1wlGtA1f7M8=" crossorigin="anonymous"></script>
+<script src="/ProRankings/assets/js/list-config.js"></script>
+<script>
+    const ratingList = new List('rating-table', {valueNames: ["rank", "team", "rating", "rd"]});
 </script>
 
 </body>
