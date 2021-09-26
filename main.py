@@ -281,8 +281,11 @@ if __name__ == "__main__":
         teams_data = []
         for tournament_name in PREMIER_LEAGUES:
             team_names = get_tournament_teams(tournament_name)
-            teams_data.extend([(k, tournament_name, v.rating)
+            teams_data.extend([[k, tournament_name, v.rating]
                                for k, v in teams_dictionary.items() if k in team_names])
+        for data in teams_data:
+            if data[0].endswith(" Team)"):
+                data[0] = data[0][:data[0].find("(")]
         teams_data.sort(key=lambda t: t[2], reverse=True)
 
         template = template.replace("{{ ratingTable }}", "\n".join(
