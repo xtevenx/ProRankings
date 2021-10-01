@@ -44,8 +44,9 @@
         chosen by a combination of their performance, personal preference, and which way the wind
         happened to be blowing when they were picked.</p>
 
-    <p><img src="https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png" alt="image missing"
-            title="Rating Progression of Select Teams"/></p>
+    <div>
+        <canvas id="progression-chart"></canvas>
+    </div>
 
     <h2 id="rating-list-for-major-regions">Rating List for Major Regions</h2>
 
@@ -137,6 +138,7 @@
     Chart.defaults.font.size = 14;
     Chart.defaults.borderColor = "#ffffff5f";
     new Chart(document.getElementById("top-chart"), topChartConfig);
+    new Chart(document.getElementById("progression-chart"), progressionChartConfig);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/list.js@2.3.1/dist/list.min.js"

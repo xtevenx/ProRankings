@@ -1,4 +1,6 @@
 from math import floor
+
+import models
 from pro_rankings import *
 
 _line_output = "data/output_line.png"
@@ -52,23 +54,21 @@ if __name__ == "__main__":
 
     plt.grid(color="#ffffff9f")
 
+    plot_teams = [
+        ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
+        # ("T1", "#f44336"),  # curr lck 1st (red)
+        # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
+        ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
+        # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
+        ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
+        ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
+        # Note: no LCS teams because they haven't won worlds before. :)
+        # Note: colors are the 500 colors from the 2014 Material color palette.
+        # Note: the color palette can be found at the link below.
+        # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+    ]
+
     if LINE_CHART:
-        print("Preparing data for line graph ... ")
-
-        plot_teams = [
-            ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
-            # ("T1", "#f44336"),  # curr lck 1st (red)
-            # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
-            ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
-            # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
-            ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
-            ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
-            # Note: no LCS teams because they haven't won worlds before. :)
-            # Note: colors are the 500 colors from the 2014 Material color palette.
-            # Note: the color palette can be found at the link below.
-            # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-        ]
-
         team_names, team_colors = zip(*plot_teams)
 
         plot_data = {"Date": [], "Rating": [], "Team": []}
@@ -271,6 +271,19 @@ if __name__ == "__main__":
         text = text.replace("{{ colors }}", str(bar_colors))
         text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
         text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
+
+        datasets = [{
+            "label": t,
+            "data": [[models.convert_to_days(d), r]
+                     for d, r in teams_dictionary[t].rating_history],
+            "backgroundColor": c,
+            "borderColor": c,
+            "showLine": True
+        } for t, c in plot_teams]
+
+        text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
+        text = text.replace("{{ progressionStart }}", str(models.convert_to_days(_line_plot_start)))
+        text = text.replace("{{ progressionEnd }}", str(models.convert_to_days(_line_plot_end)))
 
         with open("assets/js/chart-config.js", "w") as fp:
             fp.write(text)

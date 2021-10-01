@@ -1,3 +1,5 @@
+const MONTH_ABBREVIATIONS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 const topChartConfig = {
     type: "bar",
     data: {
@@ -26,6 +28,36 @@ const topChartConfig = {
             y: {
                 min: {{ yMin }},
                 max: {{ yMax }}
+            }
+        }
+    }
+};
+
+const progressionChartConfig = {
+    type: "scatter",
+    data: {
+        labels: {{ progressionLabels }},
+        datasets: {{ progressionDatasets }}
+    },
+    options: {
+        scales: {
+            x: {
+                min: {{ progressionStart }},
+                max: {{ progressionEnd }},
+                ticks: {
+                    callback: function(value, index, values) {
+                        const date = new Date(1000 * value * 60 * 60 * 24);
+                        return MONTH_ABBREVIATIONS[date.getMonth()] + " " + date.getFullYear();
+                    }
+                }
+            }
+        },
+        elements: {
+            line: {
+                tension: 0.05
+            },
+            point: {
+                radius: 0
             }
         }
     }
