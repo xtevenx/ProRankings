@@ -44,8 +44,9 @@
         chosen by a combination of their performance, personal preference, and which way the wind
         happened to be blowing when they were picked.</p>
 
-    <p><img src="https://raw.githubusercontent.com/xtevenx/ProRankings/master/data/output_line.png" alt="image missing"
-            title="Rating Progression of Select Teams"/></p>
+    <div>
+        <canvas id="progression-chart"></canvas>
+    </div>
 
     <h2 id="rating-list-for-major-regions">Rating List for Major Regions</h2>
 
@@ -100,13 +101,13 @@
             <tr><td style="text-align: right">23</td><td class="name">CrowCrowd</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">2303.6</td></tr>
             <tr><td style="text-align: right">24</td><td class="name">Team Liquid</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2302.1</td></tr>
             <tr><td style="text-align: right">25</td><td class="name">TSM</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2290.4</td></tr>
-            <tr><td style="text-align: right">26</td><td class="name">Rogue (European Team)</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2288.1</td></tr>
+            <tr><td style="text-align: right">26</td><td class="name">Rogue </td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2288.1</td></tr>
             <tr><td style="text-align: right">27</td><td class="name">Misfits Gaming</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2283.3</td></tr>
             <tr><td style="text-align: right">28</td><td class="name">Nongshim RedForce</td><td class="league" style="text-align: center">LCK</td><td class="rating" style="text-align: center">2281.4</td></tr>
             <tr><td style="text-align: right">29</td><td class="name">Evil Geniuses.NA</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2263.6</td></tr>
             <tr><td style="text-align: right">30</td><td class="name">Galatasaray Esports</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2262.0</td></tr>
             <tr><td style="text-align: right">31</td><td class="name">Liiv SANDBOX</td><td class="league" style="text-align: center">LCK</td><td class="rating" style="text-align: center">2252.3</td></tr>
-            <tr><td style="text-align: right">32</td><td class="name">PEACE (Oceanic Team)</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2249.7</td></tr>
+            <tr><td style="text-align: right">32</td><td class="name">PEACE </td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2249.7</td></tr>
             <tr><td style="text-align: right">33</td><td class="name">KT Rolster</td><td class="league" style="text-align: center">LCK</td><td class="rating" style="text-align: center">2248.1</td></tr>
             <tr><td style="text-align: right">34</td><td class="name">JD Gaming</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2247.8</td></tr>
             <tr><td style="text-align: right">35</td><td class="name">Oh My God</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2225.4</td></tr>
@@ -119,79 +120,71 @@
             <tr><td style="text-align: right">42</td><td class="name">Immortals</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2186.4</td></tr>
             <tr><td style="text-align: right">43</td><td class="name">DetonatioN FocusMe</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">2180.9</td></tr>
             <tr><td style="text-align: right">44</td><td class="name">Team Vitality</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2170.9</td></tr>
-            <tr><td style="text-align: right">45</td><td class="name">GAM Esports</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">2169.9</td></tr>
-            <tr><td style="text-align: right">46</td><td class="name">RED Canids</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2169.0</td></tr>
-            <tr><td style="text-align: right">47</td><td class="name">paiN Gaming</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2157.7</td></tr>
-            <tr><td style="text-align: right">48</td><td class="name">Excel Esports</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2151.7</td></tr>
-            <tr><td style="text-align: right">49</td><td class="name">Dire Wolves</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2140.3</td></tr>
-            <tr><td style="text-align: right">50</td><td class="name">Astralis</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2139.9</td></tr>
-            <tr><td style="text-align: right">51</td><td class="name">Ultra Prime</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2137.3</td></tr>
-            <tr><td style="text-align: right">52</td><td class="name">Machi Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2127.8</td></tr>
-            <tr><td style="text-align: right">53</td><td class="name">Dignitas</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2118.5</td></tr>
-            <tr><td style="text-align: right">54</td><td class="name">Infinity Esports (Latin American Team)</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">2113.8</td></tr>
-            <tr><td style="text-align: right">55</td><td class="name">Rensga Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2102.4</td></tr>
-            <tr><td style="text-align: right">56</td><td class="name">Chiefs Esports Club</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2101.2</td></tr>
-            <tr><td style="text-align: right">57</td><td class="name">SK Gaming</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2094.7</td></tr>
-            <tr><td style="text-align: right">58</td><td class="name">ORDER</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2084.7</td></tr>
-            <tr><td style="text-align: right">59</td><td class="name">DRX</td><td class="league" style="text-align: center">LCK</td><td class="rating" style="text-align: center">2082.8</td></tr>
-            <tr><td style="text-align: right">60</td><td class="name">NASR eSports Turkey</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2081.8</td></tr>
-            <tr><td style="text-align: right">61</td><td class="name">Golden Guardians</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2078.0</td></tr>
-            <tr><td style="text-align: right">62</td><td class="name">J Team</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2074.6</td></tr>
-            <tr><td style="text-align: right">63</td><td class="name">ThunderTalk Gaming</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2071.5</td></tr>
-            <tr><td style="text-align: right">64</td><td class="name">Vorax Liberty</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2057.5</td></tr>
-            <tr><td style="text-align: right">65</td><td class="name">FlyQuest</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2043.1</td></tr>
-            <tr><td style="text-align: right">66</td><td class="name">Estral Esports</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">2037.0</td></tr>
-            <tr><td style="text-align: right">67</td><td class="name">FC Schalke 04 Esports</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2036.2</td></tr>
-            <tr><td style="text-align: right">68</td><td class="name">Istanbul Wildcats</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2026.2</td></tr>
-            <tr><td style="text-align: right">69</td><td class="name">SuperMassive Blaze</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2024.5</td></tr>
-            <tr><td style="text-align: right">70</td><td class="name">Galakticos</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2012.4</td></tr>
-            <tr><td style="text-align: right">71</td><td class="name">Counter Logic Gaming</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2005.6</td></tr>
-            <tr><td style="text-align: right">72</td><td class="name">Rascal Jester</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">2003.8</td></tr>
-            <tr><td style="text-align: right">73</td><td class="name">BOOM Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2001.7</td></tr>
-            <tr><td style="text-align: right">74</td><td class="name">Beşiktaş Esports</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2001.4</td></tr>
-            <tr><td style="text-align: right">75</td><td class="name">Saigon Buffalo</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1994.1</td></tr>
-            <tr><td style="text-align: right">76</td><td class="name">1907 Fenerbahçe Esports</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1987.2</td></tr>
-            <tr><td style="text-align: right">77</td><td class="name">Dark Passage</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1986.9</td></tr>
-            <tr><td style="text-align: right">78</td><td class="name">Flamengo Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1977.4</td></tr>
-            <tr><td style="text-align: right">79</td><td class="name">LOUD</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1947.4</td></tr>
-            <tr><td style="text-align: right">80</td><td class="name">Victory Five</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">1944.5</td></tr>
-            <tr><td style="text-align: right">81</td><td class="name">XTEN Esports</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1943.9</td></tr>
-            <tr><td style="text-align: right">82</td><td class="name">AXIZ</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1936.5</td></tr>
-            <tr><td style="text-align: right">83</td><td class="name">Black Star Gaming</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1933.2</td></tr>
-            <tr><td style="text-align: right">84</td><td class="name">5 Ronin</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1932.7</td></tr>
-            <tr><td style="text-align: right">85</td><td class="name">Rainbow7</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1927.6</td></tr>
-            <tr><td style="text-align: right">86</td><td class="name">Furious Gaming</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1920.5</td></tr>
-            <tr><td style="text-align: right">87</td><td class="name">CERBERUS Esports (Vietnamese Team)</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1909.5</td></tr>
-            <tr><td style="text-align: right">88</td><td class="name">Team Secret (Vietnamese Team)</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1896.4</td></tr>
-            <tr><td style="text-align: right">89</td><td class="name">Legacy Esports</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1891.1</td></tr>
-            <tr><td style="text-align: right">90</td><td class="name">Isurus</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1890.9</td></tr>
-            <tr><td style="text-align: right">91</td><td class="name">KaBuM! e-Sports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1890.3</td></tr>
-            <tr><td style="text-align: right">92</td><td class="name">Vega Squadron</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1882.6</td></tr>
-            <tr><td style="text-align: right">93</td><td class="name">Hong Kong Attitude</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1881.7</td></tr>
-            <tr><td style="text-align: right">94</td><td class="name">V3 Esports</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1857.0</td></tr>
-            <tr><td style="text-align: right">95</td><td class="name">Gravitas</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1853.6</td></tr>
-            <tr><td style="text-align: right">96</td><td class="name">Dragon Army</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1835.4</td></tr>
-            <tr><td style="text-align: right">97</td><td class="name">Luxury Esports</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1833.6</td></tr>
-            <tr><td style="text-align: right">98</td><td class="name">Netshoes Miners</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1829.0</td></tr>
-            <tr><td style="text-align: right">99</td><td class="name">SBTC Esports</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1828.8</td></tr>
-            <tr><td style="text-align: right">100</td><td class="name">Team Flash.Vietnam</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1816.2</td></tr>
-            <tr><td style="text-align: right">101</td><td class="name">INTZ</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1783.7</td></tr>
-            <tr><td style="text-align: right">102</td><td class="name">Sengoku Gaming</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1776.1</td></tr>
-            <tr><td style="text-align: right">103</td><td class="name">RoX (2014 CIS Team)</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1766.9</td></tr>
-            <tr><td style="text-align: right">104</td><td class="name">Fukuoka SoftBank HAWKS gaming</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1758.5</td></tr>
-            <tr><td style="text-align: right">105</td><td class="name">FURIA Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1749.3</td></tr>
-            <tr><td style="text-align: right">106</td><td class="name">Berjaya Dragons</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1746.0</td></tr>
-            <tr><td style="text-align: right">107</td><td class="name">All Knights</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1739.2</td></tr>
-            <tr><td style="text-align: right">108</td><td class="name">Burst The Sky Esports</td><td class="league" style="text-align: center">VCS</td><td class="rating" style="text-align: center">1738.8</td></tr>
-            <tr><td style="text-align: right">109</td><td class="name">Crest Gaming Act</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1734.7</td></tr>
-            <tr><td style="text-align: right">110</td><td class="name">MAMMOTH</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1734.0</td></tr>
-            <tr><td style="text-align: right">111</td><td class="name">Kaos Latin Gamers</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1704.0</td></tr>
-            <tr><td style="text-align: right">112</td><td class="name">Liyab Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1703.6</td></tr>
-            <tr><td style="text-align: right">113</td><td class="name">Impunity</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1657.8</td></tr>
-            <tr><td style="text-align: right">114</td><td class="name">CTRL PLAY</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1622.7</td></tr>
-            <tr><td style="text-align: right">115</td><td class="name">Burning Core</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1540.8</td></tr>
-            <tr><td style="text-align: right">116</td><td class="name">Alpha Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1530.7</td></tr>
-            <tr><td style="text-align: right">117</td><td class="name">Team AURORA</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1488.3</td></tr>
+            <tr><td style="text-align: right">45</td><td class="name">RED Canids</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2169.0</td></tr>
+            <tr><td style="text-align: right">46</td><td class="name">paiN Gaming</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2157.7</td></tr>
+            <tr><td style="text-align: right">47</td><td class="name">Excel Esports</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2151.7</td></tr>
+            <tr><td style="text-align: right">48</td><td class="name">Dire Wolves</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2140.3</td></tr>
+            <tr><td style="text-align: right">49</td><td class="name">Astralis</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2139.9</td></tr>
+            <tr><td style="text-align: right">50</td><td class="name">Ultra Prime</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2137.3</td></tr>
+            <tr><td style="text-align: right">51</td><td class="name">Machi Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2127.8</td></tr>
+            <tr><td style="text-align: right">52</td><td class="name">Dignitas</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2118.5</td></tr>
+            <tr><td style="text-align: right">53</td><td class="name">Infinity Esports </td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">2113.8</td></tr>
+            <tr><td style="text-align: right">54</td><td class="name">Rensga Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2102.4</td></tr>
+            <tr><td style="text-align: right">55</td><td class="name">Chiefs Esports Club</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2101.2</td></tr>
+            <tr><td style="text-align: right">56</td><td class="name">SK Gaming</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2094.7</td></tr>
+            <tr><td style="text-align: right">57</td><td class="name">ORDER</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">2084.7</td></tr>
+            <tr><td style="text-align: right">58</td><td class="name">DRX</td><td class="league" style="text-align: center">LCK</td><td class="rating" style="text-align: center">2082.8</td></tr>
+            <tr><td style="text-align: right">59</td><td class="name">NASR eSports Turkey</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2081.8</td></tr>
+            <tr><td style="text-align: right">60</td><td class="name">Golden Guardians</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2078.0</td></tr>
+            <tr><td style="text-align: right">61</td><td class="name">J Team</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2074.6</td></tr>
+            <tr><td style="text-align: right">62</td><td class="name">ThunderTalk Gaming</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">2071.5</td></tr>
+            <tr><td style="text-align: right">63</td><td class="name">Vorax Liberty</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">2057.5</td></tr>
+            <tr><td style="text-align: right">64</td><td class="name">FlyQuest</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2043.1</td></tr>
+            <tr><td style="text-align: right">65</td><td class="name">Estral Esports</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">2037.0</td></tr>
+            <tr><td style="text-align: right">66</td><td class="name">FC Schalke 04 Esports</td><td class="league" style="text-align: center">LEC</td><td class="rating" style="text-align: center">2036.2</td></tr>
+            <tr><td style="text-align: right">67</td><td class="name">Istanbul Wildcats</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2026.2</td></tr>
+            <tr><td style="text-align: right">68</td><td class="name">SuperMassive Blaze</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2024.5</td></tr>
+            <tr><td style="text-align: right">69</td><td class="name">Galakticos</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2012.4</td></tr>
+            <tr><td style="text-align: right">70</td><td class="name">Counter Logic Gaming</td><td class="league" style="text-align: center">LCS</td><td class="rating" style="text-align: center">2005.6</td></tr>
+            <tr><td style="text-align: right">71</td><td class="name">Rascal Jester</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">2003.8</td></tr>
+            <tr><td style="text-align: right">72</td><td class="name">BOOM Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">2001.7</td></tr>
+            <tr><td style="text-align: right">73</td><td class="name">Beşiktaş Esports</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">2001.4</td></tr>
+            <tr><td style="text-align: right">74</td><td class="name">1907 Fenerbahçe Esports</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1987.2</td></tr>
+            <tr><td style="text-align: right">75</td><td class="name">Dark Passage</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1986.9</td></tr>
+            <tr><td style="text-align: right">76</td><td class="name">Flamengo Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1977.4</td></tr>
+            <tr><td style="text-align: right">77</td><td class="name">LOUD</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1947.4</td></tr>
+            <tr><td style="text-align: right">78</td><td class="name">Victory Five</td><td class="league" style="text-align: center">LPL</td><td class="rating" style="text-align: center">1944.5</td></tr>
+            <tr><td style="text-align: right">79</td><td class="name">XTEN Esports</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1943.9</td></tr>
+            <tr><td style="text-align: right">80</td><td class="name">AXIZ</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1936.5</td></tr>
+            <tr><td style="text-align: right">81</td><td class="name">Black Star Gaming</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1933.2</td></tr>
+            <tr><td style="text-align: right">82</td><td class="name">5 Ronin</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1932.7</td></tr>
+            <tr><td style="text-align: right">83</td><td class="name">Rainbow7</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1927.6</td></tr>
+            <tr><td style="text-align: right">84</td><td class="name">Furious Gaming</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1920.5</td></tr>
+            <tr><td style="text-align: right">85</td><td class="name">Legacy Esports</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1891.1</td></tr>
+            <tr><td style="text-align: right">86</td><td class="name">Isurus</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1890.9</td></tr>
+            <tr><td style="text-align: right">87</td><td class="name">KaBuM! e-Sports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1890.3</td></tr>
+            <tr><td style="text-align: right">88</td><td class="name">Vega Squadron</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1882.6</td></tr>
+            <tr><td style="text-align: right">89</td><td class="name">Hong Kong Attitude</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1881.7</td></tr>
+            <tr><td style="text-align: right">90</td><td class="name">V3 Esports</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1857.0</td></tr>
+            <tr><td style="text-align: right">91</td><td class="name">Gravitas</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1853.6</td></tr>
+            <tr><td style="text-align: right">92</td><td class="name">Dragon Army</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1835.4</td></tr>
+            <tr><td style="text-align: right">93</td><td class="name">Netshoes Miners</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1829.0</td></tr>
+            <tr><td style="text-align: right">94</td><td class="name">INTZ</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1783.7</td></tr>
+            <tr><td style="text-align: right">95</td><td class="name">Sengoku Gaming</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1776.1</td></tr>
+            <tr><td style="text-align: right">96</td><td class="name">RoX </td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1766.9</td></tr>
+            <tr><td style="text-align: right">97</td><td class="name">Fukuoka SoftBank HAWKS gaming</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1758.5</td></tr>
+            <tr><td style="text-align: right">98</td><td class="name">FURIA Esports</td><td class="league" style="text-align: center">CBLOL</td><td class="rating" style="text-align: center">1749.3</td></tr>
+            <tr><td style="text-align: right">99</td><td class="name">Berjaya Dragons</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1746.0</td></tr>
+            <tr><td style="text-align: right">100</td><td class="name">All Knights</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1739.2</td></tr>
+            <tr><td style="text-align: right">101</td><td class="name">Crest Gaming Act</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1734.7</td></tr>
+            <tr><td style="text-align: right">102</td><td class="name">MAMMOTH</td><td class="league" style="text-align: center">LCO</td><td class="rating" style="text-align: center">1734.0</td></tr>
+            <tr><td style="text-align: right">103</td><td class="name">Kaos Latin Gamers</td><td class="league" style="text-align: center">LLA</td><td class="rating" style="text-align: center">1704.0</td></tr>
+            <tr><td style="text-align: right">104</td><td class="name">Liyab Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1703.6</td></tr>
+            <tr><td style="text-align: right">105</td><td class="name">Impunity</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1657.8</td></tr>
+            <tr><td style="text-align: right">106</td><td class="name">CTRL PLAY</td><td class="league" style="text-align: center">LCL</td><td class="rating" style="text-align: center">1622.7</td></tr>
+            <tr><td style="text-align: right">107</td><td class="name">Burning Core</td><td class="league" style="text-align: center">LJL</td><td class="rating" style="text-align: center">1540.8</td></tr>
+            <tr><td style="text-align: right">108</td><td class="name">Alpha Esports</td><td class="league" style="text-align: center">PCS</td><td class="rating" style="text-align: center">1530.7</td></tr>
+            <tr><td style="text-align: right">109</td><td class="name">Team AURORA</td><td class="league" style="text-align: center">TCL</td><td class="rating" style="text-align: center">1488.3</td></tr>
             </tbody>
         </table>
     </div>
@@ -253,6 +246,7 @@
     Chart.defaults.font.size = 14;
     Chart.defaults.borderColor = "#ffffff5f";
     new Chart(document.getElementById("top-chart"), topChartConfig);
+    new Chart(document.getElementById("progression-chart"), progressionChartConfig);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/list.js@2.3.1/dist/list.min.js"
