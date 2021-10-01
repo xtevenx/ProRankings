@@ -36,7 +36,6 @@ const topChartConfig = {
 const progressionChartConfig = {
     type: "scatter",
     data: {
-        labels: {{ progressionLabels }},
         datasets: {{ progressionDatasets }}
     },
     options: {
