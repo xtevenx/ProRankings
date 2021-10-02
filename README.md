@@ -45,53 +45,53 @@ confidence interval of the rating.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | DWG KIA | 2536.8 | 73.7 |
-| 2 | FunPlus Phoenix | 2536.2 | 74.2 |
-| 3 | EDward Gaming | 2523.1 | 68.3 |
-| 4 | MAD Lions | 2513.9 | 78.1 |
-| 5 | Royal Never Give Up | 2498.8 | 78.8 |
-| 6 | LNG Esports | 2414.0 | 63.6 |
-| 7 | T1 | 2395.1 | 65.9 |
-| 8 | 100 Thieves | 2367.7 | 68.7 |
-| 9 | Top Esports | 2359.3 | 71.2 |
-| 10 | Suning | 2355.3 | 69.8 |
-| 11 | Fnatic | 2346.7 | 67.0 |
-| 12 | Team WE | 2340.6 | 61.8 |
-| 13 | Hanwha Life Esports | 2332.9 | 66.5 |
-| 14 | Gen.G | 2330.0 | 69.0 |
-| 15 | Bilibili Gaming | 2319.4 | 73.6 |
-| 16 | Cloud9 | 2319.1 | 67.4 |
-| 17 | G2 Esports | 2313.8 | 79.1 |
-| 18 | Rare Atom | 2313.5 | 77.3 |
-| 19 | Afreeca Freecs | 2306.4 | 67.7 |
-| 20 | Team Liquid | 2302.1 | 71.5 |
-| 21 | TSM | 2290.4 | 69.9 |
-| 22 | Rogue (European Team) | 2288.1 | 80.1 |
-| 23 | Misfits Gaming | 2283.3 | 77.4 |
-| 24 | Nongshim RedForce | 2281.4 | 71.4 |
-| 25 | Evil Geniuses.NA | 2263.6 | 72.2 |
-| 26 | Liiv SANDBOX | 2252.3 | 71.9 |
-| 27 | KT Rolster | 2248.1 | 69.8 |
-| 28 | JD Gaming | 2247.8 | 75.8 |
-| 29 | Oh My God | 2225.4 | 76.1 |
-| 30 | Fredit BRION | 2213.9 | 70.4 |
-| 31 | Invictus Gaming | 2213.6 | 74.1 |
-| 32 | LGD Gaming | 2200.7 | 77.6 |
-| 33 | Rogue Warriors | 2192.9 | 80.6 |
-| 34 | Immortals | 2186.4 | 78.1 |
-| 35 | Team Vitality | 2170.9 | 85.7 |
-| 36 | Excel Esports | 2151.7 | 91.9 |
-| 37 | Astralis | 2139.9 | 90.9 |
-| 38 | Ultra Prime | 2137.3 | 78.0 |
-| 39 | Dignitas | 2118.5 | 75.6 |
-| 40 | SK Gaming | 2094.7 | 93.9 |
-| 41 | DRX | 2082.8 | 75.2 |
-| 42 | Golden Guardians | 2078.0 | 85.7 |
-| 43 | ThunderTalk Gaming | 2071.5 | 77.9 |
-| 44 | FlyQuest | 2043.1 | 82.8 |
-| 45 | FC Schalke 04 Esports | 2036.2 | 89.9 |
-| 46 | Counter Logic Gaming | 2005.6 | 86.6 |
-| 47 | Victory Five | 1944.5 | 86.8 |
+| 1 | DWG KIA | 2535.9 | 73.7 |
+| 2 | FunPlus Phoenix | 2535.7 | 74.2 |
+| 3 | EDward Gaming | 2522.6 | 68.3 |
+| 4 | MAD Lions | 2513.4 | 78.1 |
+| 5 | Royal Never Give Up | 2498.4 | 78.8 |
+| 6 | LNG Esports | 2413.5 | 63.6 |
+| 7 | T1 | 2394.1 | 65.9 |
+| 8 | 100 Thieves | 2367.1 | 68.7 |
+| 9 | Top Esports | 2358.8 | 71.2 |
+| 10 | Suning | 2354.8 | 69.8 |
+| 11 | Fnatic | 2346.2 | 67.0 |
+| 12 | Team WE | 2340.1 | 61.8 |
+| 13 | Hanwha Life Esports | 2331.9 | 66.5 |
+| 14 | Gen.G | 2329.0 | 69.0 |
+| 15 | Bilibili Gaming | 2318.9 | 73.6 |
+| 16 | Cloud9 | 2318.5 | 67.4 |
+| 17 | G2 Esports | 2313.3 | 79.1 |
+| 18 | Rare Atom | 2313.0 | 77.3 |
+| 19 | Afreeca Freecs | 2305.4 | 67.7 |
+| 20 | Team Liquid | 2301.5 | 71.5 |
+| 21 | TSM | 2289.8 | 69.9 |
+| 22 | Rogue (European Team) | 2287.6 | 80.1 |
+| 23 | Misfits Gaming | 2282.8 | 77.4 |
+| 24 | Nongshim RedForce | 2280.4 | 71.4 |
+| 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
+| 26 | Liiv SANDBOX | 2251.3 | 71.9 |
+| 27 | JD Gaming | 2247.3 | 75.8 |
+| 28 | KT Rolster | 2247.1 | 69.8 |
+| 29 | Oh My God | 2224.9 | 76.1 |
+| 30 | Invictus Gaming | 2213.1 | 74.1 |
+| 31 | Fredit BRION | 2212.9 | 70.4 |
+| 32 | LGD Gaming | 2200.2 | 77.6 |
+| 33 | Rogue Warriors | 2192.4 | 80.6 |
+| 34 | Immortals | 2185.8 | 78.1 |
+| 35 | Team Vitality | 2170.4 | 85.7 |
+| 36 | Excel Esports | 2151.2 | 91.9 |
+| 37 | Astralis | 2139.4 | 90.9 |
+| 38 | Ultra Prime | 2136.9 | 78.0 |
+| 39 | Dignitas | 2117.9 | 75.6 |
+| 40 | SK Gaming | 2094.1 | 93.9 |
+| 41 | DRX | 2081.7 | 75.3 |
+| 42 | Golden Guardians | 2077.4 | 85.7 |
+| 43 | ThunderTalk Gaming | 2071.0 | 77.9 |
+| 44 | FlyQuest | 2042.5 | 82.8 |
+| 45 | FC Schalke 04 Esports | 2035.6 | 89.9 |
+| 46 | Counter Logic Gaming | 2005.0 | 86.6 |
+| 47 | Victory Five | 1944.0 | 86.8 |
 
 About the Rating System
 -----------------------
