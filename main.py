@@ -318,7 +318,7 @@ if __name__ == "__main__":
             '</tr>'
             for i, (n, l, r) in enumerate(teams_data))[8:])
 
-        with open("README.html", "w+", encoding="utf-8") as fp:
+        with open("index.html", "w+", encoding="utf-8") as fp:
             fp.write(template)
 
     print("Done.")
