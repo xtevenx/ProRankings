@@ -261,7 +261,7 @@ if __name__ == "__main__":
             text = fp.read()
 
         labels = [t[0] for t in majors_data]
-        ratings = [round(t[1].rating, 1) for t in majors_data]
+        ratings = [t[1].rating for t in majors_data]
         bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
         bar_colors = ["#" + "".join((hex(floor(256 * x))[2:] for x in t)) for t in bar_colors]
         ylim_diff = 0.146 * (max(ratings) - min(ratings))

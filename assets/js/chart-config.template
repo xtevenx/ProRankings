@@ -5,15 +5,23 @@ const topChartConfig = {
     data: {
         labels: {{ labels }},
         datasets: [{
-            label: "Rating Points",
             backgroundColor: {{ colors }},
             data: {{ data }},
+            label: "Rating Points"
         }]
     },
     options: {
         plugins: {
             legend: {
                 display: false
+            },
+            tooltip: {
+                mode: "nearest",
+                callbacks: {
+                    label: function(context) {
+                        return context.raw.toFixed(1);
+                    }
+                }
             }
         },
         scales: {
@@ -26,8 +34,8 @@ const topChartConfig = {
                 }
             },
             y: {
-                min: {{ yMin }},
-                max: {{ yMax }}
+                max: {{ yMax }},
+                min: {{ yMin }}
             }
         }
     }
@@ -39,6 +47,11 @@ const progressionChartConfig = {
         datasets: {{ progressionDatasets }}
     },
     options: {
+        elements: {
+            line: {
+                tension: 0.05
+            }
+        },
         scales: {
             x: {
                 min: {{ progressionStart }},
@@ -51,12 +64,14 @@ const progressionChartConfig = {
                 }
             }
         },
-        elements: {
-            line: {
-                tension: 0.05
-            },
-            point: {
-                radius: 0
+        plugins: {
+            tooltip: {
+                mode: "nearest",
+                callbacks: {
+                    label: function(context) {
+                        return context.raw[1].toFixed(1);
+                    }
+                }
             }
         }
     }
