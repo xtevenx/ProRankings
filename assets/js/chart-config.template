@@ -68,6 +68,9 @@ const progressionChartConfig = {
             tooltip: {
                 mode: "nearest",
                 callbacks: {
+                    title: function(context) {
+                        return context[0].dataset.label;
+                    },
                     label: function(context) {
                         return context.raw[1].toFixed(1);
                     }
