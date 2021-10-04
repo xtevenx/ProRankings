@@ -32,13 +32,27 @@ a {
     display: block;
     float: left;
     margin: 0 0.2em 0.2em 0;
+    opacity: 85%;
     padding: 0.1em 0.4em;
+    transition: 0.25s;
     user-select: none;
+}
+
+.checkbutton:hover {
+    opacity: 100%;
+    transition: 0.25s;
 }
 
 .checkbutton.checked {
     background-color: #017aa7;
     color: #ffffffdf;
+    opacity: 100%;
+    transition: 0.25s;
+}
+
+.checkbutton.checked:hover {
+    opacity: 85%;
+    transition: 0.25s;
 }
 
 .checkbutton input {
