@@ -26,14 +26,13 @@ a {
 
 .checkbutton {
     background-color: #ffffff1f;
-    border-radius: 0.236em;
     border-width: 0;
     color: #ffffff9f;
     cursor: pointer;
     display: block;
     float: left;
-    margin: 0 0.191em 0.382em;
-    padding: 0.12em 0.382em;
+    margin: 0 0.2em 0.2em 0;
+    padding: 0.1em 0.4em;
     user-select: none;
 }
 
