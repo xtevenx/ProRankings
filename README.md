@@ -60,11 +60,11 @@ confidence interval of the rating.
 | 13 | Gen.G | 2329.0 | 69.0 |
 | 14 | Bilibili Gaming | 2318.9 | 73.6 |
 | 15 | Cloud9 | 2318.5 | 67.4 |
-| 16 | G2 Esports | 2313.3 | 79.1 |
-| 17 | Rare Atom | 2313.0 | 77.3 |
-| 18 | Afreeca Freecs | 2305.4 | 67.7 |
-| 19 | Team Liquid | 2301.5 | 71.5 |
-| 20 | Hanwha Life Esports | 2301.3 | 85.0 |
+| 16 | Hanwha Life Esports | 2317.1 | 82.1 |
+| 17 | G2 Esports | 2313.3 | 79.1 |
+| 18 | Rare Atom | 2313.0 | 77.3 |
+| 19 | Afreeca Freecs | 2305.4 | 67.7 |
+| 20 | Team Liquid | 2301.5 | 71.5 |
 | 21 | TSM | 2289.8 | 69.9 |
 | 22 | Rogue (European Team) | 2287.6 | 80.1 |
 | 23 | Misfits Gaming | 2282.8 | 77.4 |
