@@ -55,11 +55,11 @@ confidence interval of the rating.
 | 8 | 100 Thieves | 2367.1 | 68.7 |
 | 9 | Top Esports | 2358.8 | 71.2 |
 | 10 | Suning | 2354.8 | 69.8 |
-| 11 | Fnatic | 2346.2 | 67.0 |
-| 12 | Team WE | 2340.1 | 61.8 |
-| 13 | Gen.G | 2329.0 | 69.0 |
-| 14 | Bilibili Gaming | 2318.9 | 73.6 |
-| 15 | Cloud9 | 2318.5 | 67.4 |
+| 11 | Cloud9 | 2349.1 | 87.6 |
+| 12 | Fnatic | 2346.2 | 67.0 |
+| 13 | Team WE | 2340.1 | 61.8 |
+| 14 | Gen.G | 2329.0 | 69.0 |
+| 15 | Bilibili Gaming | 2318.9 | 73.6 |
 | 16 | Hanwha Life Esports | 2317.1 | 82.1 |
 | 17 | G2 Esports | 2313.3 | 79.1 |
 | 18 | Rare Atom | 2313.0 | 77.3 |
