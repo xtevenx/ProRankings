@@ -52,11 +52,11 @@ confidence interval of the rating.
 | 5 | Royal Never Give Up | 2498.4 | 78.8 |
 | 6 | LNG Esports | 2469.7 | 77.2 |
 | 7 | T1 | 2394.1 | 65.9 |
-| 8 | 100 Thieves | 2367.1 | 68.7 |
-| 9 | Hanwha Life Esports | 2359.1 | 76.3 |
-| 10 | Top Esports | 2358.8 | 71.2 |
-| 11 | Suning | 2354.8 | 69.8 |
-| 12 | Cloud9 | 2349.1 | 87.6 |
+| 8 | Cloud9 | 2384.4 | 83.4 |
+| 9 | 100 Thieves | 2367.1 | 68.7 |
+| 10 | Hanwha Life Esports | 2359.1 | 76.3 |
+| 11 | Top Esports | 2358.8 | 71.2 |
+| 12 | Suning | 2354.8 | 69.8 |
 | 13 | Fnatic | 2346.2 | 67.0 |
 | 14 | Team WE | 2340.1 | 61.8 |
 | 15 | Gen.G | 2329.0 | 69.0 |
