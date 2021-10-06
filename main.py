@@ -316,9 +316,9 @@ if __name__ == "__main__":
                     rating_diff = v.rating - r
                 rating_diff = round(rating_diff, 1)
                 if rating_diff > 0:
-                    formatted_diff = f'<span style="color: #4CAF50">&#x025B4;{rating_diff}</span>'
+                    formatted_diff = f'<span style="color: #4CAF50">&plus;{rating_diff}</span>'
                 elif rating_diff < 0:
-                    formatted_diff = f'<span style="color: #F44336">&#x025BE;{-rating_diff}</span>'
+                    formatted_diff = f'<span style="color: #F44336">&minus;{-rating_diff}</span>'
                 else:
                     formatted_diff = ""
 
@@ -335,7 +335,7 @@ if __name__ == "__main__":
             f'<td class="name">{n}</td>'
             f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
             f'<td class="rating" style="text-align: center">{r:.1f}</td>'
-            f'<td class="diff" style="text-align: center">{d}</td>'
+            f'<td class="diff" style="text-align: center; white-space: nowrap">{d}</td>'
             '</tr>'
             for i, (n, l, r, d) in enumerate(teams_data))[8:])
 
