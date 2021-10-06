@@ -1,4 +1,4 @@
-from math import exp, floor
+from math import floor
 
 import models
 from pro_rankings import *
@@ -15,6 +15,9 @@ _plot_dpi = 200
 _bar_number_teams = 12
 _line_smooth_factor = 1.5
 _rating_diff_days = 7
+
+# value in days
+_chart_grouping_debounce = 0.5
 
 BAR_CHART = True
 LINE_CHART = True
@@ -277,17 +280,18 @@ if __name__ == "__main__":
             "label": t, "backgroundColor": c, "borderColor": c, "showLine": True
         } for t, c in plot_teams]
 
-        _SMOOTH_FACTOR: float = 1.6  # <- move this elsewhere later.
         for set_ in datasets:
             data = [[models.convert_to_days(d), r]
                     for d, r in teams_dictionary[set_["label"]].rating_history]
-            for i, (date, _) in enumerate(data):
-                multipliers = []
-                for o_d, o_r in data:
-                    multipliers.append(exp(-(o_d - date) ** 2 / (2 * _SMOOTH_FACTOR ** 2)))
-                m_sum = sum(multipliers)
-                multipliers = [m / m_sum for m in multipliers]
-                data[i][1] = sum(multipliers[j] * r for j, (_, r) in enumerate(data))
+
+            index = 0
+            while True:
+                if index + 1 >= len(data):
+                    break
+                if data[index + 1][0] <= data[index][0] + _chart_grouping_debounce:
+                    data.pop(index)
+                else:
+                    index += 1
             set_["data"] = data
 
         text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
