@@ -14,6 +14,7 @@ _plot_dpi = 200
 
 _bar_number_teams = 12
 _line_smooth_factor = 1.5
+_rating_diff_days = 7
 
 BAR_CHART = True
 LINE_CHART = True
@@ -302,8 +303,27 @@ if __name__ == "__main__":
         teams_data = []
         for tournament_name in PREMIER_LEAGUES:
             team_names = get_tournament_teams(tournament_name)
-            teams_data.extend([[k, tournament_name, v.rating]
-                               for k, v in teams_dictionary.items() if k in team_names])
+
+            diff_limit = models.convert_to_days(current_date)
+            for k, v in teams_dictionary.items():
+                if k not in team_names:
+                    continue
+
+                rating_diff = 0
+                for d, r in reversed(v.rating_history):
+                    if diff_limit - models.convert_to_days(d) > _rating_diff_days:
+                        break
+                    rating_diff = v.rating - r
+                rating_diff = round(rating_diff, 1)
+                if rating_diff > 0:
+                    formatted_diff = f'<span style="color: #4CAF50">&#x025B4;{rating_diff}</span>'
+                elif rating_diff < 0:
+                    formatted_diff = f'<span style="color: #F44336">&#x025BE;{-rating_diff}</span>'
+                else:
+                    formatted_diff = ""
+
+                teams_data.append([k, tournament_name, v.rating, formatted_diff])
+
         for data in teams_data:
             if data[0].endswith(" Team)"):
                 data[0] = data[0][:data[0].find("(")]
@@ -315,8 +335,9 @@ if __name__ == "__main__":
             f'<td class="name">{n}</td>'
             f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
             f'<td class="rating" style="text-align: center">{r:.1f}</td>'
+            f'<td class="diff" style="text-align: center">{d}</td>'
             '</tr>'
-            for i, (n, l, r) in enumerate(teams_data))[8:])
+            for i, (n, l, r, d) in enumerate(teams_data))[8:])
 
         with open("index.html", "w+", encoding="utf-8") as fp:
             fp.write(template)

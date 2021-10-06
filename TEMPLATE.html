@@ -72,6 +72,7 @@
                 <th>Team</th>
                 <th style="text-align: center">League</th>
                 <th style="text-align: center">Rating</th>
+                <th style="text-align: center">+/-</th>
             </tr>
             </thead>
             <tbody class="list">
@@ -144,7 +145,7 @@
         integrity="sha256-NEVvGNMGqFvs6adGLZjm5sLgcuX9rGTg1wlGtA1f7M8=" crossorigin="anonymous"></script>
 <script src="/ProRankings/assets/js/list-config.js"></script>
 <script>
-    const ratingList = new List("rating-table", {valueNames: ["name", "league", "rating"]});
+    const ratingList = new List("rating-table", {valueNames: ["name", "league", "rating", "diff"]});
     (window.updateRatingTable = function () {
         let displayedLeagues = new Set();
         for (let c of ratingTableCheckboxes) {
