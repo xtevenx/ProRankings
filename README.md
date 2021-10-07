@@ -50,7 +50,7 @@ confidence interval of the rating.
 | 3 | EDward Gaming | 2522.6 | 68.3 |
 | 4 | MAD Lions | 2513.4 | 78.1 |
 | 5 | Royal Never Give Up | 2498.4 | 78.8 |
-| 6 | LNG Esports | 2469.7 | 77.2 |
+| 6 | LNG Esports | 2474.7 | 76.8 |
 | 7 | Cloud9 | 2411.7 | 79.6 |
 | 8 | T1 | 2394.1 | 65.9 |
 | 9 | 100 Thieves | 2367.1 | 68.7 |
