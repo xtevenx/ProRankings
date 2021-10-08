@@ -11,6 +11,10 @@ a {
     color: #53a9d9;
 }
 
+.markdown-body h1, .markdown-body h2 {
+    border-bottom: 1px solid #ffffff5f;
+}
+
 .markdown-body table {
     display: table;
     table-layout: auto;
