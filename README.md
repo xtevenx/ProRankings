@@ -54,19 +54,19 @@ confidence interval of the rating.
 | 7 | LNG Esports | 2431.1 | 76.4 |
 | 8 | T1 | 2429.9 | 87.5 |
 | 9 | Gen.G | 2393.9 | 94.3 |
-| 10 | Cloud9 | 2381.4 | 67.9 |
-| 11 | Team Liquid | 2373.2 | 93.3 |
-| 12 | Top Esports | 2358.8 | 71.2 |
-| 13 | Suning | 2354.8 | 69.8 |
-| 14 | 100 Thieves | 2341.5 | 91.7 |
-| 15 | Team WE | 2340.1 | 61.8 |
-| 16 | Bilibili Gaming | 2318.9 | 73.6 |
-| 17 | G2 Esports | 2313.3 | 79.1 |
-| 18 | Fnatic | 2313.2 | 89.7 |
-| 19 | Rare Atom | 2313.0 | 77.3 |
-| 20 | Afreeca Freecs | 2305.4 | 67.7 |
-| 21 | TSM | 2289.8 | 69.9 |
-| 22 | Rogue (European Team) | 2287.6 | 80.1 |
+| 10 | Team Liquid | 2373.2 | 93.3 |
+| 11 | Top Esports | 2358.8 | 71.2 |
+| 12 | Suning | 2354.8 | 69.8 |
+| 13 | Rogue (European Team) | 2354.3 | 97.8 |
+| 14 | Cloud9 | 2353.8 | 67.2 |
+| 15 | 100 Thieves | 2341.5 | 91.7 |
+| 16 | Team WE | 2340.1 | 61.8 |
+| 17 | Bilibili Gaming | 2318.9 | 73.6 |
+| 18 | G2 Esports | 2313.3 | 79.1 |
+| 19 | Fnatic | 2313.2 | 89.7 |
+| 20 | Rare Atom | 2313.0 | 77.3 |
+| 21 | Afreeca Freecs | 2305.4 | 67.7 |
+| 22 | TSM | 2289.8 | 69.9 |
 | 23 | Misfits Gaming | 2282.8 | 77.4 |
 | 24 | Nongshim RedForce | 2280.4 | 71.4 |
 | 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
