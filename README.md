@@ -52,7 +52,7 @@ confidence interval of the rating.
 | 5 | FunPlus Phoenix | 2493.6 | 92.3 |
 | 6 | Hanwha Life Esports | 2450.0 | 68.5 |
 | 7 | LNG Esports | 2431.1 | 76.4 |
-| 8 | T1 | 2394.1 | 65.9 |
+| 8 | T1 | 2429.9 | 87.5 |
 | 9 | Gen.G | 2393.9 | 94.3 |
 | 10 | Cloud9 | 2381.4 | 67.9 |
 | 11 | 100 Thieves | 2367.1 | 68.7 |
