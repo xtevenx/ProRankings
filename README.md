@@ -48,23 +48,23 @@ confidence interval of the rating.
 | 1 | DWG KIA | 2583.2 | 93.8 |
 | 2 | EDward Gaming | 2548.2 | 89.2 |
 | 3 | Royal Never Give Up | 2547.1 | 95.0 |
-| 4 | MAD Lions | 2513.4 | 78.1 |
-| 5 | FunPlus Phoenix | 2493.6 | 92.3 |
-| 6 | Hanwha Life Esports | 2450.0 | 68.5 |
+| 4 | FunPlus Phoenix | 2493.6 | 92.3 |
+| 5 | Hanwha Life Esports | 2450.0 | 68.5 |
+| 6 | MAD Lions | 2440.6 | 96.9 |
 | 7 | LNG Esports | 2431.1 | 76.4 |
 | 8 | T1 | 2429.9 | 87.5 |
 | 9 | Gen.G | 2393.9 | 94.3 |
 | 10 | Cloud9 | 2381.4 | 67.9 |
-| 11 | Top Esports | 2358.8 | 71.2 |
-| 12 | Suning | 2354.8 | 69.8 |
-| 13 | 100 Thieves | 2341.5 | 91.7 |
-| 14 | Team WE | 2340.1 | 61.8 |
-| 15 | Bilibili Gaming | 2318.9 | 73.6 |
-| 16 | G2 Esports | 2313.3 | 79.1 |
-| 17 | Fnatic | 2313.2 | 89.7 |
-| 18 | Rare Atom | 2313.0 | 77.3 |
-| 19 | Afreeca Freecs | 2305.4 | 67.7 |
-| 20 | Team Liquid | 2301.5 | 71.5 |
+| 11 | Team Liquid | 2373.2 | 93.3 |
+| 12 | Top Esports | 2358.8 | 71.2 |
+| 13 | Suning | 2354.8 | 69.8 |
+| 14 | 100 Thieves | 2341.5 | 91.7 |
+| 15 | Team WE | 2340.1 | 61.8 |
+| 16 | Bilibili Gaming | 2318.9 | 73.6 |
+| 17 | G2 Esports | 2313.3 | 79.1 |
+| 18 | Fnatic | 2313.2 | 89.7 |
+| 19 | Rare Atom | 2313.0 | 77.3 |
+| 20 | Afreeca Freecs | 2305.4 | 67.7 |
 | 21 | TSM | 2289.8 | 69.9 |
 | 22 | Rogue (European Team) | 2287.6 | 80.1 |
 | 23 | Misfits Gaming | 2282.8 | 77.4 |
