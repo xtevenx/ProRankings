@@ -50,18 +50,18 @@ confidence interval of the rating.
 | 3 | EDward Gaming | 2522.6 | 68.3 |
 | 4 | MAD Lions | 2513.4 | 78.1 |
 | 5 | FunPlus Phoenix | 2493.6 | 92.3 |
-| 6 | LNG Esports | 2474.7 | 76.8 |
-| 7 | Hanwha Life Esports | 2430.5 | 69.3 |
+| 6 | Hanwha Life Esports | 2450.0 | 68.5 |
+| 7 | LNG Esports | 2431.1 | 76.4 |
 | 8 | T1 | 2394.1 | 65.9 |
-| 9 | Cloud9 | 2381.4 | 67.9 |
-| 10 | 100 Thieves | 2367.1 | 68.7 |
-| 11 | Top Esports | 2358.8 | 71.2 |
-| 12 | Suning | 2354.8 | 69.8 |
-| 13 | Fnatic | 2346.2 | 67.0 |
+| 9 | Gen.G | 2393.9 | 94.3 |
+| 10 | Cloud9 | 2381.4 | 67.9 |
+| 11 | 100 Thieves | 2367.1 | 68.7 |
+| 12 | Top Esports | 2358.8 | 71.2 |
+| 13 | Suning | 2354.8 | 69.8 |
 | 14 | Team WE | 2340.1 | 61.8 |
-| 15 | Gen.G | 2329.0 | 69.0 |
-| 16 | Bilibili Gaming | 2318.9 | 73.6 |
-| 17 | G2 Esports | 2313.3 | 79.1 |
+| 15 | Bilibili Gaming | 2318.9 | 73.6 |
+| 16 | G2 Esports | 2313.3 | 79.1 |
+| 17 | Fnatic | 2313.2 | 89.7 |
 | 18 | Rare Atom | 2313.0 | 77.3 |
 | 19 | Afreeca Freecs | 2305.4 | 67.7 |
 | 20 | Team Liquid | 2301.5 | 71.5 |
