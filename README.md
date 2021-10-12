@@ -47,7 +47,7 @@ confidence interval of the rating.
 | --: | --- | :-: | :-: |
 | 1 | DWG KIA | 2601.8 | 90.5 |
 | 2 | EDward Gaming | 2573.7 | 85.2 |
-| 3 | Royal Never Give Up | 2547.1 | 95.0 |
+| 3 | Royal Never Give Up | 2566.0 | 91.6 |
 | 4 | FunPlus Phoenix | 2493.6 | 92.3 |
 | 5 | MAD Lions | 2440.6 | 96.9 |
 | 6 | LNG Esports | 2431.1 | 76.4 |
@@ -63,9 +63,9 @@ confidence interval of the rating.
 | 16 | Rogue (European Team) | 2333.4 | 93.8 |
 | 17 | Bilibili Gaming | 2318.9 | 73.6 |
 | 18 | G2 Esports | 2313.3 | 79.1 |
-| 19 | Fnatic | 2313.2 | 89.7 |
-| 20 | Rare Atom | 2313.0 | 77.3 |
-| 21 | Afreeca Freecs | 2305.4 | 67.7 |
+| 19 | Rare Atom | 2313.0 | 77.3 |
+| 20 | Afreeca Freecs | 2305.4 | 67.7 |
+| 21 | Fnatic | 2295.7 | 86.9 |
 | 22 | TSM | 2289.8 | 69.9 |
 | 23 | Misfits Gaming | 2282.8 | 77.4 |
 | 24 | Nongshim RedForce | 2280.4 | 71.4 |
