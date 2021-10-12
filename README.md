@@ -48,7 +48,7 @@ confidence interval of the rating.
 | 1 | DWG KIA | 2601.8 | 90.5 |
 | 2 | EDward Gaming | 2573.7 | 85.2 |
 | 3 | Royal Never Give Up | 2566.0 | 91.6 |
-| 4 | FunPlus Phoenix | 2493.6 | 92.3 |
+| 4 | FunPlus Phoenix | 2519.7 | 88.1 |
 | 5 | MAD Lions | 2440.6 | 96.9 |
 | 6 | LNG Esports | 2431.1 | 76.4 |
 | 7 | Hanwha Life Esports | 2428.1 | 66.9 |
@@ -57,9 +57,9 @@ confidence interval of the rating.
 | 10 | Team Liquid | 2373.2 | 93.3 |
 | 11 | Top Esports | 2358.8 | 71.2 |
 | 12 | Suning | 2354.8 | 69.8 |
-| 13 | Cloud9 | 2353.8 | 67.2 |
-| 14 | 100 Thieves | 2341.5 | 91.7 |
-| 15 | Team WE | 2340.1 | 61.8 |
+| 13 | 100 Thieves | 2341.5 | 91.7 |
+| 14 | Team WE | 2340.1 | 61.8 |
+| 15 | Cloud9 | 2339.0 | 66.0 |
 | 16 | Rogue (European Team) | 2333.4 | 93.8 |
 | 17 | Bilibili Gaming | 2318.9 | 73.6 |
 | 18 | G2 Esports | 2313.3 | 79.1 |
