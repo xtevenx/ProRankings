@@ -54,10 +54,10 @@ confidence interval of the rating.
 | 7 | Hanwha Life Esports | 2428.1 | 66.9 |
 | 8 | T1 | 2404.0 | 83.8 |
 | 9 | Gen.G | 2393.9 | 94.3 |
-| 10 | Team Liquid | 2373.2 | 93.3 |
-| 11 | Top Esports | 2358.8 | 71.2 |
-| 12 | Suning | 2354.8 | 69.8 |
-| 13 | 100 Thieves | 2341.5 | 91.7 |
+| 10 | 100 Thieves | 2378.3 | 86.8 |
+| 11 | Team Liquid | 2373.2 | 93.3 |
+| 12 | Top Esports | 2358.8 | 71.2 |
+| 13 | Suning | 2354.8 | 69.8 |
 | 14 | Team WE | 2340.1 | 61.8 |
 | 15 | Cloud9 | 2339.0 | 66.0 |
 | 16 | Rogue (European Team) | 2333.4 | 93.8 |
