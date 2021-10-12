@@ -49,13 +49,13 @@ confidence interval of the rating.
 | 2 | EDward Gaming | 2573.7 | 85.2 |
 | 3 | Royal Never Give Up | 2566.0 | 91.6 |
 | 4 | FunPlus Phoenix | 2519.7 | 88.1 |
-| 5 | MAD Lions | 2440.6 | 96.9 |
+| 5 | MAD Lions | 2479.5 | 91.3 |
 | 6 | LNG Esports | 2431.1 | 76.4 |
 | 7 | Hanwha Life Esports | 2428.1 | 66.9 |
 | 8 | T1 | 2404.0 | 83.8 |
-| 9 | Gen.G | 2393.9 | 94.3 |
-| 10 | 100 Thieves | 2378.3 | 86.8 |
-| 11 | Team Liquid | 2373.2 | 93.3 |
+| 9 | 100 Thieves | 2378.3 | 86.8 |
+| 10 | Team Liquid | 2373.2 | 93.3 |
+| 11 | Gen.G | 2359.0 | 89.4 |
 | 12 | Top Esports | 2358.8 | 71.2 |
 | 13 | Suning | 2354.8 | 69.8 |
 | 14 | Team WE | 2340.1 | 61.8 |
