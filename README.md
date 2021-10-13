@@ -47,7 +47,7 @@ confidence interval of the rating.
 | --: | --- | :-: | :-: |
 | 1 | DWG KIA | 2617.7 | 87.9 |
 | 2 | Royal Never Give Up | 2592.6 | 87.3 |
-| 3 | EDward Gaming | 2573.7 | 85.2 |
+| 3 | EDward Gaming | 2586.7 | 83.4 |
 | 4 | FunPlus Phoenix | 2540.2 | 84.9 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
 | 6 | MAD Lions | 2435.8 | 86.2 |
