@@ -51,12 +51,12 @@ confidence interval of the rating.
 | 4 | FunPlus Phoenix | 2540.2 | 84.9 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
 | 6 | MAD Lions | 2435.8 | 86.2 |
-| 7 | Hanwha Life Esports | 2414.0 | 65.8 |
-| 8 | T1 | 2404.0 | 83.8 |
+| 7 | T1 | 2434.7 | 80.4 |
+| 8 | Hanwha Life Esports | 2414.0 | 65.8 |
 | 9 | Gen.G | 2395.6 | 84.9 |
-| 10 | 100 Thieves | 2378.3 | 86.8 |
-| 11 | Top Esports | 2358.8 | 71.2 |
-| 12 | Suning | 2354.8 | 69.8 |
+| 10 | Top Esports | 2358.8 | 71.2 |
+| 11 | Suning | 2354.8 | 69.8 |
+| 12 | 100 Thieves | 2343.8 | 82.8 |
 | 13 | Team WE | 2340.1 | 61.8 |
 | 14 | Cloud9 | 2330.5 | 65.5 |
 | 15 | Bilibili Gaming | 2318.9 | 73.6 |
