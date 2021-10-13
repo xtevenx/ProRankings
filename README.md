@@ -65,10 +65,10 @@ confidence interval of the rating.
 | 18 | Rare Atom | 2313.0 | 77.3 |
 | 19 | Rogue (European Team) | 2311.3 | 90.0 |
 | 20 | Afreeca Freecs | 2305.4 | 67.7 |
-| 21 | Fnatic | 2295.7 | 86.9 |
-| 22 | TSM | 2289.8 | 69.9 |
-| 23 | Misfits Gaming | 2282.8 | 77.4 |
-| 24 | Nongshim RedForce | 2280.4 | 71.4 |
+| 21 | TSM | 2289.8 | 69.9 |
+| 22 | Misfits Gaming | 2282.8 | 77.4 |
+| 23 | Nongshim RedForce | 2280.4 | 71.4 |
+| 24 | Fnatic | 2277.8 | 84.2 |
 | 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
 | 26 | Liiv SANDBOX | 2251.3 | 71.9 |
 | 27 | JD Gaming | 2247.3 | 75.8 |
