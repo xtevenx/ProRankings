@@ -53,18 +53,18 @@ confidence interval of the rating.
 | 6 | MAD Lions | 2435.8 | 86.2 |
 | 7 | Hanwha Life Esports | 2414.0 | 65.8 |
 | 8 | T1 | 2404.0 | 83.8 |
-| 9 | 100 Thieves | 2378.3 | 86.8 |
-| 10 | Gen.G | 2359.0 | 89.4 |
+| 9 | Gen.G | 2395.6 | 84.9 |
+| 10 | 100 Thieves | 2378.3 | 86.8 |
 | 11 | Top Esports | 2358.8 | 71.2 |
 | 12 | Suning | 2354.8 | 69.8 |
 | 13 | Team WE | 2340.1 | 61.8 |
 | 14 | Cloud9 | 2339.0 | 66.0 |
-| 15 | Team Liquid | 2337.4 | 88.3 |
-| 16 | Bilibili Gaming | 2318.9 | 73.6 |
-| 17 | G2 Esports | 2313.3 | 79.1 |
-| 18 | Rare Atom | 2313.0 | 77.3 |
-| 19 | Rogue (European Team) | 2311.3 | 90.0 |
-| 20 | Afreeca Freecs | 2305.4 | 67.7 |
+| 15 | Bilibili Gaming | 2318.9 | 73.6 |
+| 16 | G2 Esports | 2313.3 | 79.1 |
+| 17 | Rare Atom | 2313.0 | 77.3 |
+| 18 | Rogue (European Team) | 2311.3 | 90.0 |
+| 19 | Afreeca Freecs | 2305.4 | 67.7 |
+| 20 | Team Liquid | 2303.6 | 84.0 |
 | 21 | TSM | 2289.8 | 69.9 |
 | 22 | Misfits Gaming | 2282.8 | 77.4 |
 | 23 | Nongshim RedForce | 2280.4 | 71.4 |
