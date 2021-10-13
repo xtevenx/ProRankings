@@ -45,7 +45,7 @@ confidence interval of the rating.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | DWG KIA | 2601.8 | 90.5 |
+| 1 | DWG KIA | 2617.7 | 87.9 |
 | 2 | Royal Never Give Up | 2592.6 | 87.3 |
 | 3 | EDward Gaming | 2573.7 | 85.2 |
 | 4 | FunPlus Phoenix | 2540.2 | 84.9 |
@@ -58,7 +58,7 @@ confidence interval of the rating.
 | 11 | Top Esports | 2358.8 | 71.2 |
 | 12 | Suning | 2354.8 | 69.8 |
 | 13 | Team WE | 2340.1 | 61.8 |
-| 14 | Cloud9 | 2339.0 | 66.0 |
+| 14 | Cloud9 | 2330.5 | 65.5 |
 | 15 | Bilibili Gaming | 2318.9 | 73.6 |
 | 16 | G2 Esports | 2313.3 | 79.1 |
 | 17 | Rare Atom | 2313.0 | 77.3 |
