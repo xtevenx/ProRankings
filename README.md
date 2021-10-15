@@ -45,7 +45,7 @@ confidence interval of the rating.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | DWG KIA | 2646.6 | 84.3 |
+| 1 | DWG KIA | 2655.0 | 82.6 |
 | 2 | Royal Never Give Up | 2592.6 | 87.3 |
 | 3 | EDward Gaming | 2586.7 | 83.4 |
 | 4 | LNG Esports | 2482.3 | 71.7 |
@@ -68,7 +68,7 @@ confidence interval of the rating.
 | 21 | Misfits Gaming | 2282.8 | 77.4 |
 | 22 | Nongshim RedForce | 2280.4 | 71.4 |
 | 23 | Fnatic | 2277.8 | 84.2 |
-| 24 | Rogue (European Team) | 2274.0 | 85.8 |
+| 24 | Rogue (European Team) | 2265.5 | 84.0 |
 | 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
 | 26 | Liiv SANDBOX | 2251.3 | 71.9 |
 | 27 | JD Gaming | 2247.3 | 75.8 |
