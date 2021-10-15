@@ -45,10 +45,10 @@ confidence interval of the rating.
 
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
-| 1 | DWG KIA | 2617.7 | 87.9 |
+| 1 | DWG KIA | 2646.6 | 84.3 |
 | 2 | Royal Never Give Up | 2592.6 | 87.3 |
 | 3 | EDward Gaming | 2586.7 | 83.4 |
-| 4 | FunPlus Phoenix | 2540.2 | 84.9 |
+| 4 | FunPlus Phoenix | 2511.6 | 81.9 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
 | 6 | MAD Lions | 2435.8 | 86.2 |
 | 7 | T1 | 2434.7 | 80.4 |
@@ -56,19 +56,19 @@ confidence interval of the rating.
 | 9 | Gen.G | 2395.6 | 84.9 |
 | 10 | Top Esports | 2358.8 | 71.2 |
 | 11 | Suning | 2354.8 | 69.8 |
-| 12 | 100 Thieves | 2343.8 | 82.8 |
-| 13 | Team WE | 2340.1 | 61.8 |
-| 14 | Cloud9 | 2330.5 | 65.5 |
+| 12 | Cloud9 | 2351.9 | 64.8 |
+| 13 | 100 Thieves | 2343.8 | 82.8 |
+| 14 | Team WE | 2340.1 | 61.8 |
 | 15 | Bilibili Gaming | 2318.9 | 73.6 |
 | 16 | G2 Esports | 2313.3 | 79.1 |
 | 17 | Rare Atom | 2313.0 | 77.3 |
-| 18 | Rogue (European Team) | 2311.3 | 90.0 |
-| 19 | Afreeca Freecs | 2305.4 | 67.7 |
-| 20 | Team Liquid | 2303.6 | 84.0 |
-| 21 | TSM | 2289.8 | 69.9 |
-| 22 | Misfits Gaming | 2282.8 | 77.4 |
-| 23 | Nongshim RedForce | 2280.4 | 71.4 |
-| 24 | Fnatic | 2277.8 | 84.2 |
+| 18 | Afreeca Freecs | 2305.4 | 67.7 |
+| 19 | Team Liquid | 2303.6 | 84.0 |
+| 20 | TSM | 2289.8 | 69.9 |
+| 21 | Misfits Gaming | 2282.8 | 77.4 |
+| 22 | Nongshim RedForce | 2280.4 | 71.4 |
+| 23 | Fnatic | 2277.8 | 84.2 |
+| 24 | Rogue (European Team) | 2274.0 | 85.8 |
 | 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
 | 26 | Liiv SANDBOX | 2251.3 | 71.9 |
 | 27 | JD Gaming | 2247.3 | 75.8 |
