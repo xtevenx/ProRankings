@@ -53,13 +53,13 @@ confidence interval of the rating.
 | 6 | T1 | 2434.7 | 80.4 |
 | 7 | Hanwha Life Esports | 2414.0 | 65.8 |
 | 8 | Gen.G | 2395.6 | 84.9 |
-| 9 | FunPlus Phoenix | 2381.7 | 72.5 |
-| 10 | Cloud9 | 2373.8 | 62.0 |
+| 9 | Cloud9 | 2392.9 | 60.3 |
+| 10 | FunPlus Phoenix | 2381.7 | 72.5 |
 | 11 | Top Esports | 2358.8 | 71.2 |
-| 12 | Rogue (European Team) | 2358.8 | 76.9 |
-| 13 | Suning | 2354.8 | 69.8 |
-| 14 | 100 Thieves | 2343.8 | 82.8 |
-| 15 | Team WE | 2340.1 | 61.8 |
+| 12 | Suning | 2354.8 | 69.8 |
+| 13 | 100 Thieves | 2343.8 | 82.8 |
+| 14 | Team WE | 2340.1 | 61.8 |
+| 15 | Rogue (European Team) | 2330.7 | 73.6 |
 | 16 | Bilibili Gaming | 2318.9 | 73.6 |
 | 17 | G2 Esports | 2313.3 | 79.1 |
 | 18 | Rare Atom | 2313.0 | 77.3 |
