@@ -46,7 +46,7 @@ confidence interval of the rating.
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
 | 1 | DWG KIA | 2667.5 | 80.3 |
-| 2 | Royal Never Give Up | 2522.2 | 86.8 |
+| 2 | Royal Never Give Up | 2552.3 | 82.4 |
 | 3 | T1 | 2511.7 | 73.4 |
 | 4 | EDward Gaming | 2504.1 | 76.2 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
