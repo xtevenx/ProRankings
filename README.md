@@ -46,7 +46,7 @@ confidence interval of the rating.
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
 | 1 | DWG KIA | 2667.5 | 80.3 |
-| 2 | Royal Never Give Up | 2592.6 | 87.3 |
+| 2 | Royal Never Give Up | 2522.2 | 86.8 |
 | 3 | T1 | 2511.7 | 73.4 |
 | 4 | EDward Gaming | 2504.1 | 76.2 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
@@ -58,17 +58,17 @@ confidence interval of the rating.
 | 11 | FunPlus Phoenix | 2381.7 | 72.5 |
 | 12 | Top Esports | 2358.8 | 71.2 |
 | 13 | Suning | 2354.8 | 69.8 |
-| 14 | Team WE | 2340.1 | 61.8 |
-| 15 | Rogue (European Team) | 2330.7 | 73.6 |
-| 16 | Bilibili Gaming | 2318.9 | 73.6 |
-| 17 | G2 Esports | 2313.3 | 79.1 |
-| 18 | Rare Atom | 2313.0 | 77.3 |
-| 19 | Afreeca Freecs | 2305.4 | 67.7 |
-| 20 | Team Liquid | 2303.6 | 84.0 |
-| 21 | TSM | 2289.8 | 69.9 |
-| 22 | Misfits Gaming | 2282.8 | 77.4 |
-| 23 | Nongshim RedForce | 2280.4 | 71.4 |
-| 24 | Fnatic | 2277.8 | 84.2 |
+| 14 | Fnatic | 2340.5 | 83.5 |
+| 15 | Team WE | 2340.1 | 61.8 |
+| 16 | Rogue (European Team) | 2330.7 | 73.6 |
+| 17 | Bilibili Gaming | 2318.9 | 73.6 |
+| 18 | G2 Esports | 2313.3 | 79.1 |
+| 19 | Rare Atom | 2313.0 | 77.3 |
+| 20 | Afreeca Freecs | 2305.4 | 67.7 |
+| 21 | Team Liquid | 2303.6 | 84.0 |
+| 22 | TSM | 2289.8 | 69.9 |
+| 23 | Misfits Gaming | 2282.8 | 77.4 |
+| 24 | Nongshim RedForce | 2280.4 | 71.4 |
 | 25 | Evil Geniuses.NA | 2263.0 | 72.2 |
 | 26 | Liiv SANDBOX | 2251.3 | 71.9 |
 | 27 | JD Gaming | 2247.3 | 75.8 |
