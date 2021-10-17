@@ -61,11 +61,11 @@ confidence interval of the rating.
 | 14 | Team WE | 2340.1 | 61.8 |
 | 15 | Rogue (European Team) | 2330.7 | 73.6 |
 | 16 | Bilibili Gaming | 2318.9 | 73.6 |
-| 17 | Fnatic | 2315.4 | 79.7 |
-| 18 | G2 Esports | 2313.3 | 79.1 |
-| 19 | Rare Atom | 2313.0 | 77.3 |
-| 20 | Afreeca Freecs | 2305.4 | 67.7 |
-| 21 | Team Liquid | 2303.6 | 84.0 |
+| 17 | G2 Esports | 2313.3 | 79.1 |
+| 18 | Rare Atom | 2313.0 | 77.3 |
+| 19 | Afreeca Freecs | 2305.4 | 67.7 |
+| 20 | Team Liquid | 2303.6 | 84.0 |
+| 21 | Fnatic | 2294.1 | 76.6 |
 | 22 | TSM | 2289.8 | 69.9 |
 | 23 | Misfits Gaming | 2282.8 | 77.4 |
 | 24 | Nongshim RedForce | 2280.4 | 71.4 |
