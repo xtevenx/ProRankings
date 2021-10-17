@@ -50,7 +50,7 @@ confidence interval of the rating.
 | 3 | T1 | 2511.7 | 73.4 |
 | 4 | EDward Gaming | 2504.1 | 76.2 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
-| 6 | Hanwha Life Esports | 2445.0 | 66.8 |
+| 6 | Hanwha Life Esports | 2460.7 | 64.9 |
 | 7 | MAD Lions | 2435.8 | 86.2 |
 | 8 | Gen.G | 2395.6 | 84.9 |
 | 9 | Cloud9 | 2392.9 | 60.3 |
@@ -58,10 +58,10 @@ confidence interval of the rating.
 | 11 | FunPlus Phoenix | 2381.7 | 72.5 |
 | 12 | Top Esports | 2358.8 | 71.2 |
 | 13 | Suning | 2354.8 | 69.8 |
-| 14 | Fnatic | 2340.5 | 83.5 |
-| 15 | Team WE | 2340.1 | 61.8 |
-| 16 | Rogue (European Team) | 2330.7 | 73.6 |
-| 17 | Bilibili Gaming | 2318.9 | 73.6 |
+| 14 | Team WE | 2340.1 | 61.8 |
+| 15 | Rogue (European Team) | 2330.7 | 73.6 |
+| 16 | Bilibili Gaming | 2318.9 | 73.6 |
+| 17 | Fnatic | 2315.4 | 79.7 |
 | 18 | G2 Esports | 2313.3 | 79.1 |
 | 19 | Rare Atom | 2313.0 | 77.3 |
 | 20 | Afreeca Freecs | 2305.4 | 67.7 |
