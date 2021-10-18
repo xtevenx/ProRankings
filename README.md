@@ -51,8 +51,8 @@ confidence interval of the rating.
 | 4 | EDward Gaming | 2504.1 | 76.2 |
 | 5 | LNG Esports | 2482.3 | 71.7 |
 | 6 | Hanwha Life Esports | 2468.6 | 61.2 |
-| 7 | MAD Lions | 2435.8 | 86.2 |
-| 8 | Gen.G | 2395.6 | 84.9 |
+| 7 | Gen.G | 2437.0 | 83.1 |
+| 8 | MAD Lions | 2395.4 | 84.2 |
 | 9 | Cloud9 | 2392.9 | 60.3 |
 | 10 | 100 Thieves | 2392.5 | 74.4 |
 | 11 | FunPlus Phoenix | 2381.7 | 72.5 |
