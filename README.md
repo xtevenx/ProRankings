@@ -52,14 +52,14 @@ confidence interval of the rating.
 | 5 | Hanwha Life Esports | 2468.6 | 61.2 |
 | 6 | MAD Lions | 2461.1 | 76.4 |
 | 7 | LNG Esports | 2437.7 | 67.6 |
-| 8 | Cloud9 | 2392.9 | 60.3 |
-| 9 | 100 Thieves | 2392.5 | 74.4 |
-| 10 | FunPlus Phoenix | 2381.7 | 72.5 |
-| 11 | Gen.G | 2367.0 | 75.5 |
-| 12 | Team Liquid | 2365.9 | 75.5 |
-| 13 | Top Esports | 2358.8 | 71.2 |
-| 14 | Suning | 2354.8 | 69.8 |
-| 15 | Team WE | 2340.1 | 61.8 |
+| 8 | Gen.G | 2395.7 | 72.4 |
+| 9 | Cloud9 | 2392.9 | 60.3 |
+| 10 | 100 Thieves | 2392.5 | 74.4 |
+| 11 | FunPlus Phoenix | 2381.7 | 72.5 |
+| 12 | Top Esports | 2358.8 | 71.2 |
+| 13 | Suning | 2354.8 | 69.8 |
+| 14 | Team WE | 2340.1 | 61.8 |
+| 15 | Team Liquid | 2338.4 | 72.4 |
 | 16 | Rogue (European Team) | 2330.7 | 73.6 |
 | 17 | Bilibili Gaming | 2318.9 | 73.6 |
 | 18 | G2 Esports | 2313.3 | 79.1 |
