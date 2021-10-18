@@ -49,9 +49,9 @@ confidence interval of the rating.
 | 2 | Royal Never Give Up | 2539.1 | 74.9 |
 | 3 | T1 | 2511.7 | 73.4 |
 | 4 | EDward Gaming | 2504.1 | 76.2 |
-| 5 | Hanwha Life Esports | 2468.6 | 61.2 |
-| 6 | MAD Lions | 2461.1 | 76.4 |
-| 7 | LNG Esports | 2437.7 | 67.6 |
+| 5 | MAD Lions | 2488.8 | 73.2 |
+| 6 | Hanwha Life Esports | 2468.6 | 61.2 |
+| 7 | LNG Esports | 2416.7 | 65.4 |
 | 8 | Gen.G | 2395.7 | 72.4 |
 | 9 | Cloud9 | 2392.9 | 60.3 |
 | 10 | 100 Thieves | 2392.5 | 74.4 |
