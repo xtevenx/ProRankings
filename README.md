@@ -46,12 +46,12 @@ confidence interval of the rating.
 | | Team | Rating | RD |
 | --: | --- | :-: | :-: |
 | 1 | DWG KIA | 2667.5 | 80.3 |
-| 2 | T1 | 2559.5 | 71.5 |
+| 2 | T1 | 2576.6 | 69.1 |
 | 3 | Royal Never Give Up | 2539.1 | 74.9 |
 | 4 | EDward Gaming | 2504.1 | 76.2 |
 | 5 | MAD Lions | 2455.7 | 70.4 |
-| 6 | Hanwha Life Esports | 2434.2 | 61.7 |
-| 7 | Gen.G | 2429.3 | 69.8 |
+| 6 | Gen.G | 2429.3 | 69.8 |
+| 7 | Hanwha Life Esports | 2421.0 | 60.1 |
 | 8 | LNG Esports | 2416.7 | 65.4 |
 | 9 | Cloud9 | 2392.9 | 60.3 |
 | 10 | 100 Thieves | 2392.5 | 74.4 |
