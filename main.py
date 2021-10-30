@@ -22,7 +22,6 @@ _chart_grouping_debounce = 0.5
 BAR_CHART = True
 LINE_CHART = True
 TOURNAMENT_CHART = False
-README = True
 HTML = True
 
 if __name__ == "__main__":
@@ -238,25 +237,6 @@ if __name__ == "__main__":
 
         plt.savefig(_tourney_output, dpi=_plot_dpi)
         plt.clf()
-
-    if README:
-        print("Generating README.md ... ")
-
-        with open("TEMPLATE.md", "r") as fp:
-            template = fp.read()
-
-        team_names = get_tournaments_teams(MAJOR_LEAGUES)
-        teams_data = [
-            (k, v.rating, v.deviation) for k, v in teams_dictionary.items() if k in team_names]
-        teams_data.sort(key=lambda t: t[1], reverse=True)
-
-        string_list = [
-            f"| {i + 1} | {n} | {r:.1f} | {d:.1f} |" for i, (n, r, d) in enumerate(teams_data)]
-        header = "| | Team | Rating | RD |\n| --: | --- | :-: | :-: |\n"
-        template = template.replace("{{ RatingTable }}", header + "\n".join(string_list))
-
-        with open("README.md", "w+") as fp:
-            fp.write(template)
 
     if HTML:
         print("Generating README.html ... ")
