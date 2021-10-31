@@ -4,8 +4,8 @@ import models
 from pro_rankings import *
 
 _line_output = "data/output_line.png"
-_line_plot_start = "2021-01-08 00:00:00"
-_line_plot_end = "2022-01-08 00:00:00"
+_line_plot_start = "2020-01-01 00:00:00"
+_line_plot_end = "2021-12-31 23:59:59"
 _bar_output = "data/output_bar.png"
 _tourney_output = "data/output_tourney.png"
 
@@ -56,12 +56,12 @@ if __name__ == "__main__":
 
     plot_teams = [
         ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
-        # ("T1", "#f44336"),  # curr lck 1st (red)
         # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
         ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
         # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
         ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
-        ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
+        # ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
+        ("T1", "#f44336"),  # personal favourite team (red)
         # Note: no LCS teams because they haven't won worlds before. :)
         # Note: colors are the 500 colors from the 2014 Material color palette.
         # Note: the color palette can be found at the link below.
