@@ -9,17 +9,11 @@ _line_plot_end = "2021-12-31 23:59:59"
 _bar_output = "data/output_bar.png"
 _tourney_output = "data/output_tourney.png"
 
-_plot_size = (9.6, 5.4)
-_plot_dpi = 200
-
 _bar_number_teams = 12
-_line_smooth_factor = 1.5
 _rating_diff_days = 7
 
-# value in days
+# Value in days.
 _chart_grouping_debounce = 0.5
-
-HTML = True
 
 if __name__ == "__main__":
     from datetime import datetime
@@ -29,30 +23,7 @@ if __name__ == "__main__":
 
     print("Loading plotting libraries ... ")
 
-    import matplotlib as mpl
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import pandas as pd
     import seaborn as sns
-
-    # don't warn on chained assignment (hopefully the code is correct :)
-    pd.options.mode.chained_assignment = None
-
-    mpl.rcParams.update({
-        "axes.axisbelow": True,
-        "axes.edgecolor": "#ffffff9f",
-        "axes.facecolor": "black",
-        "axes.labelcolor": "#ffffff9f",
-        "figure.facecolor": "black",
-        "grid.color": "#ffffff",
-        "grid.alpha": 0.382,
-        "patch.linewidth": 0,
-        "text.color": "#ffffff9f",
-        "xtick.color": "#ffffff9f",
-        "ytick.color": "#ffffff9f",
-    })
-
-    plt.grid(color="#ffffff9f")
 
     plot_teams = [
         ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
@@ -79,92 +50,93 @@ if __name__ == "__main__":
     majors_data.sort(key=lambda t: t[1].rating, reverse=True)
     majors_data = majors_data[:_bar_number_teams]
 
-    if HTML:
-        print("Generating README.html ... ")
+    # Actually generate the HTML ==============================================
 
-        with open("assets/js/chart-config.template", "r") as fp:
-            text = fp.read()
+    print("Generating README.html ... ")
 
-        labels = [t[0] for t in majors_data]
-        ratings = [t[1].rating for t in majors_data]
-        bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
-        bar_colors = ["#" + "".join((hex(floor(256 * x))[2:] for x in t)) for t in bar_colors]
-        ylim_diff = 0.146 * (max(ratings) - min(ratings))
+    with open("assets/js/chart-config.template", "r") as fp:
+        text = fp.read()
 
-        text = text.replace("{{ labels }}", str(labels))
-        text = text.replace("{{ data }}", str(ratings))
-        text = text.replace("{{ colors }}", str(bar_colors))
-        text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
-        text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
+    labels = [t[0] for t in majors_data]
+    ratings = [t[1].rating for t in majors_data]
+    bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
+    bar_colors = ["#" + "".join((hex(floor(256 * x))[2:] for x in t)) for t in bar_colors]
+    ylim_diff = 0.146 * (max(ratings) - min(ratings))
 
-        datasets = [{
-            "label": t, "backgroundColor": c, "borderColor": c, "showLine": True
-        } for t, c in plot_teams]
+    text = text.replace("{{ labels }}", str(labels))
+    text = text.replace("{{ data }}", str(ratings))
+    text = text.replace("{{ colors }}", str(bar_colors))
+    text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
+    text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
 
-        for set_ in datasets:
-            data = [[models.convert_to_days(d), r]
-                    for d, r in teams_dictionary[set_["label"]].rating_history]
+    datasets = [{
+        "label": t, "backgroundColor": c, "borderColor": c, "showLine": True
+    } for t, c in plot_teams]
 
-            index = 0
-            while True:
-                if index + 1 >= len(data):
+    for set_ in datasets:
+        data = [[models.convert_to_days(d), r]
+                for d, r in teams_dictionary[set_["label"]].rating_history]
+
+        index = 0
+        while True:
+            if index + 1 >= len(data):
+                break
+            if data[index + 1][0] <= data[index][0] + _chart_grouping_debounce:
+                data.pop(index)
+            else:
+                index += 1
+        set_["data"] = data
+
+    text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
+    text = text.replace("{{ progressionStart }}", str(models.convert_to_days(_line_plot_start)))
+    text = text.replace("{{ progressionEnd }}", str(models.convert_to_days(_line_plot_end)))
+
+    with open("assets/js/chart-config.js", "w") as fp:
+        fp.write(text)
+
+    with open("TEMPLATE.html", "r", encoding="utf-8") as fp:
+        template = fp.read()
+
+    teams_data = []
+    for tournament_name in PREMIER_LEAGUES:
+        team_names = get_tournament_teams(tournament_name)
+
+        diff_limit = models.convert_to_days(current_date)
+        for k, v in teams_dictionary.items():
+            if k not in team_names:
+                continue
+
+            rating_diff = 0
+            for d, r in reversed(v.rating_history):
+                if diff_limit - models.convert_to_days(d) > _rating_diff_days:
                     break
-                if data[index + 1][0] <= data[index][0] + _chart_grouping_debounce:
-                    data.pop(index)
-                else:
-                    index += 1
-            set_["data"] = data
+                rating_diff = v.rating - r
+            rating_diff = round(rating_diff, 1)
+            if rating_diff > 0:
+                formatted_diff = f'<span style="color: #4CAF50">&plus;{rating_diff}</span>'
+            elif rating_diff < 0:
+                formatted_diff = f'<span style="color: #F44336">&minus;{-rating_diff}</span>'
+            else:
+                formatted_diff = ""
 
-        text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
-        text = text.replace("{{ progressionStart }}", str(models.convert_to_days(_line_plot_start)))
-        text = text.replace("{{ progressionEnd }}", str(models.convert_to_days(_line_plot_end)))
+            teams_data.append([k, tournament_name, v.rating, formatted_diff])
 
-        with open("assets/js/chart-config.js", "w") as fp:
-            fp.write(text)
+    for data in teams_data:
+        if data[0].endswith(" Team)"):
+            data[0] = data[0][:data[0].find("(")]
+    teams_data.sort(key=lambda t: t[2], reverse=True)
 
-        with open("TEMPLATE.html", "r", encoding="utf-8") as fp:
-            template = fp.read()
+    template = template.replace("{{ ratingTable }}", "\n".join(
+        '            <tr>'
+        f'<td style="text-align: right">{i + 1}</td>'
+        f'<td class="name">{n}</td>'
+        f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
+        f'<td class="rating" style="text-align: center">{r:.1f}</td>'
+        f'<td class="diff" style="text-align: center; white-space: nowrap">{d}</td>'
+        '</tr>'
+        for i, (n, l, r, d) in enumerate(teams_data))[8:])
 
-        teams_data = []
-        for tournament_name in PREMIER_LEAGUES:
-            team_names = get_tournament_teams(tournament_name)
-
-            diff_limit = models.convert_to_days(current_date)
-            for k, v in teams_dictionary.items():
-                if k not in team_names:
-                    continue
-
-                rating_diff = 0
-                for d, r in reversed(v.rating_history):
-                    if diff_limit - models.convert_to_days(d) > _rating_diff_days:
-                        break
-                    rating_diff = v.rating - r
-                rating_diff = round(rating_diff, 1)
-                if rating_diff > 0:
-                    formatted_diff = f'<span style="color: #4CAF50">&plus;{rating_diff}</span>'
-                elif rating_diff < 0:
-                    formatted_diff = f'<span style="color: #F44336">&minus;{-rating_diff}</span>'
-                else:
-                    formatted_diff = ""
-
-                teams_data.append([k, tournament_name, v.rating, formatted_diff])
-
-        for data in teams_data:
-            if data[0].endswith(" Team)"):
-                data[0] = data[0][:data[0].find("(")]
-        teams_data.sort(key=lambda t: t[2], reverse=True)
-
-        template = template.replace("{{ ratingTable }}", "\n".join(
-            '            <tr>'
-            f'<td style="text-align: right">{i + 1}</td>'
-            f'<td class="name">{n}</td>'
-            f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
-            f'<td class="rating" style="text-align: center">{r:.1f}</td>'
-            f'<td class="diff" style="text-align: center; white-space: nowrap">{d}</td>'
-            '</tr>'
-            for i, (n, l, r, d) in enumerate(teams_data))[8:])
-
-        with open("index.html", "w+", encoding="utf-8") as fp:
-            fp.write(template)
+    with open("index.html", "w+", encoding="utf-8") as fp:
+        fp.write(template)
 
     print("Done.")

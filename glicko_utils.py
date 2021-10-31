@@ -16,7 +16,7 @@ Result = Tuple[float, float, float]
 ResultList = Sequence[Result]
 
 # Set various Glicko rating system variables.
-INITIAL_RATING: float = 1645.15
+INITIAL_RATING: float = 1500
 INITIAL_DEVIATION: float = 350
 
 TYPICAL_DEVIATION: float = 50
