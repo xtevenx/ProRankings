@@ -19,9 +19,6 @@ _rating_diff_days = 7
 # value in days
 _chart_grouping_debounce = 0.5
 
-BAR_CHART = True
-LINE_CHART = True
-TOURNAMENT_CHART = False
 HTML = True
 
 if __name__ == "__main__":
@@ -71,67 +68,6 @@ if __name__ == "__main__":
         # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
     ]
 
-    if LINE_CHART:
-        team_names, team_colors = zip(*plot_teams)
-
-        plot_data = {"Date": [], "Rating": [], "Team": []}
-        for team_name in team_names:
-            timestamps, ratings = zip(*teams_dictionary[team_name].rating_history)
-            plot_data["Rating"].extend(ratings)
-            plot_data["Date"].extend(timestamps)
-            plot_data["Team"].extend(len(timestamps) * (team_name,))
-
-        # input data into a DataFrame
-        datetime_start = pd.to_datetime(_line_plot_start)
-        no_smooth_start = datetime_start - pd.to_timedelta(52, unit="W")
-
-        df = pd.DataFrame(plot_data)
-        df["Date"] = pd.to_datetime(df["Date"])
-
-        new_df = pd.DataFrame()
-        for team_name in team_names:
-            temp_df = df[df["Team"] == team_name]
-            temp_df["Date"] = temp_df["Date"].apply(lambda dt: datetime(dt.year, dt.month, dt.day))
-            temp_df.drop_duplicates(subset="Date", keep="last", inplace=True)
-            temp_df.set_index("Date", inplace=True)
-            temp_df = temp_df.resample("6H").interpolate(method="linear")
-            temp_df = temp_df[temp_df.index >= no_smooth_start]
-
-            # apply Gaussian kernel smoothing.
-            smoothed_df = temp_df.copy()
-            for date in smoothed_df.index[::-1]:
-                multipliers = np.exp(
-                    -(temp_df.index - date).days ** 2 / (2 * (_line_smooth_factor ** 2))
-                )
-                multipliers /= np.sum(multipliers)
-                if date < datetime_start:
-                    break
-                smoothed_df.at[date, "Rating"] = np.sum(multipliers * temp_df["Rating"])
-            temp_df = smoothed_df
-
-            temp_df = temp_df[temp_df.index >= datetime_start]
-            temp_df["Team"] = team_name
-            new_df = new_df.append(temp_df)
-        df = new_df
-
-        # actually plot the data
-        print("Generating line graph ... ")
-
-        _, _ = plt.subplots()
-        plt.figure(figsize=_plot_size)
-
-        for name, color in plot_teams:
-            plt.plot("Rating", data=df[df["Team"] == name], color=color, label=name)
-        plt.legend()
-
-        plt.xlim(pd.to_datetime(_line_plot_start), pd.to_datetime(_line_plot_end))
-        plt.grid(True, axis="y")
-
-        plt.title("Rating Progression of Select Teams")
-
-        plt.savefig(_line_output, dpi=_plot_dpi)
-        plt.clf()
-
     team_names = get_tournaments_teams(MAJOR_LEAGUES)
     majors_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
 
@@ -142,101 +78,6 @@ if __name__ == "__main__":
 
     majors_data.sort(key=lambda t: t[1].rating, reverse=True)
     majors_data = majors_data[:_bar_number_teams]
-
-    if BAR_CHART:
-        plot_data = {
-            "Rating": [t[1].rating for t in majors_data],
-            "Team": [t[0] for t in majors_data]
-        }
-
-        # input data into a DataFrame
-        df = pd.DataFrame(plot_data)
-        df.sort_values(by="Rating", ascending=False, inplace=True)
-
-        print("Generating bar graph ... ")
-
-        _, _ = plt.subplots()
-        plt.figure(figsize=_plot_size)
-
-        bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
-        bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
-
-        plt.title("Ratings of Top Teams in Major Leagues")
-        plt.xticks(ticks=[])
-
-        ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
-        plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
-        plt.grid(True, axis="y")
-
-        y_min = plt.ylim()[0]
-        for i, a in enumerate(bars):
-            plt.gca().text(
-                x=a.get_x() + a.get_width() / 2,
-                y=plt.ylim()[0] + 0.2 * ylim_diff,
-                s=plot_data["Team"][i],
-                backgroundcolor="#0000009f",
-                color="#ffffff9f",
-                horizontalalignment="center",
-                rotation="vertical"
-            )
-
-        plt.savefig(_bar_output, dpi=_plot_dpi)
-        plt.clf()
-
-    if TOURNAMENT_CHART:
-        print("Preparing data for tournament bar graph ... ")
-
-        team_names = get_tournaments_teams([
-            "2021 Season World Championship/Main Event",
-            "2021 Season World Championship/Play-in",
-        ])
-        teams_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
-
-        all_names = {t[0] for t in teams_data}
-        for team_name in team_names:
-            if team_name not in all_names:
-                print(f"Error: team `{team_name}' not found.")
-
-        teams_data.sort(key=lambda t: t[1].rating, reverse=True)
-
-        plot_data = {
-            "Rating": [t[1].rating for t in teams_data],
-            "Team": [t[0] for t in teams_data]
-        }
-
-        # input data into a DataFrame
-        df = pd.DataFrame(plot_data)
-        df.sort_values(by="Rating", ascending=False, inplace=True)
-
-        print("Generating tournament bar graph ... ")
-
-        _, _ = plt.subplots()
-        plt.figure(figsize=_plot_size)
-
-        bar_colors = sns.color_palette(palette="hls", n_colors=len(teams_data))
-        bars = plt.bar(x="Team", height="Rating", data=df, color=bar_colors)
-
-        plt.title("Ratings of Teams at Worlds 2021")
-        plt.xticks(ticks=[])
-
-        ylim_diff = 0.146 * (max(df["Rating"]) - min(df["Rating"]))
-        plt.ylim(min(df["Rating"]) - ylim_diff, max(df["Rating"]) + ylim_diff)
-        plt.grid(True, axis="y")
-
-        y_min = plt.ylim()[0]
-        for i, a in enumerate(bars):
-            plt.gca().text(
-                x=a.get_x() + a.get_width() / 2,
-                y=plt.ylim()[0] + 0.2 * ylim_diff,
-                s=plot_data["Team"][i],
-                backgroundcolor="#0000009f",
-                color="#ffffff9f",
-                horizontalalignment="center",
-                rotation="vertical"
-            )
-
-        plt.savefig(_tourney_output, dpi=_plot_dpi)
-        plt.clf()
 
     if HTML:
         print("Generating README.html ... ")
