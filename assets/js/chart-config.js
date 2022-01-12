@@ -54,8 +54,8 @@ const progressionChartConfig = {
         },
         scales: {
             x: {
-                min: 18262.0,
-                max: 18992.999988425927,
+                min: 18628.0,
+                max: 19357.999988425927,
                 ticks: {
                     callback: function(value, index, values) {
                         const date = new Date(1000 * value * 60 * 60 * 24);
