@@ -4,8 +4,8 @@ import models
 from pro_rankings import *
 
 _line_output = "data/output_line.png"
-_line_plot_start = "2020-01-01 00:00:00"
-_line_plot_end = "2021-12-31 23:59:59"
+_line_plot_start = "2021-01-01 00:00:00"
+_line_plot_end = "2022-12-31 23:59:59"
 _bar_output = "data/output_bar.png"
 _tourney_output = "data/output_tourney.png"
 
