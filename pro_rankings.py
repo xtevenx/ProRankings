@@ -5,18 +5,18 @@ import mwclient
 from models import QueryDelay, TeamData
 
 # iterable of all the major leagues.
-MAJOR_LEAGUES: tuple = tuple(f"{s}/2021 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL"))
+MAJOR_LEAGUES: tuple = tuple(f"{s}/2022 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL"))
 
 # iterable of all premier leagues.
 PREMIER_LEAGUES: tuple = MAJOR_LEAGUES + (
-    "CBLOL/2021 Season/Split 2",
-    "LCL/2021 Season/Summer Season",
-    "LJL/2021 Season/Summer Season",
-    "LLA/2021 Season/Closing Season",
-    "LCO/2021 Season/Split 2",
-    "PCS/2021 Season/Summer Season",
-    "TCL/2021 Season/Summer Season",
-    "VCS/2021 Season/Summer Season",
+    "CBLOL/2022 Season/Split 1",
+    "LCL/2022 Season/Spring Season",
+    "LJL/2022 Season/Spring Season",
+    "LLA/2022 Season/Opening Season",
+    "LCO/2022 Season/Split 1",
+    "PCS/2022 Season/Spring Season",
+    "TCL/2022 Season/Winter Season",
+    "VCS/2022 Season/Spring Season",
 )
 
 # how much extra do interregional games count towards one's rating.
