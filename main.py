@@ -26,13 +26,14 @@ if __name__ == "__main__":
     import seaborn as sns
 
     plot_teams = [
-        ("DWG KIA", "#00bcd4"),  # curr lck 1st  (cyan)
+        # ("DWG KIA", "#00bcd4"),  # curr lck 1st (cyan)
         # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
-        ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
-        # ("Fnatic", "#ff9800"),  # curr lec 1st  (orange)
+        ("T1", "#f44336"),  # curr lck 1st (red)
+        ("Fnatic", "#ff9800"),  # curr lec 1st (orange)
+        # ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
+        ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
         ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
         # ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
-        ("T1", "#f44336"),  # personal favourite team (red)
         # Note: no LCS teams because they haven't won worlds before. :)
         # Note: colors are the 500 colors from the 2014 Material color palette.
         # Note: the color palette can be found at the link below.
