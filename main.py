@@ -29,10 +29,11 @@ if __name__ == "__main__":
         # ("DWG KIA", "#00bcd4"),  # curr lck 1st (cyan)
         # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
         ("T1", "#f44336"),  # curr lck 1st (red)
-        ("Fnatic", "#ff9800"),  # curr lec 1st (orange)
+        # ("Fnatic", "#ff9800"),  # curr lec 1st (orange)
         # ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
         ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
         ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
+        ("LNG Esports", "#673AB7"),  # curr lpl 1st (deep purple)
         # ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
         # Note: no LCS teams because they haven't won worlds before. :)
         # Note: colors are the 500 colors from the 2014 Material color palette.
