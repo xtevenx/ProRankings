@@ -33,8 +33,8 @@ if __name__ == "__main__":
         # ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
         ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
         ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
-        ("LNG Esports", "#673AB7"),  # curr lpl 1st (deep purple)
-        # ("FunPlus Phoenix", "#ff5722"),  # personal favourite team (deep orange)
+        ("Victory Five", "#cddc39"),  # curr lpl 1st (lime)
+        # ("LNG Esports", "#673AB7"),  # curr lpl 1st (deep purple)
         # Note: no LCS teams because they haven't won worlds before. :)
         # Note: colors are the 500 colors from the 2014 Material color palette.
         # Note: the color palette can be found at the link below.
