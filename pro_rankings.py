@@ -1,6 +1,7 @@
 import datetime
 import json
 import mwclient
+import os
 
 from models import QueryDelay, TeamData
 
@@ -89,11 +90,9 @@ def _save_past_data(end_at, rename_history, games_data, filename: str = "data/pa
                 "rename_history": rename_history,
                 "games_data": games_data}
 
-    try:
-        with open(filename, "w") as fp:
-            json.dump(save_obj, fp, separators=(",", ":"))
-    except FileNotFoundError:
-        ...
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w") as fp:
+        json.dump(save_obj, fp, separators=(",", ":"))
 
 
 def parse_string_datetime(str_: str) -> datetime.datetime:
