@@ -335,3 +335,11 @@ if __name__ == "__main__":
         league_teams = [t for t in teams_list if t.name in league_teams]
         avg_rating = sum(t.rating for t in league_teams) / len(league_teams)
         print(f"{league_name} average rating: {avg_rating:.2f}")
+
+    # Calculate the highest ever ratings.
+    raw_data = [(t.name, max(t.rating_history, key=lambda t: t[1]))
+                for t in teams_dictionary.values()]
+    raw_data.sort(key=lambda t: t[1][1], reverse=True)
+
+    for i, x in enumerate(raw_data[:10]):
+        print(f"{str(i + 1).rjust(2)}. {x[0]}: {x[1][1]:.1f} @ {x[1][0].split()[0]}")
