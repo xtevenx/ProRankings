@@ -34,8 +34,9 @@ if __name__ == "__main__":
         # ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
         ("G2 Esports", "#795548"),  # curr lec 1st (brown)
         # ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
-        ("Victory Five", "#cddc39"),  # curr lpl 1st (lime)
+        # ("Victory Five", "#cddc39"),  # curr lpl 1st (lime)
         # ("LNG Esports", "#673AB7"),  # curr lpl 1st (deep purple)
+        ("Royal Never Give Up", "#ffeb3b"),  # curr lpl 1st (yellow)
         # Note: no LCS teams because they haven't won worlds before. :)
         # Note: colors are the 500 colors from the 2014 Material color palette.
         # Note: the color palette can be found at the link below.
