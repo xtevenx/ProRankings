@@ -3,10 +3,10 @@ const MONTH_ABBREVIATIONS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "A
 const topChartConfig = {
     type: "bar",
     data: {
-        labels: ['G2 Esports', 'T1', 'Royal Never Give Up', 'Gen.G', 'DWG KIA', 'Top Esports', 'Victory Five', 'JD Gaming', 'Evil Geniuses.NA', 'EDward Gaming', 'Kwangdong Freecs', 'Rogue (European Team)'],
+        labels: ['G2 Esports', 'T1', 'Royal Never Give Up', 'Gen.G', 'DWG KIA', 'Top Esports', 'Victory Five', 'Evil Geniuses.NA', 'JD Gaming', 'EDward Gaming', 'Kwangdong Freecs', 'Rogue (European Team)'],
         datasets: [{
             backgroundColor: ['#dc5f57', '#dca157', '#d4dc57', '#91dc57', '#57dc5f', '#57dca1', '#57d4dc', '#5791dc', '#5f57dc', '#a157dc', '#dc57d4', '#dc5791'],
-            data: [2528.245895538339, 2524.4226615570483, 2433.668639693661, 2387.898616079233, 2372.332289879694, 2336.9448755164985, 2303.111970811392, 2258.759450606141, 2253.738590506081, 2238.41758265801, 2238.069224561753, 2235.074396943037],
+            data: [2528.245895538339, 2524.4226615570483, 2433.668639693661, 2387.898616079233, 2372.332289879694, 2336.9448755164985, 2303.111970811392, 2272.739558778241, 2258.759450606141, 2238.41758265801, 2238.069224561753, 2235.074396943037],
             label: "Rating Points"
         }]
     },
