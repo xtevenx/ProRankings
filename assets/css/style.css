@@ -1,28 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import "given-style.css";
+@import "normalize-8.0.1.min.css";
 
-html, body {
-    background: black;
-    color: #ffffff9f;
+* {
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    background: black;
+}
+
+body {
+    color: #ffffff9f;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 32px auto;
+    max-width: 1024px;
+    word-wrap: break-word;
 }
 
 a {
     color: #53a9d9;
+    text-decoration: none;
 }
 
-.markdown-body h1, .markdown-body h2 {
+h1, h2 {
     border-bottom: 1px solid #ffffff5f;
+    padding-bottom: 0.25em;
 }
 
-.markdown-body table {
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
     display: table;
     table-layout: auto;
+    width: 100%;
 }
 
-.markdown-body table th, .markdown-body table td {
-    background-color: #000000;
+table th, table td {
     border: 1px solid #ffffff5f;
+    padding: 6px 12px;
+}
+
+li {
+    padding-bottom: 0.25em;
 }
 
 
