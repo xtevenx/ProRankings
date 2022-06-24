@@ -9,9 +9,9 @@
     --green-color: #c3e88d;
     --blue-color: #82aaff;
     --red-color: #f07a78;
+    --white-color: #eeffff;
 
     --background-color-light: #353740;
-    --foreground-color-lighter: #f2f6ff;
     --foreground-color-light: #bfc3d3;
     --blue-color-light: #b6dbff;
     --blue-color-dark: #4d7bcb;
@@ -103,7 +103,7 @@ li {
 }
 
 .checkbutton.checked {
-    color: var(--foreground-color-lighter);
+    color: var(--white-color);
     background-color: var(--blue-color-dark);
     opacity: 100%;
     transition: var(--animation-duration);
