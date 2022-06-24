@@ -1,16 +1,17 @@
-from math import floor
+import json
 
 import models
 from pro_rankings import *
 
-_line_plot_start = "2021-01-01 00:00:00"
-_line_plot_end = "2022-12-31 23:59:59"
+_line_plot_start: str = "2021-01-01 00:00:00"
+_line_plot_end: str = "2022-12-31 23:59:59"
 
-_bar_number_teams = 12
-_rating_diff_days = 7
+_bar_number_teams: int = 12
+_rating_diff_days: int = 7
 
 # Value in days.
-_chart_grouping_debounce = 0.5
+_chart_data_decimals: int = 1
+_chart_grouping_debounce: float = 0.5
 
 # https://material-theme.com/docs/reference/color-palette/
 # Selected theme: Deep ocean
@@ -58,7 +59,8 @@ if __name__ == "__main__":
     ]
 
     team_names = get_tournaments_teams(MAJOR_LEAGUES)
-    majors_data = [(k, v) for k, v in teams_dictionary.items() if k in team_names]
+    majors_data = [(k, v) for k, v in teams_dictionary.items()
+                   if k in team_names]
 
     all_names = {t[0] for t in majors_data}
     for team_name in team_names:
@@ -76,21 +78,29 @@ if __name__ == "__main__":
         text = fp.read()
 
     labels = [t[0] for t in majors_data]
-    ratings = [t[1].rating for t in majors_data]
+    ratings = [round(t[1].rating, _chart_data_decimals) for t in majors_data]
     ylim_diff = 0.146 * (max(ratings) - min(ratings))
 
     text = text.replace("{{ labels }}", str(labels))
     text = text.replace("{{ data }}", str(ratings))
     text = text.replace("{{ colors }}", str(BAR_COLORS))
-    text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
-    text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
+
+    text = text.replace(
+        "{{ yMin }}",
+        str(round(min(ratings) - ylim_diff, _chart_data_decimals)))
+    text = text.replace(
+        "{{ yMax }}",
+        str(round(max(ratings) + ylim_diff, _chart_data_decimals)))
 
     datasets = [{
-        "label": t, "backgroundColor": c, "borderColor": c, "showLine": True
+        "label": t,
+        "backgroundColor": c,
+        "borderColor": c,
+        "showLine": True
     } for t, c in plot_teams]
 
     for set_ in datasets:
-        data = [[models.convert_to_days(d), r]
+        data = [[models.convert_to_days(d), round(r, _chart_data_decimals)]
                 for d, r in teams_dictionary[set_["label"]].rating_history]
 
         index = 0
@@ -104,8 +114,14 @@ if __name__ == "__main__":
         set_["data"] = data
 
     text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
-    text = text.replace("{{ progressionStart }}", str(models.convert_to_days(_line_plot_start)))
-    text = text.replace("{{ progressionEnd }}", str(models.convert_to_days(_line_plot_end)))
+    text = text.replace(
+        "{{ progressionStart }}",
+        str(round(models.convert_to_days(_line_plot_start),
+                  _chart_data_decimals)))
+    text = text.replace(
+        "{{ progressionEnd }}",
+        str(round(models.convert_to_days(_line_plot_end),
+                  _chart_data_decimals)))
 
     with open("assets/js/chart-config.js", "w") as fp:
         fp.write(text)
@@ -142,15 +158,15 @@ if __name__ == "__main__":
             data[0] = data[0][:data[0].find("(")]
     teams_data.sort(key=lambda t: t[2], reverse=True)
 
-    template = template.replace("{{ ratingTable }}", "\n".join(
-        '            <tr>'
-        f'<td style="text-align: right">{i + 1}</td>'
-        f'<td class="name">{n}</td>'
-        f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
-        f'<td class="rating" style="text-align: center">{r:.1f}</td>'
-        f'<td class="diff" style="text-align: center; white-space: nowrap">{d}</td>'
-        '</tr>'
-        for i, (n, l, r, d) in enumerate(teams_data))[8:])
+    template = template.replace(
+        "{{ ratingTable }}", "\n".join(
+            '            <tr>'
+            f'<td style="text-align: right">{i + 1}</td>'
+            f'<td class="name">{n}</td>'
+            f'<td class="league" style="text-align: center">{l.split("/")[0]}</td>'
+            f'<td class="rating" style="text-align: center">{r:.1f}</td>'
+            f'<td class="diff" style="text-align: center; white-space: nowrap">{d}</td>'
+            '</tr>' for i, (n, l, r, d) in enumerate(teams_data))[8:])
 
     with open("index.html", "w+", encoding="utf-8") as fp:
         fp.write(template)
