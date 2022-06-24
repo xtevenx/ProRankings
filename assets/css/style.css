@@ -1,32 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import "normalize-8.0.1.min.css";
 
+:root {
+    /* https://material-theme.com/docs/reference/color-palette */
+    /* Selected theme: Deep ocean */
+    --background-color: #0f111a;
+    --foreground-color: #8f93a2;
+    --green-color: #c3e88d;
+    --blue-color: #82aaff;
+    --red-color: #f07a78;
+
+    --background-color-light: #353740;
+    --foreground-color-lighter: #f2f6ff;
+    --foreground-color-light: #bfc3d3;
+    --blue-color-light: #b6dbff;
+    --blue-color-dark: #4d7bcb;
+    --blue-color-darker: #00509a;
+
+    --animation-duration: 200ms;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
 
 html {
-    background: black;
+    background: var(--background-color);
 }
 
 body {
-    color: #ffffff9f;
+    color: var(--foreground-color);
     font-size: 16px;
     line-height: 1.5;
     margin: 32px auto;
-    max-width: 1024px;
+    max-width: 978px;
     word-wrap: break-word;
 }
 
 a {
-    color: #53a9d9;
+    color: var(--blue-color);
     text-decoration: none;
+    transition: var(--animation-duration);
+}
+
+a:hover {
+    color: var(--blue-color-light);
+    transition: var(--animation-duration);
+}
+
+h1, h2, h3 {
+    color: var(--blue-color);
 }
 
 h1, h2 {
     border-bottom: 1px solid #ffffff5f;
-    padding-bottom: 0.25em;
+    padding-bottom: 0.2em;
+}
+
+h1 {
+    font-weight: 900;
+    text-align: center;
 }
 
 table {
@@ -43,166 +77,43 @@ table th, table td {
 }
 
 li {
-    padding-bottom: 0.25em;
+    padding-bottom: 0.2em;
 }
 
 
 /* Checkbutton styling. */
 
 .checkbutton {
-    animation: unchecked-unhover 0.25s;
-    background: linear-gradient(45deg, #017aa7 0, #ffffff1f 0);
+    background-color: var(--background-color-light);
     border-width: 0;
-    color: #ffffff9f;
+    color: var(--foreground-color-light);
     cursor: pointer;
     display: block;
     float: left;
-    margin: 0 0.2em 0.2em 0;
+    margin: -12px 0.2em 0.4em 0em;
     opacity: 90%;
-    padding: 0.1em 0.4em;
-    transition: 0.25s;
+    padding: 0.1em 0.6em;
+    transition: var(--animation-duration);
     user-select: none;
 }
 
 .checkbutton:hover {
-    animation: unchecked-hover 0.25s;
-    background: linear-gradient(45deg, #017aa7 15%, #ffffff1f 15%);
     opacity: 100%;
-    transition: 0.25s;
+    transition: var(--animation-duration);
 }
 
 .checkbutton.checked {
-    animation: checked-unhover 0.25s;
-    background: linear-gradient(45deg, #ffffff1f 0%, #017aa7 0%);
-    color: #ffffffdf;
+    color: var(--foreground-color-lighter);
+    background-color: var(--blue-color-dark);
     opacity: 100%;
-    transition: 0.25s;
+    transition: var(--animation-duration);
 }
 
 .checkbutton.checked:hover {
-    animation: checked-hover 0.25s;
-    background: linear-gradient(45deg, #ffffff1f 15%, #017aa7 15%);
-    transition: 0.25s;
+    opacity: 90%;
+    transition: var(--animation-duration);
 }
 
 .checkbutton input {
     display: none;
-}
-
-/* Python 3 code for generating keyframes. not pretty, but I gave up on pretty for now. /shrug
-# note: cubic bezier for x^3 is cubic-bezier(0, 0.33, 0, 0.67)
-
-t = 15; f = 1/3
-
-# unchecked-hover
-for p in range(0, 101, 5):
-    print(f"{p}% {{ background: linear-gradient(45deg, #017aa7 {t*(p/100)**f}%, #ffffff1f {t*(p/100)**f}%) }}")
-
-# unchecked-unhover
-for p in range(0, 101, 5):
-    print(f"{p}% {{ background: linear-gradient(45deg, #017aa7 {t*(1-(p/100)**f)}%, #ffffff1f {t*(1-(p/100)**f)}%) }}")
-
-# checked-hover
-for p in range(0, 101, 5):
-    print(f"{p}% {{ background: linear-gradient(45deg, #ffffff1f {t*(p/100)**f}%, #017aa7 {t*(p/100)**f}%) }}")
-
-# checked-unhover
-for p in range(0, 101, 5):
-    print(f"{p}% {{ background: linear-gradient(45deg, #ffffff1f {t*(1-(p/100)**f)}%, #017aa7 {t*(1-(p/100)**f)}%) }}")
- */
-
-@keyframes unchecked-hover {
-    0% { background: linear-gradient(45deg, #017aa7 0.0%, #ffffff1f 0.0%) }
-    5% { background: linear-gradient(45deg, #017aa7 5.526047247960581%, #ffffff1f 5.526047247960581%) }
-    10% { background: linear-gradient(45deg, #017aa7 6.962383250419169%, #ffffff1f 6.962383250419169%) }
-    15% { background: linear-gradient(45deg, #017aa7 7.969939268869584%, #ffffff1f 7.969939268869584%) }
-    20% { background: linear-gradient(45deg, #017aa7 8.772053214638598%, #ffffff1f 8.772053214638598%) }
-    25% { background: linear-gradient(45deg, #017aa7 9.449407874211548%, #ffffff1f 9.449407874211548%) }
-    30% { background: linear-gradient(45deg, #017aa7 10.041494251232542%, #ffffff1f 10.041494251232542%) }
-    35% { background: linear-gradient(45deg, #017aa7 10.570948098097338%, #ffffff1f 10.570948098097338%) }
-    40% { background: linear-gradient(45deg, #017aa7 11.05209449592116%, #ffffff1f 11.05209449592116%) }
-    45% { background: linear-gradient(45deg, #017aa7 11.494641485903296%, #ffffff1f 11.494641485903296%) }
-    50% { background: linear-gradient(45deg, #017aa7 11.905507889761497%, #ffffff1f 11.905507889761497%) }
-    55% { background: linear-gradient(45deg, #017aa7 12.289819059009687%, #ffffff1f 12.289819059009687%) }
-    60% { background: linear-gradient(45deg, #017aa7 12.651489979526238%, #ffffff1f 12.651489979526238%) }
-    65% { background: linear-gradient(45deg, #017aa7 12.993586580113542%, #ffffff1f 12.993586580113542%) }
-    70% { background: linear-gradient(45deg, #017aa7 13.318560026139009%, #ffffff1f 13.318560026139009%) }
-    75% { background: linear-gradient(45deg, #017aa7 13.628404446241047%, #ffffff1f 13.628404446241047%) }
-    80% { background: linear-gradient(45deg, #017aa7 13.924766500838338%, #ffffff1f 13.924766500838338%) }
-    85% { background: linear-gradient(45deg, #017aa7 14.209023557788644%, #ffffff1f 14.209023557788644%) }
-    90% { background: linear-gradient(45deg, #017aa7 14.482340769084447%, #ffffff1f 14.482340769084447%) }
-    95% { background: linear-gradient(45deg, #017aa7 14.745713587373377%, #ffffff1f 14.745713587373377%) }
-    100% { background: linear-gradient(45deg, #017aa7 15.0%, #ffffff1f 15.0%) }
-}
-
-@keyframes unchecked-unhover {
-    0% { background: linear-gradient(45deg, #017aa7 15.0%, #ffffff1f 15.0%) }
-    5% { background: linear-gradient(45deg, #017aa7 9.473952752039418%, #ffffff1f 9.473952752039418%) }
-    10% { background: linear-gradient(45deg, #017aa7 8.037616749580831%, #ffffff1f 8.037616749580831%) }
-    15% { background: linear-gradient(45deg, #017aa7 7.030060731130416%, #ffffff1f 7.030060731130416%) }
-    20% { background: linear-gradient(45deg, #017aa7 6.227946785361401%, #ffffff1f 6.227946785361401%) }
-    25% { background: linear-gradient(45deg, #017aa7 5.550592125788451%, #ffffff1f 5.550592125788451%) }
-    30% { background: linear-gradient(45deg, #017aa7 4.9585057487674575%, #ffffff1f 4.9585057487674575%) }
-    35% { background: linear-gradient(45deg, #017aa7 4.429051901902662%, #ffffff1f 4.429051901902662%) }
-    40% { background: linear-gradient(45deg, #017aa7 3.9479055040788404%, #ffffff1f 3.9479055040788404%) }
-    45% { background: linear-gradient(45deg, #017aa7 3.5053585140967036%, #ffffff1f 3.5053585140967036%) }
-    50% { background: linear-gradient(45deg, #017aa7 3.094492110238503%, #ffffff1f 3.094492110238503%) }
-    55% { background: linear-gradient(45deg, #017aa7 2.710180940990312%, #ffffff1f 2.710180940990312%) }
-    60% { background: linear-gradient(45deg, #017aa7 2.348510020473762%, #ffffff1f 2.348510020473762%) }
-    65% { background: linear-gradient(45deg, #017aa7 2.0064134198864587%, #ffffff1f 2.0064134198864587%) }
-    70% { background: linear-gradient(45deg, #017aa7 1.6814399738609902%, #ffffff1f 1.6814399738609902%) }
-    75% { background: linear-gradient(45deg, #017aa7 1.3715955537589526%, #ffffff1f 1.3715955537589526%) }
-    80% { background: linear-gradient(45deg, #017aa7 1.0752334991616626%, #ffffff1f 1.0752334991616626%) }
-    85% { background: linear-gradient(45deg, #017aa7 0.7909764422113563%, #ffffff1f 0.7909764422113563%) }
-    90% { background: linear-gradient(45deg, #017aa7 0.5176592309155542%, #ffffff1f 0.5176592309155542%) }
-    95% { background: linear-gradient(45deg, #017aa7 0.25428641262662255%, #ffffff1f 0.25428641262662255%) }
-    100% { background: linear-gradient(45deg, #017aa7 0.0%, #ffffff1f 0.0%) }
-}
-
-@keyframes checked-hover {
-    0% { background: linear-gradient(45deg, #ffffff1f 0.0%, #017aa7 0.0%) }
-    5% { background: linear-gradient(45deg, #ffffff1f 5.526047247960581%, #017aa7 5.526047247960581%) }
-    10% { background: linear-gradient(45deg, #ffffff1f 6.962383250419169%, #017aa7 6.962383250419169%) }
-    15% { background: linear-gradient(45deg, #ffffff1f 7.969939268869584%, #017aa7 7.969939268869584%) }
-    20% { background: linear-gradient(45deg, #ffffff1f 8.772053214638598%, #017aa7 8.772053214638598%) }
-    25% { background: linear-gradient(45deg, #ffffff1f 9.449407874211548%, #017aa7 9.449407874211548%) }
-    30% { background: linear-gradient(45deg, #ffffff1f 10.041494251232542%, #017aa7 10.041494251232542%) }
-    35% { background: linear-gradient(45deg, #ffffff1f 10.570948098097338%, #017aa7 10.570948098097338%) }
-    40% { background: linear-gradient(45deg, #ffffff1f 11.05209449592116%, #017aa7 11.05209449592116%) }
-    45% { background: linear-gradient(45deg, #ffffff1f 11.494641485903296%, #017aa7 11.494641485903296%) }
-    50% { background: linear-gradient(45deg, #ffffff1f 11.905507889761497%, #017aa7 11.905507889761497%) }
-    55% { background: linear-gradient(45deg, #ffffff1f 12.289819059009687%, #017aa7 12.289819059009687%) }
-    60% { background: linear-gradient(45deg, #ffffff1f 12.651489979526238%, #017aa7 12.651489979526238%) }
-    65% { background: linear-gradient(45deg, #ffffff1f 12.993586580113542%, #017aa7 12.993586580113542%) }
-    70% { background: linear-gradient(45deg, #ffffff1f 13.318560026139009%, #017aa7 13.318560026139009%) }
-    75% { background: linear-gradient(45deg, #ffffff1f 13.628404446241047%, #017aa7 13.628404446241047%) }
-    80% { background: linear-gradient(45deg, #ffffff1f 13.924766500838338%, #017aa7 13.924766500838338%) }
-    85% { background: linear-gradient(45deg, #ffffff1f 14.209023557788644%, #017aa7 14.209023557788644%) }
-    90% { background: linear-gradient(45deg, #ffffff1f 14.482340769084447%, #017aa7 14.482340769084447%) }
-    95% { background: linear-gradient(45deg, #ffffff1f 14.745713587373377%, #017aa7 14.745713587373377%) }
-    100% { background: linear-gradient(45deg, #ffffff1f 15.0%, #017aa7 15.0%) }
-}
-
-@keyframes checked-unhover {
-    0% { background: linear-gradient(45deg, #ffffff1f 15.0%, #017aa7 15.0%) }
-    5% { background: linear-gradient(45deg, #ffffff1f 9.473952752039418%, #017aa7 9.473952752039418%) }
-    10% { background: linear-gradient(45deg, #ffffff1f 8.037616749580831%, #017aa7 8.037616749580831%) }
-    15% { background: linear-gradient(45deg, #ffffff1f 7.030060731130416%, #017aa7 7.030060731130416%) }
-    20% { background: linear-gradient(45deg, #ffffff1f 6.227946785361401%, #017aa7 6.227946785361401%) }
-    25% { background: linear-gradient(45deg, #ffffff1f 5.550592125788451%, #017aa7 5.550592125788451%) }
-    30% { background: linear-gradient(45deg, #ffffff1f 4.9585057487674575%, #017aa7 4.9585057487674575%) }
-    35% { background: linear-gradient(45deg, #ffffff1f 4.429051901902662%, #017aa7 4.429051901902662%) }
-    40% { background: linear-gradient(45deg, #ffffff1f 3.9479055040788404%, #017aa7 3.9479055040788404%) }
-    45% { background: linear-gradient(45deg, #ffffff1f 3.5053585140967036%, #017aa7 3.5053585140967036%) }
-    50% { background: linear-gradient(45deg, #ffffff1f 3.094492110238503%, #017aa7 3.094492110238503%) }
-    55% { background: linear-gradient(45deg, #ffffff1f 2.710180940990312%, #017aa7 2.710180940990312%) }
-    60% { background: linear-gradient(45deg, #ffffff1f 2.348510020473762%, #017aa7 2.348510020473762%) }
-    65% { background: linear-gradient(45deg, #ffffff1f 2.0064134198864587%, #017aa7 2.0064134198864587%) }
-    70% { background: linear-gradient(45deg, #ffffff1f 1.6814399738609902%, #017aa7 1.6814399738609902%) }
-    75% { background: linear-gradient(45deg, #ffffff1f 1.3715955537589526%, #017aa7 1.3715955537589526%) }
-    80% { background: linear-gradient(45deg, #ffffff1f 1.0752334991616626%, #017aa7 1.0752334991616626%) }
-    85% { background: linear-gradient(45deg, #ffffff1f 0.7909764422113563%, #017aa7 0.7909764422113563%) }
-    90% { background: linear-gradient(45deg, #ffffff1f 0.5176592309155542%, #017aa7 0.5176592309155542%) }
-    95% { background: linear-gradient(45deg, #ffffff1f 0.25428641262662255%, #017aa7 0.25428641262662255%) }
-    100% { background: linear-gradient(45deg, #ffffff1f 0.0%, #017aa7 0.0%) }
 }

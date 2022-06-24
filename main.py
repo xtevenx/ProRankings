@@ -3,17 +3,44 @@ from math import floor
 import models
 from pro_rankings import *
 
-_line_output = "data/output_line.png"
 _line_plot_start = "2021-01-01 00:00:00"
 _line_plot_end = "2022-12-31 23:59:59"
-_bar_output = "data/output_bar.png"
-_tourney_output = "data/output_tourney.png"
 
 _bar_number_teams = 12
 _rating_diff_days = 7
 
 # Value in days.
 _chart_grouping_debounce = 0.5
+
+# https://material-theme.com/docs/reference/color-palette/
+# Selected theme: Deep ocean
+COLORS = {
+    "green": "#c3e88d",
+    "yellow": "#ffcb6b",
+    "blue": "#82aaff",
+    "red": "#f07178",
+    "purple": "#c792ea",
+    "orange": "#f78c6c",
+    "cyan": "#89ddff",
+    "gray": "#717cb4",
+    "white": "#eeffff",
+}
+
+# https://meyerweb.com/eric/tools/color-blend
+BAR_COLORS = [
+    COLORS["red"],
+    COLORS["orange"],
+    COLORS["yellow"],
+    "#ebd576",
+    "#d7de82",
+    COLORS["green"],
+    "#a3c9c6",
+    COLORS["blue"],
+    "#a59ef5",
+    COLORS["purple"],
+    "#9c87cf",
+    COLORS["gray"],
+]
 
 if __name__ == "__main__":
     from datetime import datetime
@@ -23,24 +50,11 @@ if __name__ == "__main__":
 
     print("Loading plotting libraries ... ")
 
-    import seaborn as sns
-
     plot_teams = [
-        # ("DWG KIA", "#00bcd4"),  # curr lck 1st (cyan)
-        # ("Gen.G", "#ffeb3b"),  # curr lck 1st (yellow)
-        ("T1", "#f44336"),  # curr lck 1st (red)
-        # ("Fnatic", "#ff9800"),  # curr lec 1st (orange)
-        # ("MAD Lions", "#ffca28"),  # curr lec 1st (amber)
-        # ("Rogue (European Team)", "#2196f3"),  # curr lec 1st (blue)
-        ("G2 Esports", "#795548"),  # curr lec 1st (brown)
-        # ("EDward Gaming", "#795548"),  # curr lpl 1st  (brown)
-        # ("Victory Five", "#cddc39"),  # curr lpl 1st (lime)
-        # ("LNG Esports", "#673AB7"),  # curr lpl 1st (deep purple)
-        ("Royal Never Give Up", "#ffeb3b"),  # curr lpl 1st (yellow)
-        # Note: no LCS teams because they haven't won worlds before. :)
-        # Note: colors are the 500 colors from the 2014 Material color palette.
-        # Note: the color palette can be found at the link below.
-        # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+        ("T1", COLORS["red"]),
+        ("G2 Esports", COLORS["gray"]),
+        ("Royal Never Give Up", COLORS["yellow"]),
+        # Note: No LCS teams because they haven't won worlds before. :)
     ]
 
     team_names = get_tournaments_teams(MAJOR_LEAGUES)
@@ -63,13 +77,11 @@ if __name__ == "__main__":
 
     labels = [t[0] for t in majors_data]
     ratings = [t[1].rating for t in majors_data]
-    bar_colors = sns.color_palette(palette="hls", n_colors=_bar_number_teams)
-    bar_colors = ["#" + "".join((hex(floor(256 * x))[2:] for x in t)) for t in bar_colors]
     ylim_diff = 0.146 * (max(ratings) - min(ratings))
 
     text = text.replace("{{ labels }}", str(labels))
     text = text.replace("{{ data }}", str(ratings))
-    text = text.replace("{{ colors }}", str(bar_colors))
+    text = text.replace("{{ colors }}", str(BAR_COLORS))
     text = text.replace("{{ yMin }}", str(round(min(ratings) - ylim_diff)))
     text = text.replace("{{ yMax }}", str(round(max(ratings) + ylim_diff)))
 
@@ -117,9 +129,9 @@ if __name__ == "__main__":
                 rating_diff = v.rating - r
             rating_diff = round(rating_diff, 1)
             if rating_diff > 0:
-                formatted_diff = f'<span style="color: #4CAF50">&plus;{rating_diff}</span>'
+                formatted_diff = f'<span style="color: var(--green-color)">&plus;{rating_diff}</span>'
             elif rating_diff < 0:
-                formatted_diff = f'<span style="color: #F44336">&minus;{-rating_diff}</span>'
+                formatted_diff = f'<span style="color: var(--red-color)">&minus;{-rating_diff}</span>'
             else:
                 formatted_diff = ""
 
