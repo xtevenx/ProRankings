@@ -100,7 +100,8 @@ if __name__ == "__main__":
     } for t, c in plot_teams]
 
     for set_ in datasets:
-        data = [[models.convert_to_days(d), round(r, _chart_data_decimals)]
+        data = [[round(models.convert_to_days(d), _chart_data_decimals),
+                 round(r, _chart_data_decimals)]
                 for d, r in teams_dictionary[set_["label"]].rating_history]
 
         index = 0

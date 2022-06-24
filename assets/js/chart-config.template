@@ -11,6 +11,7 @@ const topChartConfig = {
         }]
     },
     options: {
+        animation: false,
         plugins: {
             legend: {
                 display: false
@@ -47,6 +48,7 @@ const progressionChartConfig = {
         datasets: {{ progressionDatasets }}
     },
     options: {
+        animation: false,
         elements: {
             line: {
                 tension: 0.05
