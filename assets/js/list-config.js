@@ -1,6 +1,5 @@
 const ratingTableCheckboxes = [
     document.getElementById("rating-table-lcs"),
-    document.getElementById("rating-table-lcs"),
     document.getElementById("rating-table-lec"),
     document.getElementById("rating-table-lck"),
     document.getElementById("rating-table-lpl"),
