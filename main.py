@@ -86,8 +86,8 @@ if __name__ == "__main__":
 
     ymin = round(2 * min(ratings), -2) // 2
     ymax = round(2 * max(ratings), -2) // 2
-    text = text.replace("{{ yMin }}", str(ymin - 50 * min(ratings) < ymin))
-    text = text.replace("{{ yMax }}", str(ymax + 50 * max(ratings) > ymax))
+    text = text.replace("{{ yMin }}", str(ymin - 50 * (min(ratings) < ymin)))
+    text = text.replace("{{ yMax }}", str(ymax + 50 * (max(ratings) > ymax)))
 
     datasets = [{
         "label": t,
