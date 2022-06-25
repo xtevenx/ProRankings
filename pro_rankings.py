@@ -326,8 +326,8 @@ if __name__ == "__main__":
         beautified_rank = f"{i + 1}.".rjust(3)
         beautified_name = team.name.ljust(len(longest_name) + 2)
         beautified_rating = f"{team.rating:.0f}".rjust(4)
-        beautified_deviation = f"{2 * team.deviation:.0f}".rjust(3)
-        print(f"{beautified_rank} {beautified_name} {beautified_rating} ± {beautified_deviation}")
+        beautified_deviation = f"{team.deviation:.0f}".rjust(3)
+        print(f"{beautified_rank} {beautified_name} {beautified_rating} (dev: {beautified_deviation})")
 
     # Calculate average ratings for each major league.
     for league_name in MAJOR_LEAGUES:
