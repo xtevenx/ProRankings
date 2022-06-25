@@ -35,8 +35,8 @@ const topChartConfig = {
                 }
             },
             y: {
-                max: 2571.3,
-                min: 2191.4
+                max: 2500.0,
+                min: 2200.0
             }
         }
     }
