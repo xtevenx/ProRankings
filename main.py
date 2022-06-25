@@ -79,16 +79,15 @@ if __name__ == "__main__":
 
     labels = [t[0] for t in majors_data]
     ratings = [round(t[1].rating, _chart_data_decimals) for t in majors_data]
-    ylim_diff = 0.146 * (max(ratings) - min(ratings))
 
     text = text.replace("{{ labels }}", str(labels))
     text = text.replace("{{ data }}", str(ratings))
     text = text.replace("{{ colors }}", str(BAR_COLORS))
 
-    ymin = round(2 * (min(ratings) - ylim_diff), -2) // 2
-    ymax = round(2 * (max(ratings) - ylim_diff), -2) // 2
-    text = text.replace("{{ yMin }}", str(ymin))
-    text = text.replace("{{ yMax }}", str(ymax))
+    ymin = round(2 * min(ratings), -2) // 2
+    ymax = round(2 * max(ratings), -2) // 2
+    text = text.replace("{{ yMin }}", str(ymin - 50 * min(ratings) < ymin))
+    text = text.replace("{{ yMax }}", str(ymax + 50 * max(ratings) > ymax))
 
     datasets = [{
         "label": t,
