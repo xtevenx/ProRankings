@@ -85,12 +85,10 @@ if __name__ == "__main__":
     text = text.replace("{{ data }}", str(ratings))
     text = text.replace("{{ colors }}", str(BAR_COLORS))
 
-    text = text.replace(
-        "{{ yMin }}",
-        str(round(min(ratings) - ylim_diff, _chart_data_decimals)))
-    text = text.replace(
-        "{{ yMax }}",
-        str(round(max(ratings) + ylim_diff, _chart_data_decimals)))
+    ymin = round(2 * (min(ratings) - ylim_diff), -2) // 2
+    ymax = round(2 * (max(ratings) - ylim_diff), -2) // 2
+    text = text.replace("{{ yMin }}", str(ymin))
+    text = text.replace("{{ yMax }}", str(ymax))
 
     datasets = [{
         "label": t,
