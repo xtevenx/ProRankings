@@ -19,12 +19,12 @@ if __name__ == "__main__":
 
     result_pct = []
     for x in range(win_games - 1, -1, -1):
-        game_score = (win_games, x)
-        pct = math.comb(sum(game_score) - 1, x) * win_pct ** win_games * (1 - win_pct) ** x
-        result_pct.insert(0, (game_score, pct))
-        game_score = (x, win_games)
-        pct = math.comb(sum(game_score) - 1, x) * win_pct ** x * (1 - win_pct) ** win_games
-        result_pct.append((game_score, pct))
+        win_ways = math.comb(win_games + x - 1, x)
+
+        pct = win_ways * win_pct**win_games * (1 - win_pct)**x
+        result_pct.insert(0, ((win_games, x), pct))
+        pct = win_ways * win_pct**x * (1 - win_pct)**win_games
+        result_pct.append(((x, win_games), pct))
 
     print("\nEstimated result chances: ")
     for (w, l), pct in result_pct:
