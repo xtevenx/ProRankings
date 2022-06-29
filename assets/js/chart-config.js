@@ -6,7 +6,7 @@ const topChartConfig = {
         labels: ['T1', 'Royal Never Give Up', 'Gen.G', 'Victory Five', 'DWG KIA', 'Top Esports', 'G2 Esports', 'JD Gaming', 'DRX', 'Evil Geniuses.NA', 'EDward Gaming', 'Rogue (European Team)'],
         datasets: [{
             backgroundColor: ['#f07178', '#f78c6c', '#ffcb6b', '#ebd576', '#d7de82', '#c3e88d', '#a3c9c6', '#82aaff', '#a59ef5', '#c792ea', '#9c87cf', '#717cb4'],
-            data: [2546.7, 2482.2, 2465.7, 2415.2, 2376.4, 2366.6, 2333.9, 2313.1, 2284.5, 2268.9, 2245.7, 2225.7],
+            data: [2546.7, 2482.2, 2465.7, 2415.2, 2376.4, 2366.6, 2333.9, 2313.1, 2301.0, 2268.9, 2245.7, 2225.7],
             label: "Rating Points"
         }]
     },
