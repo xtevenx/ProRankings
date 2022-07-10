@@ -1,21 +1,23 @@
+import datetime
 import json
 
 import models
-from pro_rankings import *
+import pro_rankings as pr
 
-_line_plot_start: str = "2021-01-01 00:00:00"
-_line_plot_end: str = "2022-12-31 23:59:59"
+# Plot and table configurations
+PLT_DATA_PRECISION: int = 1  # decimal points
 
-_bar_number_teams: int = 12
-_rating_diff_days: int = 7
+PLT_BAR_NUMBER_TEAMS: int = 12
 
-# Value in days.
-_chart_data_decimals: int = 1
-_chart_grouping_debounce: float = 0.5
+PLT_LINE_START: str = "2021-01-01 00:00:00"
+PLT_LINE_END: str = "2022-12-31 23:59:59"
+PLT_LINE_RATING_DEBOUNCE: float = 0.5  # days
+
+TBL_RATING_DIFF: int = 7  # days
 
 # https://material-theme.com/docs/reference/color-palette/
 # Selected theme: Deep ocean
-COLORS = {
+COLORS: dict[str, str] = {
     "green": "#c3e88d",
     "yellow": "#ffcb6b",
     "blue": "#82aaff",
@@ -28,7 +30,7 @@ COLORS = {
 }
 
 # https://meyerweb.com/eric/tools/color-blend
-BAR_COLORS = [
+PLT_BAR_COLORS: list[str] = [
     COLORS["red"],
     COLORS["orange"],
     COLORS["yellow"],
@@ -43,46 +45,44 @@ BAR_COLORS = [
     COLORS["gray"],
 ]
 
+PLT_LINE_TEAMS: list[tuple[str, str]] = [
+    ("T1", COLORS["red"]),
+    ("G2 Esports", COLORS["gray"]),
+    ("Royal Never Give Up", COLORS["yellow"]),
+    # Note: No LCS teams because they haven't won worlds before. :)
+]
+
+# Miscellaneous constants
+CURRENT_DATE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 if __name__ == "__main__":
-    from datetime import datetime
+    teams = pr.get_teams_data()
 
-    teams_dictionary = get_teams_data()
-    current_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    major_names = pr.get_tournaments_teams(pr.MAJOR_LEAGUES)
+    major_teams = [(k, v) for k, v in teams.items() if k in major_names]
 
-    print("Loading plotting libraries ... ")
+    found_major_teams = {t[0] for t in major_teams}
+    for name in major_names:
+        if name not in found_major_teams:
+            print(f"Error: data for team `{name}' not found.")
 
-    plot_teams = [
-        ("T1", COLORS["red"]),
-        ("G2 Esports", COLORS["gray"]),
-        ("Royal Never Give Up", COLORS["yellow"]),
-        # Note: No LCS teams because they haven't won worlds before. :)
-    ]
-
-    team_names = get_tournaments_teams(MAJOR_LEAGUES)
-    majors_data = [(k, v) for k, v in teams_dictionary.items()
-                   if k in team_names]
-
-    all_names = {t[0] for t in majors_data}
-    for team_name in team_names:
-        if team_name not in all_names:
-            print(f"Error: team `{team_name}' not found.")
-
-    majors_data.sort(key=lambda t: t[1].rating, reverse=True)
-    majors_data = majors_data[:_bar_number_teams]
+    major_teams.sort(key=lambda t: t[1].rating, reverse=True)
+    major_teams = major_teams[:PLT_BAR_NUMBER_TEAMS]
 
     # Actually generate the HTML ==============================================
 
     print("Generating README.html ... ")
 
-    with open("assets/js/chart-config.template", "r") as fp:
+    with open("assets/js/chart-config.template", mode="r",
+              encoding="utf-8") as fp:
         text = fp.read()
 
-    labels = [t[0] for t in majors_data]
-    ratings = [round(t[1].rating, _chart_data_decimals) for t in majors_data]
+    labels = [t[0] for t in major_teams]
+    ratings = [round(t[1].rating, PLT_DATA_PRECISION) for t in major_teams]
 
     text = text.replace("{{ labels }}", str(labels))
     text = text.replace("{{ data }}", str(ratings))
-    text = text.replace("{{ colors }}", str(BAR_COLORS))
+    text = text.replace("{{ colors }}", str(PLT_BAR_COLORS))
 
     ymin = round(2 * min(ratings), -2) // 2
     ymax = round(2 * max(ratings), -2) // 2
@@ -94,51 +94,50 @@ if __name__ == "__main__":
         "backgroundColor": c,
         "borderColor": c,
         "showLine": True
-    } for t, c in plot_teams]
+    } for t, c in PLT_LINE_TEAMS]
 
-    for set_ in datasets:
-        data = [[round(models.convert_to_days(d), _chart_data_decimals),
-                 round(r, _chart_data_decimals)]
-                for d, r in teams_dictionary[set_["label"]].rating_history]
+    for dataset in datasets:
+        data = [[
+            round(models.convert_to_days(d), PLT_DATA_PRECISION),
+            round(r, PLT_DATA_PRECISION),
+        ] for d, r in teams[dataset["label"]].rating_history]
 
         index = 0
         while True:
             if index + 1 >= len(data):
                 break
-            if data[index + 1][0] <= data[index][0] + _chart_grouping_debounce:
+            if data[index + 1][0] <= data[index][0] + PLT_LINE_RATING_DEBOUNCE:
                 data.pop(index)
             else:
                 index += 1
-        set_["data"] = data
+        dataset["data"] = data
 
     text = text.replace("{{ progressionDatasets }}", json.dumps(datasets))
     text = text.replace(
         "{{ progressionStart }}",
-        str(round(models.convert_to_days(_line_plot_start),
-                  _chart_data_decimals)))
+        str(round(models.convert_to_days(PLT_LINE_START), PLT_DATA_PRECISION)))
     text = text.replace(
         "{{ progressionEnd }}",
-        str(round(models.convert_to_days(_line_plot_end),
-                  _chart_data_decimals)))
+        str(round(models.convert_to_days(PLT_LINE_END), PLT_DATA_PRECISION)))
 
-    with open("assets/js/chart-config.js", "w") as fp:
+    with open("assets/js/chart-config.js", mode="w", encoding="utf-8") as fp:
         fp.write(text)
 
-    with open("TEMPLATE.html", "r", encoding="utf-8") as fp:
+    with open("TEMPLATE.html", mode="r", encoding="utf-8") as fp:
         template = fp.read()
 
     teams_data = []
-    for tournament_name in PREMIER_LEAGUES:
-        team_names = get_tournament_teams(tournament_name)
+    for tournament_name in pr.PREMIER_LEAGUES:
+        team_names = pr.get_tournament_teams(tournament_name)
 
-        diff_limit = models.convert_to_days(current_date)
-        for k, v in teams_dictionary.items():
+        diff_limit = models.convert_to_days(CURRENT_DATE)
+        for k, v in teams.items():
             if k not in team_names:
                 continue
 
             rating_diff = 0
             for d, r in reversed(v.rating_history):
-                if diff_limit - models.convert_to_days(d) > _rating_diff_days:
+                if diff_limit - models.convert_to_days(d) > TBL_RATING_DIFF:
                     break
                 rating_diff = v.rating - r
             rating_diff = round(rating_diff, 1)
