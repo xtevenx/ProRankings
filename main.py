@@ -56,9 +56,9 @@ PLT_LINE_TEAMS: list[tuple[str, str]] = [
 CURRENT_DATE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 if __name__ == "__main__":
-    teams = pr.get_teams_data()
+    teams = pr.teams_data()
 
-    major_names = pr.get_tournaments_teams(pr.MAJOR_LEAGUES)
+    major_names = pr.tournaments_teams(pr.MAJOR_LEAGUES)
     major_teams = [(k, v) for k, v in teams.items() if k in major_names]
 
     found_major_teams = {t[0] for t in major_teams}
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     teams_data = []
     for tournament_name in pr.PREMIER_LEAGUES:
-        team_names = pr.get_tournament_teams(tournament_name)
+        team_names = pr.tournament_teams(tournament_name)
 
         diff_limit = models.convert_to_days(CURRENT_DATE)
         for k, v in teams.items():
