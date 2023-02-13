@@ -1,3 +1,5 @@
+# helpfull? https://lol.fandom.com/wiki/Special:CargoTables
+
 import datetime
 import json
 import os
@@ -6,34 +8,19 @@ import mwclient
 
 from models import QueryDelay, TeamData
 
-# Iterable of all the major leagues
-# MAJOR_LEAGUES: list[str] = [
-#     f"{s}/2022 Season/Spring Season" for s in ("LCS", "LEC", "LCK", "LPL")
-# ]
-MAJOR_LEAGUES: list[str] = [
-    f"{s}/2022 Season/Summer Season" for s in ("LCS", "LEC", "LCK", "LPL")
-]
-
-# Iterable of all premier leagues
-# PREMIER_LEAGUES: list[str] = MAJOR_LEAGUES + [
-#     "CBLOL/2022 Season/Split 1",
-#     "LCL/2022 Season/Spring Season",
-#     "LJL/2022 Season/Spring Season",
-#     "LLA/2022 Season/Opening Season",
-#     "LCO/2022 Season/Split 1",
-#     "PCS/2022 Season/Spring Season",
-#     "TCL/2022 Season/Winter Season",
-#     "VCS/2022 Season/Spring Season",
-# ]
-PREMIER_LEAGUES: list[str] = MAJOR_LEAGUES + [
-    "CBLOL/2022 Season/Split 2",
-    # "LCL/2022 Season/Summer Season",  # cancelled
-    "LJL/2022 Season/Summer Season",
-    "LLA/2022 Season/Closing Season",
-    "LCO/2022 Season/Split 2",
-    "PCS/2022 Season/Summer Season",
-    "TCL/2022 Season/Summer Season",
-    "VCS/2022 Season/Summer Season",
+# Iterable of all premier leagues by OverviewPage
+PREMIER_LEAGUES: list[str] = [
+    s.replace("_", " ") for s in (
+        "LPL/2023_Season/Spring_Season",
+        "LEC/2023_Season/Winter_Season",
+        "LCK/2023_Season/Spring_Season",
+        "LCS/2023_Season/Spring_Season",
+        "PCS/2023_Season/Spring_Season",
+        "VCS/2023_Season/Spring_Season",
+        "CBLOL/2023_Season/Split_1",
+        "LJL/2023_Season/Spring_Season",
+        "LLA/2023_Season/Opening_Season",
+    )
 ]
 
 # How much *extra* do interregional games count towards one's rating
@@ -351,7 +338,6 @@ def tournament_teams(tournament: str) -> set:
 def main() -> None:
     teams = teams_data()
 
-    # team_names = tournaments_teams(MAJOR_LEAGUES)
     team_names = tournaments_teams(PREMIER_LEAGUES)
     # team_names = team_names([
     #     "2020 Season World Championship/Main Event",
@@ -371,7 +357,7 @@ def main() -> None:
               f"(dev: {beautified_deviation})")
 
     # Calculate average ratings for each major league.
-    for league_name in MAJOR_LEAGUES:
+    for league_name in PREMIER_LEAGUES:
         league_teams = tournament_teams(league_name)
         league_teams = [t for t in teams_list if t.name in league_teams]
         avg_rating = sum(t.rating for t in league_teams) / len(league_teams)

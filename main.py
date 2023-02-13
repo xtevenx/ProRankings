@@ -9,8 +9,8 @@ PLT_DATA_PRECISION: int = 1  # decimal points
 
 PLT_BAR_NUMBER_TEAMS: int = 12
 
-PLT_LINE_START: str = "2021-01-01 00:00:00"
-PLT_LINE_END: str = "2022-12-31 23:59:59"
+PLT_LINE_START: str = "2022-01-01 00:00:00"
+PLT_LINE_END: str = "2023-12-31 23:59:59"
 PLT_LINE_RATING_DEBOUNCE: float = 0.5  # days
 
 TBL_RATING_DIFF: int = 7  # days
@@ -46,9 +46,9 @@ PLT_BAR_COLORS: list[str] = [
 ]
 
 PLT_LINE_TEAMS: list[tuple[str, str]] = [
-    ("Gen.G", COLORS["yellow"]),
-    ("Rogue (European Team)", COLORS["blue"]),
-    ("JD Gaming", COLORS["red"]),
+    ("T1", COLORS["red"]),
+    ("Team Vitality", COLORS["yellow"]),
+    ("Invictus Gaming", COLORS["gray"]),
     # Note: No LCS teams because they haven't won worlds before. :)
 ]
 
@@ -58,7 +58,7 @@ CURRENT_DATE = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 if __name__ == "__main__":
     teams = pr.teams_data()
 
-    major_names = pr.tournaments_teams(pr.MAJOR_LEAGUES)
+    major_names = pr.tournaments_teams(pr.PREMIER_LEAGUES)
     major_teams = [(k, v) for k, v in teams.items() if k in major_names]
 
     found_major_teams = {t[0] for t in major_teams}
