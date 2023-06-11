@@ -6,7 +6,7 @@ const topChartConfig = {
         labels: ['JD Gaming', 'T1', 'Gen.G', 'Bilibili Gaming', 'KT Rolster', 'Dplus KIA', 'Weibo Gaming', 'Hanwha Life Esports', 'G2 Esports', 'LNG Esports', 'Kwangdong Freecs', 'EDward Gaming'],
         datasets: [{
             backgroundColor: ['#f07178', '#f78c6c', '#ffcb6b', '#ebd576', '#d7de82', '#c3e88d', '#a3c9c6', '#82aaff', '#a59ef5', '#c792ea', '#9c87cf', '#717cb4'],
-            data: [2560.9, 2505.1, 2479.5, 2477.6, 2431.8, 2363.2, 2352.0, 2343.4, 2303.8, 2296.1, 2289.3, 2279.3],
+            data: [2560.9, 2505.1, 2479.5, 2477.6, 2431.8, 2376.8, 2352.0, 2343.4, 2303.8, 2296.1, 2289.3, 2279.3],
             label: "Rating Points"
         }]
     },
