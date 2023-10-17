@@ -11,15 +11,15 @@ from models import QueryDelay, TeamData
 # Iterable of all premier leagues by OverviewPage
 PREMIER_LEAGUES: list[str] = [
     s.replace("_", " ") for s in (
-        "LPL/2023_Season/Spring_Season",
-        "LEC/2023_Season/Winter_Season",
-        "LCK/2023_Season/Spring_Season",
-        "LCS/2023_Season/Spring_Season",
-        "PCS/2023_Season/Spring_Season",
-        "VCS/2023_Season/Spring_Season",
-        "CBLOL/2023_Season/Split_1",
-        "LJL/2023_Season/Spring_Season",
-        "LLA/2023_Season/Opening_Season",
+        "LPL/2023_Season/Summer_Season",
+        "LEC/2023_Season/Summer_Season",
+        "LCK/2023_Season/Summer_Season",
+        "LCS/2023_Season/Summer_Season",
+        "PCS/2023_Season/Summer_Season",
+        "VCS/2023_Season/Summer_Season",
+        "CBLOL/2023_Season/Split_2",
+        "LJL/2023_Season/Summer_Season",
+        "LLA/2023_Season/Closing_Season",
     )
 ]
 
