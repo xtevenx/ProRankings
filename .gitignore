@@ -1,3 +1,6 @@
+# Python virtualenv files
+venv/
+
 # Python auto-generated files
 __pycache__/
 
