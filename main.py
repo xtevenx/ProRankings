@@ -46,9 +46,9 @@ PLT_BAR_COLORS: list[str] = [
 ]
 
 PLT_LINE_TEAMS: list[tuple[str, str]] = [
-    ("T1", COLORS["red"]),
-    ("Team Vitality", COLORS["yellow"]),
-    ("Invictus Gaming", COLORS["gray"]),
+    ("Gen.G", COLORS["yellow"]),
+    ("JD Gaming", COLORS["red"]),
+    ("G2 Esports", COLORS["gray"]),
     # Note: No LCS teams because they haven't won worlds before. :)
 ]
 
