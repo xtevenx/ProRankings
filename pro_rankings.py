@@ -89,7 +89,7 @@ def _load_data(filename: str = "data/past_data.json") -> dict:
     """
 
     try:
-        with open(filename, mode="r", encoding="utf-8") as fp:
+        with open(filename, encoding="utf-8") as fp:
             return json.load(fp)
     except FileNotFoundError:
         return {}
@@ -134,7 +134,7 @@ def teams_data():
             games_data.pop()
 
         _interval_start = str(start_datetime)
-        seen_games = set(str(sorted(g.values())) for g in games_data)
+        seen_games = {str(sorted(g.values())) for g in games_data}
 
     else:
         # Get all games after Oct 27, 2009 (release date of LoL)
@@ -267,7 +267,7 @@ def teams_data():
         game_time: str = game_data["DateTime UTC"]
 
         # Update stats if new season.
-        year, month, day = [int(n) for n in game_time.split()[0].split("-")]
+        year, month, day = (int(n) for n in game_time.split()[0].split("-"))
         game_datetime = datetime.datetime(year, month, day)
 
         if game_datetime > SEASON_END_DATES[season_index]:
@@ -321,15 +321,16 @@ def tournament_teams(tournament: str) -> set:
     """Get the set of participant team names for a tournament name."""
 
     QUERY_DELAY.ensure_delay()
-    response: dict = mwclient.Site("lol.fandom.com", path="/").api(
+    response = mwclient.Site("lol.fandom.com", path="/").api(
         "cargoquery",
         limit="max",
         tables="Standings=S",
         fields="S.Team",
         where=f"S.OverviewPage='{tournament}'").get("cargoquery")
+    assert response is not None
 
     teams = tuple(d["title"]["Team"] for d in response)
-    teams = set(t for t in teams if not t.startswith("TBD "))
+    teams = {t for t in teams if not t.startswith("TBD ")}
 
     print(f"Collected {len(teams)} team names from `{tournament}` ... ")
     return teams
