@@ -6,7 +6,7 @@ const topChartConfig = {
         labels: ['Bilibili Gaming', 'Top Esports', 'G2 Esports', 'JD Gaming', 'PSG Talon', 'Team WE', 'Team Liquid', 'LNG Esports', 'CTBC Flying Oyster', 'Fnatic', "Anyone's Legend", 'Team BDS'],
         datasets: [{
             backgroundColor: ['#f07178', '#f78c6c', '#ffcb6b', '#ebd576', '#d7de82', '#c3e88d', '#a3c9c6', '#82aaff', '#a59ef5', '#c792ea', '#9c87cf', '#717cb4'],
-            data: [2569.7, 2518.4, 2453.0, 2440.8, 2354.4, 2311.7, 2279.6, 2272.4, 2270.7, 2253.9, 2246.9, 2230.2],
+            data: [2580.1, 2518.4, 2453.0, 2440.8, 2354.4, 2294.3, 2279.6, 2272.4, 2270.7, 2253.9, 2246.9, 2230.2],
             label: "Rating Points"
         }]
     },
