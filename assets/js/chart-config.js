@@ -3,10 +3,10 @@ const MONTH_ABBREVIATIONS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "A
 const topChartConfig = {
     type: "bar",
     data: {
-        labels: ['Gen.G', 'Hanwha Life Esports', 'Bilibili Gaming', 'Top Esports', 'T1', 'G2 Esports', 'Dplus KIA', 'LNG Esports', 'JD Gaming', 'PSG Talon', 'KT Rolster', 'Team Liquid'],
+        labels: ['Gen.G', 'Hanwha Life Esports', 'Bilibili Gaming', 'Top Esports', 'T1', 'G2 Esports', 'Dplus KIA', 'LNG Esports', 'PSG Talon', 'JD Gaming', 'KT Rolster', 'Team Liquid'],
         datasets: [{
             backgroundColor: ['#f07178', '#f78c6c', '#ffcb6b', '#ebd576', '#d7de82', '#c3e88d', '#a3c9c6', '#82aaff', '#a59ef5', '#c792ea', '#9c87cf', '#717cb4'],
-            data: [2711.9, 2528.8, 2513.5, 2505.1, 2475.6, 2456.9, 2418.7, 2411.1, 2402.6, 2392.2, 2348.2, 2340.1],
+            data: [2711.9, 2528.8, 2513.5, 2505.1, 2475.6, 2456.9, 2418.7, 2411.1, 2405.6, 2402.6, 2348.2, 2340.1],
             label: "Rating Points"
         }]
     },
