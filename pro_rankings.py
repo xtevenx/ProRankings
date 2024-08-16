@@ -11,15 +11,14 @@ from models import QueryDelay, TeamData
 # Iterable of all premier leagues by OverviewPage
 PREMIER_LEAGUES: list[str] = [
     s.replace("_", " ") for s in (
-        "LPL/2023_Season/Summer_Season",
-        "LEC/2023_Season/Summer_Season",
-        "LCK/2023_Season/Summer_Season",
-        "LCS/2023_Season/Summer_Season",
-        "PCS/2023_Season/Summer_Season",
-        "VCS/2023_Season/Summer_Season",
-        "CBLOL/2023_Season/Split_2",
-        "LJL/2023_Season/Summer_Season",
-        "LLA/2023_Season/Closing_Season",
+        "LPL/2024_Season/Summer_Season",
+        "LEC/2024_Season/Summer_Season",
+        "LCK/2024_Season/Summer_Season",
+        "LCS/2024_Season/Summer_Season",
+        "PCS/2024_Season/Summer_Season",
+        "VCS/2024_Season/Summer_Season",
+        "CBLOL/2024_Season/Split_2",
+        "LLA/2024_Season/Closing_Season",
     )
 ]
 
@@ -50,7 +49,9 @@ SEASON_END_DATES_READABLE: list[str] = [
     "Jan 10, 2020",  # season 10
     "Jan  8, 2021",  # season 11
     "Jan  7, 2022",  # season 12
-    "Jan  1, 9999",  # end of time
+    "Jan 11, 2023",  # season 13
+    "Jan 14, 2024",  # season 14
+    "Dec 31, 9999",  # end of time
 ]
 
 MONTHS_STR: dict[str, int] = {

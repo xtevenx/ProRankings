@@ -9,8 +9,8 @@ PLT_DATA_PRECISION: int = 1  # decimal points
 
 PLT_BAR_NUMBER_TEAMS: int = 12
 
-PLT_LINE_START: str = "2022-01-01 00:00:00"
-PLT_LINE_END: str = "2023-12-31 23:59:59"
+PLT_LINE_START: str = "2023-01-01 00:00:00"
+PLT_LINE_END: str = "2024-12-31 23:59:59"
 PLT_LINE_RATING_DEBOUNCE: float = 0.5  # days
 
 TBL_RATING_DIFF: int = 7  # days
@@ -47,7 +47,8 @@ PLT_BAR_COLORS: list[str] = [
 
 PLT_LINE_TEAMS: list[tuple[str, str]] = [
     ("Gen.G", COLORS["yellow"]),
-    ("JD Gaming", COLORS["red"]),
+    # ("JD Gaming", COLORS["red"]),
+    ("Bilibili Gaming", COLORS["blue"]),
     ("G2 Esports", COLORS["gray"]),
     # Note: No LCS teams because they haven't won worlds before. :)
 ]
