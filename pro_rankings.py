@@ -19,6 +19,7 @@ PREMIER_LEAGUES: list[str] = [
         "VCS/2024_Season/Summer_Season",
         "CBLOL/2024_Season/Split_2",
         "LLA/2024_Season/Closing_Season",
+        "LJL/2024_Season/Summer_Season",
     )
 ]
 
