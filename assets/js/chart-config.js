@@ -6,7 +6,7 @@ const topChartConfig = {
         labels: ['Gen.G', 'T1', 'Invictus Gaming', 'Hanwha Life Esports', 'Top Esports', 'CTBC Flying Oyster', "Anyone's Legend", 'FlyQuest', 'Bilibili Gaming', 'G2 Esports', 'KT Rolster', 'Weibo Gaming'],
         datasets: [{
             backgroundColor: ['#f07178', '#f78c6c', '#ffcb6b', '#ebd576', '#d7de82', '#c3e88d', '#a3c9c6', '#82aaff', '#a59ef5', '#c792ea', '#9c87cf', '#717cb4'],
-            data: [2675.4, 2573.9, 2535.8, 2504.7, 2486.1, 2455.5, 2449.2, 2440.6, 2436.7, 2384.7, 2384.6, 2383.8],
+            data: [2675.4, 2573.9, 2535.8, 2504.7, 2485.3, 2455.5, 2449.2, 2440.6, 2436.7, 2384.7, 2384.6, 2383.8],
             label: "Rating Points"
         }]
     },
